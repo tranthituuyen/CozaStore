@@ -1,30 +1,25 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quản lý đơn hàng</title>
 
-    <title>Dashboard</title>
-
-    <!-- Custom fonts for this template-->
     <link rel="stylesheet" href="fontawesome-5.15.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
           rel="stylesheet">
 
-    <!-- Custom styles for this template-->
     <link rel="stylesheet" href="css/sb-admin-2.min.css">
-    <script src="fontawesome-5.15.1/js/all.min.js"></script>
     <link rel="stylesheet" href="css/new-style.css">
 </head>
-
 <body id="page-top">
     <!-- Page Wrapper -->
     <div id="wrapper">
         <!-- Sidebar -->
         <ul class="navbar-nav sidebar sidebar-dark accordion dashboardSidebar" id="accordionSidebar">
+
             <!-- Sidebar - Brand -->
             <a href="home.html" class="sidebar-brand d-flex align-items-center justify-content-center">
                 <div class="sidebar-brand-icon rotate-n-15">
@@ -38,9 +33,9 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="cz-dashboard.html">
+                <a class="nav-link" href="dashboard.html">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Thống kê</span>
+                    <span>Dashboard</span>
                 </a>
             </li>
 
@@ -48,7 +43,9 @@
             <hr class="sidebar-divider">
 
             <!-- Heading -->
-            <div class="sidebar-heading">Quản lý chung</div>
+            <div class="sidebar-heading">
+                Quản lý chung
+            </div>
 
             <!-- Nav Item - quản lý danh mục -->
             <li class="nav-item">
@@ -153,7 +150,6 @@
                     <span>Quản lý bài đăng Blog</span>
                 </a>
             </li>
-
             <!-- Nav Item - quản lý giao dịch -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="z-deal-management.html">
@@ -162,11 +158,14 @@
                 </a>
             </li>
 
+
             <!-- Divider -->
             <hr class="sidebar-divider">
 
             <!-- Heading -->
-            <div class="sidebar-heading">Quản lý thông tin</div>
+            <div class="sidebar-heading">
+                Quản lý thông tin
+            </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
@@ -190,23 +189,40 @@
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
+
             <!-- Main Content -->
             <div id="content">
+
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow user-select-none">
+
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
+
+                    <!-- Topbar Search -->
+                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Tìm kiếm..."
+                                   aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
+
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                         <li class="nav-item dropdown no-arrow d-sm-none">
                             <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-search fa-fw"></i>
                             </a>
-
                             <!-- Dropdown - Messages -->
                             <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
                                  aria-labelledby="searchDropdown">
@@ -363,7 +379,7 @@
                                     Nhật ký hoạt động
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="cz-login.html" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="login.html" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Đăng xuất
                                 </a>
@@ -377,103 +393,96 @@
                 <div class="container-fluid user-select-none">
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4 user-select-none">
-                        <h1 class="h3 mb-0 font-weight-bold">Thống kê</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-                            <i class="fas fa-download fa-sm text-white-50"></i> Xuất báo cáo
+                        <h1 class="h3 mb-0 text-gray-800">Quản lý đơn hàng</h1>
+                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-download fa-sm text-white-50"></i> Xuất báo cáo
                         </a>
                     </div>
 
                     <!-- Content Row -->
                     <div class="row">
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4 user-select-none">
-                            <div class="card border-left-primary shadow h-100 py-2">
+                        <!-- đơn hàng mới -->
+                        <div class="col-xl-3 col-md-6 mb-4 mainTab">
+                            <div id="donHangMoi" class="card border-left-primary shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                                Thu nhập (hàng tháng)
+                                            <div class="text-xs text-primary text-uppercase mb-1">
+                                                <h6 class="font-weight-bold">Đơn hàng mới</h6>
                                             </div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                                32.000.000đ
+                                                14 đơn
                                             </div>
                                         </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                        <div class="col-auto qldh">
+                                            <img class="qldh-img" src="images/icons/new-order.png" alt="">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Thu nhập (hàng năm)
-                                            </div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                                512.000.000đ
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-info shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
-                                                Chỉ tiêu
-                                            </div>
-                                            <div class="row no-gutters align-items-center">
-                                                <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
-                                                        72%
-                                                    </div>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="progress progress-sm mr-2">
-                                                        <div class="progress-bar bg-info" role="progressbar"
-                                                             style="width: 72%" aria-valuenow="50" aria-valuemin="0"
-                                                             aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Pending Requests Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
+                        <!-- đơn hàng đang xử lý -->
+                        <div class="col-xl-3 col-md-6 mb-4 mainTab">
                             <div class="card border-left-warning shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                Đơn hàng mới
+                                            <div class="text-xs text-warning text-uppercase mb-1">
+                                                <h6 class="font-weight-bold">Đang xử lý</h6>
                                             </div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                                18
+                                                8 đơn
                                             </div>
                                         </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-comments fa-2x text-gray-300"></i>
+                                        <div class="col-auto qldh">
+                                            <img class="qldh-img" src="images/icons/processing-order.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Đơn hàng đã giao -->
+                        <div class="col-xl-3 col-md-6 mb-4 mainTab">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs text-success text-uppercase mb-1">
+                                                <h6 class="font-weight-bold">Đã giao</h6>
+                                            </div>
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col-auto">
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
+                                                        6 đơn
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto qldh">
+                                            <img src="images/icons/successful-order.png" alt="" class="qldh-img">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Đơn hàng đã hủy -->
+                        <div class="col-xl-3 col-md-6 mb-4 mainTab">
+                            <div class="card border-left-danger shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs text-danger text-uppercase mb-1">
+                                                <h6 class="font-weight-bold">Đã hủy</h6>
+                                            </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                4 đơn
+                                            </div>
+                                        </div>
+                                        <div class="col-auto qldh">
+                                            <img src="images/icons/cancel-order.png" alt="" class="qldh-img">
                                         </div>
                                     </div>
                                 </div>
@@ -481,134 +490,164 @@
                         </div>
                     </div>
 
-                    <!-- Content Row -->
-                    <div class="row">
-                        <!-- Area Chart -->
+                    <!-- đơn hàng mới -->
+                    <div class="row mb-4" id="donHangMoiTab">
                         <div class="col-xl-12 col-lg-12">
-                            <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
-                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Tổng quan thu nhập (triệu VND)</h6>
-                                    <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                             aria-labelledby="dropdownMenuLink">
-                                            <div class="dropdown-header">Tùy chọn</div>
-                                            <a class="dropdown-item" href="#">In báo cáo</a>
-                                            <a class="dropdown-item" href="#">Đến ngày</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Làm mới</a>
+                            <div class="card shadow">
+                                <div class="card-header">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h6 class="m-0 mr-4 font-weight-bold text-primary">
+                                            Đơn hàng trong ngày
+                                        </h6>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="flex-grow-1">
+                                                <div class="form-inline d-flex justify-content-start mb-0">
+                                                    <h6 class="m-0 text-primary font-weight-bold mr-2">Lọc theo:</h6>
+                                                    <input class="form-control mr-2" type="date" id="birthday"
+                                                           name="birthday">
+
+                                                    <select id="select-tinhtrang" class="form-control mr-2">
+                                                        <option value="Tất cả">Tình trạng: Tất cả</option>
+                                                        <option value="Đơn mới">Đơn mới</option>
+                                                        <option value="Đang xử lý">Đang xử lý</option>
+                                                        <option value="Đã giao">Đã giao</option>
+                                                    </select>
+
+                                                    <button class="btn btn-ms-primary">
+                                                        Tìm kiếm
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                            <button class="d-none btn btn-circle btn-ms-outline-primary myBtnSearch">
+                                                <i class="fas fa-search"></i>
+                                            </button>
+
+                                            <form class="d-none form-inline myFormSearch">
+                                                <div class="input-group d-flex align-items-center">
+                                                    <input type="text" class="flex-grow-1 form-control bg-light msTxtBox" style="height:40px;width: 420px;"
+                                                           placeholder="Tìm kiếm theo mã đơn hàng, id khách hàng hoặc sdt">
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-circle btn-ms-outline-primary myFormSearchBtn">
+                                                            <i class="fas fa-search"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
 
-                                <!-- Card Body -->
                                 <div class="card-body">
-                                    <div class="chart-area">
-                                        <canvas id="myAreaChart"></canvas>
+                                    <div class="d-flex w-75 justify-content-between">
+                                        <p class="font-weight-bold">Tổng số đơn hàng: <span class="font-weight-light">5</span></p>
+                                        <p class="font-weight-bold">Đơn mới: <span class="font-weight-light">2</span></p>
+                                        <p class="font-weight-bold">Đang xử lý: <span class="font-weight-light">1</span></p>
+                                        <p class="font-weight-bold">Đã giao: <span class="font-weight-light">2</span></p>
+                                        <p class="font-weight-bold">Đã hủy: <span class="font-weight-light">0</span></p>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-hover" id="dataTableDonHangMoi"
+                                               width="100%" cellspacing="0">
+                                            <thead>
+                                                <tr>
+                                                    <th class="align-middle">Mã DH</th>
+                                                    <th class="align-middle">ID-KH</th>
+                                                    <th class="align-middle">Tên khách hàng</th>
+                                                    <th class="align-middle">Số điện thoại</th>
+                                                    <th class="align-middle">Địa chỉ</th>
+                                                    <th class="align-middle">Số lượng</th>
+                                                    <th class="align-middle">Tình trạng</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tfoot>
+                                                <tr>
+                                                    <th class="align-middle">Mã DH</th>
+                                                    <th class="align-middle">ID-KH</th>
+                                                    <th class="align-middle">Tên khách hàng</th>
+                                                    <th class="align-middle">Số điện thoại</th>
+                                                    <th class="align-middle">Địa chỉ</th>
+                                                    <th class="align-middle">Số lượng</th>
+                                                    <th class="align-middle">Tình trạng</th>
+                                                </tr>
+                                            </tfoot>
+
+                                            <tbody>
+                                                <tr>
+                                                    <td class="align-middle">
+                                                        <a href="detail-order.html">
+                                                            #201208001
+                                                        </a>
+                                                    </td>
+                                                    <td class="align-middle">KH001</td>
+                                                    <td class="align-middle">Đinh Thị Thùy Trang</td>
+                                                    <td class="align-middle">034.xxx.xxxx</td>
+                                                    <td class="align-middle">Tân Phú</td>
+                                                    <td class="align-middle">3</td>
+                                                    <td class="align-middle">Đơn mới</td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="align-middle">
+                                                        <a href="detail-order.html">
+                                                            #201208002
+                                                        </a>
+                                                    </td>
+                                                    <td class="align-middle">KH002</td>
+                                                    <td class="align-middle">Đỗ Thị Quỳnh Anh</td>
+                                                    <td class="align-middle">034.xxx.xxxx</td>
+                                                    <td class="align-middle">Quận 3</td>
+                                                    <td class="align-middle">3</td>
+                                                    <td class="align-middle">Đơn mới</td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="align-middle">
+                                                        <a href="detail-order.html">
+                                                            #201208003
+                                                        </a>
+                                                    </td>
+                                                    <td class="align-middle">KH003</td>
+                                                    <td class="align-middle">Ngụy Hoàng Thanh Thảo</td>
+                                                    <td class="align-middle">034.xxx.xxxx</td>
+                                                    <td class="align-middle">Thủ Đức</td>
+                                                    <td class="align-middle">3</td>
+                                                    <td class="align-middle">Đang xử lý</td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="align-middle">
+                                                        <a href="detail-order.html">
+                                                            #201208004
+                                                        </a>
+                                                    </td>
+                                                    <td class="align-middle">KH004</td>
+                                                    <td class="align-middle">Hạo An</td>
+                                                    <td class="align-middle">034.xxx.xxxx</td>
+                                                    <td class="align-middle">Tân Bình</td>
+                                                    <td class="align-middle">3</td>
+                                                    <td class="align-middle">Đã giao</td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="align-middle">
+                                                        <a href="detail-order.html">
+                                                            #201208005
+                                                        </a>
+                                                    </td>
+                                                    <td class="align-middle">TN001</td>
+                                                    <td class="align-middle">Phạm Nguyễn Thanh Trà</td>
+                                                    <td class="align-middle">034.xxx.xxxx</td>
+                                                    <td class="align-middle">Tân Bình</td>
+                                                    <td class="align-middle">3</td>
+                                                    <td class="align-middle">Đã giao</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <!-- Content Row -->
-                    <div class="row">
-
-                        <!-- Content Column -->
-                        <div class="col-lg-12 mb-4">
-
-                            <!-- Project Card Example -->
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Chỉ tiêu tháng 11</h6>
-                                </div>
-
-                                <div class="card-body">
-                                    <h4 class="small font-weight-bold">Tổng doanh thu
-                                        <span class="float-right">72%</span>
-                                    </h4>
-                                    <div class="progress mb-4">
-                                        <div class="progress-bar bg-gradient-secondary" role="progressbar" style="width: 72%"
-                                             aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <h4 class="small font-weight-bold">Thời trang nam
-                                        <span class="float-right">20%</span>
-                                    </h4>
-                                    <div class="progress mb-4">
-                                        <div class="progress-bar bg-gradient-danger" role="progressbar" style="width: 20%"
-                                             aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <h4 class="small font-weight-bold">Thời trang nữ <span
-                                            class="float-right">66%</span></h4>
-                                    <div class="progress mb-4">
-                                        <div class="progress-bar bg-gradient-warning" role="progressbar" style="width: 66%"
-                                             aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <h4 class="small font-weight-bold">Balo <span
-                                            class="float-right">85%</span></h4>
-                                    <div class="progress mb-4">
-                                        <div class="progress-bar bg-gradient-primary" role="progressbar" style="width: 85%"
-                                             aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <h4 class="small font-weight-bold">Giày <span
-                                            class="float-right">Hoàn thành!</span></h4>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-gradient-success" role="progressbar" style="width: 100%"
-                                             aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Color System -->
-                            <div class="card">
-                                <div class="card-body">
-                                    <h6 class="m-0 font-weight-bold text-primary mb-2">Chú thích:</h6>
-                                    <div>
-                                        <div class="row">
-                                            <div class="col-lg-3">
-                                                <div class="card bg-gradient-success text-white shadow d-flex flex-row align-items-center">
-                                                    <div class="card-body">
-                                                        Xuất sắc
-                                                    </div>
-                                                    <div class="text-white-50 small mr-4"> > 90%</div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3">
-                                                <div class="card bg-gradient-primary text-white shadow d-flex flex-row align-items-center">
-                                                    <div class="card-body">
-                                                        Tốt
-                                                    </div>
-                                                    <div class="text-white-50 small mr-4"> > 80%</div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3">
-                                                <div class="card bg-gradient-warning text-white shadow d-flex flex-row align-items-center">
-                                                    <div class="card-body">
-                                                        Khá
-                                                    </div>
-                                                    <div class="text-white-50 small mr-4"> > 65%</div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3">
-                                                <div class="card bg-gradient-danger text-white shadow d-flex flex-row align-items-center">
-                                                    <div class="card-body">
-                                                        Tệ
-                                                    </div>
-                                                    <div class="text-white-50 small mr-4"> < 50%</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 mb-4">
-
                         </div>
                     </div>
                 </div>
@@ -635,56 +674,46 @@
         <i class="fas fa-angle-up"></i>
     </a>
 
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
-         aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Bạn muốn đăng xuất?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Chọn "Đăng xuất" nếu bạn muốn thoát.
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Hủy</button>
-                    <a class="btn btn-primary" href="cz-login.html">Đăng xuất</a>
-                </div>
-            </div>
-        </div>
-    </div>
+    <script src="fontawesome-5.15.1/js/all.min.js"></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="jquery/jquery-3.2.1.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<!-- Bootstrap core JavaScript-->
-<script src="jquery/jquery-3.2.1.min.js"></script>
-<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="jquery/jquery.easing.min.js"></script>
+    <script src="bootstrap/js/popper.min.js"></script>
 
-<!-- Core plugin JavaScript-->
-<script src="jquery/jquery.easing.min.js"></script>
-<script src="bootstrap/js/popper.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="jquery/sb-admin-2.min.js"></script>
 
-<!-- Custom scripts for all pages-->
-<script src="jquery/sb-admin-2.min.js"></script>
+    <!-- sidebar -->
+    <script>
+        const dashboardSidebar = document.querySelectorAll('.dashboardSidebar > li > a');
+        for (var i = 0; i < dashboardSidebar.length; i++) {
+            dashboardSidebar[i].onmouseenter = function (e) {
+                e.target.style.backgroundColor = 'rgb(12,0,184)';
+            }
 
-<!-- Page level plugins -->
-<script src="vendor/chart/chart.min.js"></script>
-
-<!-- Page level custom scripts -->
-<script src="jquery/chart-area-demo.js"></script>
-
-<script>
-    const dashboardSidebar = document.querySelectorAll('.dashboardSidebar > li > a');
-    for (var i = 0; i < dashboardSidebar.length; i++) {
-        dashboardSidebar[i].onmouseenter = function (e) {
-            e.target.style.backgroundColor = 'rgb(12,0,184)';
+            dashboardSidebar[i].onmouseleave = function (e) {
+                e.target.style.backgroundColor = '#224abe';
+            }
         }
+    </script>
 
-        dashboardSidebar[i].onmouseleave = function (e) {
-            e.target.style.backgroundColor = '#224abe';
-        }
-    }
-</script>
+    <!-- search -->
+    <script>
+        const myBtnSearch = document.querySelector('.myBtnSearch');
+        myBtnSearch.addEventListener('click', function () {
+            $('.myFormSearch').removeClass('d-none');
+            $('.myBtnSearch').addClass('d-none')
+        });
+
+        $('.myFormSearchBtn').on('click', function () {
+            $('.myFormSearch').addClass('d-none');
+            $('.myBtnSearch').removeClass('d-none')
+        })
+    </script>
+
 </body>
 </html>
