@@ -173,7 +173,7 @@
 
                                 <div class="col col-md-6 flex-grow-1 mt-2">
                                     <div class="card editCategoryImg">
-                                        <img src="images/banner-04.jpg" alt="AK">
+                                        <img src="<c:url value="/images/banners/banner-04.jpg" />" alt="AK">
                                     </div>
                                 </div>
                             </div>
@@ -196,10 +196,11 @@
         <script src="<c:url value='/templates/common/bootstrap/js/popper.min.js' />" type="text/javascript"></script>
         <script src="<c:url value='/templates/admin/jquery/sb-admin-2.min.js' />" type="text/javascript"></script>
         <script src="<c:url value='/templates/admin/chart/chart.min.js' />" type="text/javascript"></script>
-        <script src="<c:url value='/templates/admin/jquery/chart-area-demo.js' />"></script>
-
+        <script src="<c:url value='/templates/admin/jquery/chart-area-demo.js' />" type="text/javascript"></script>
+        <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+        <script src="<c:url value='/templates/admin/js/detail-order.js' />" type=""></script>
         <%-- sidebar --%>
-        <script>
+        <script type="text/javascript">
             const dashboardSidebar = document.querySelectorAll('.dashboardSidebar > li > a');
             for (var i = 0; i < dashboardSidebar.length; i++) {
                 dashboardSidebar[i].onmouseenter = function (e) {
@@ -212,27 +213,27 @@
         </script>
 
         <!-- add category swal -->
-        <script>
-                var btnAddCategory = document.querySelector('.btnAddCategory');
-                btnAddCategory.onclick = function () {
-                    console.log(btnAddCategory)
-                    var tenDanhMuc = document.getElementById('tenDanhMuc').value;
-                    swal(tenDanhMuc, 'đã thêm vào cơ sở dữ liệu', 'success', {
-                        buttons: {
-                            phanLoai: 'Thêm chi tiết',
-                            cancel: 'OK'
+        <script type="text/javascript">
+            var btnAddCategory = document.querySelector('.btnAddCategory');
+            btnAddCategory.onclick = function () {
+                console.log(btnAddCategory)
+                var tenDanhMuc = document.getElementById('tenDanhMuc').value;
+                swal(tenDanhMuc, 'đã thêm vào cơ sở dữ liệu', 'success', {
+                    buttons: {
+                        phanLoai: 'Thêm chi tiết',
+                        cancel: 'OK'
+                    }
+                })
+                    .then((value) => {
+                        if (value) {
+                            window.location.href = 'detail-category-management.html'
                         }
-                    })
-                        .then((value) => {
-                            if (value) {
-                                window.location.href = 'detail-category-management.html'
-                            }
-                        });
-                }
-            </script>
+                    });
+            }
+        </script>
 
         <!-- swal add product -->
-        <script>
+        <script type="text/javascript">
                 var btnAddProduct = document.querySelector('.btn-add-product');
                 btnAddProduct.onclick = function () {
                     var tenSanPham = document.getElementById('tenSanPham').value;
@@ -265,7 +266,7 @@
             </script>
 
         <!-- delete category swal -->
-        <script>
+        <script type="text/javascript">
             var btnDeleteProduct = document.querySelectorAll('.btnDeleteProduct');
             for (var i = 0; i < btnDeleteProduct.length; i++) {
                 btnDeleteProduct[i].onclick = function () {
@@ -290,21 +291,21 @@
         </script>
 
         <%-- add image swal --%>
-        <script>
+        <script type="text/javascript">
             document.querySelector('.btnEditAddProductImg').onclick = function () {
                 swal('', 'thêm ảnh thành công', 'success')
             }
         </script>
 
         <%-- save change swal --%>
-        <script>
+        <script type="text/javascript">
             document.getElementById('btn-save-change').onclick = function () {
                 swal('', 'đã lưu thay đổi', 'success')
             }
         </script>
 
         <%-- một cái thanh tìm kiếm mà tui hong chắc là mình sẽ để lại --%>
-        <script>
+        <script type="text/javascript">
             $('.btnSearchDisplay').on('click', function () {
                 $('.btnSearchHide').removeClass('d-none');
                 $('.inputSearchHide').removeClass('d-none');

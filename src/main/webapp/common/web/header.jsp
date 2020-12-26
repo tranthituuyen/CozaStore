@@ -92,7 +92,7 @@
         <li>
             <div class="right-top-bar flex-w h-full">
                 <a href="#" class="flex-c-m p-lr-10 trans-04">Hỗ trợ</a>
-                <a href="login.html" class="flex-c-m p-lr-10 trans-04">Tài khoản</a>
+                <a href="login.jsp" class="flex-c-m p-lr-10 trans-04">Tài khoản</a>
                 <a href="#" class="flex-c-m p-lr-10 trans-04">EN</a>
                 <a href="#" class="flex-c-m p-lr-10 trans-04">USD</a>
             </div>

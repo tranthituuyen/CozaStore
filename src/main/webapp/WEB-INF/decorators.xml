@@ -3,6 +3,9 @@
     <!-- any urls that are excluded will never be decorated by sitemesh -->
     <excludes>
         <pattern>/api*</pattern>
+        <pattern>/dang-nhap</pattern>
+        <pattern>/dang-ky</pattern>
+        <pattern>/quen-mat-khau</pattern>
     </excludes>
 
     <!-- apply sitemesh default template -->

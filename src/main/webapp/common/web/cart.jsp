@@ -58,12 +58,12 @@
             <div class="w-full">
                 <div class="header-cart-total w-full p-tb-40">Tổng cộng: 1.613.000đ</div>
                 <div class="header-cart-buttons flex-w w-full">
-                    <a href="shopping-cart.html"
+                    <a href="shopping-cart.jsp"
                        class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
                         Xem giỏ hàng
                     </a>
 
-                    <a href="shopping-cart.html"
+                    <a href="shopping-cart.jsp"
                        class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
                         Thanh toán
                     </a>
