@@ -19,15 +19,15 @@
     <div class="wrap-menu-desktop user-select-none">
         <nav class="limiter-menu-desktop container">
             <!-- Logo desktop -->
-            <a href="<c:url value='/views/web/home.jsp' />" class="logo">
+            <a href="<c:url value='/trang-chu' />" class="logo">
                 <img src="<c:url value='/templates/web/icons/logo-01.png' />" alt="IMG-LOGO">
             </a>
 
             <!-- Menu desktop -->
             <div class="menu-desktop">
                 <ul class="main-menu">
-                    <li class="active-menu"><a href="<c:url value='/views/web/home.jsp' />">Trang chủ</a></li>
-                    <li><a href="<c:url value="/views/web/product.jsp" />">Cửa hàng</a></li>
+                    <li class="active-menu"><a href="<c:url value='/trang-chu' />">Trang chủ</a></li>
+                    <li><a href="<c:url value='/product' />">Cửa hàng</a></li>
                     <li class="label1" data-label1="hot">
                         <a href="">Xu hướng
                         </a></li>
