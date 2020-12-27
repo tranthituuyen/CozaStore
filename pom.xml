@@ -18,6 +18,9 @@
         <servlet.api.version>2.5</servlet.api.version>
         <jstl.version>1.2</jstl.version>
         <sitemesh.version>2.4.2</sitemesh.version>
+        <javax.servlet-api.version>4.0.1</javax.servlet-api.version>
+        <sisu-inject-bean.version>1.4.2</sisu-inject-bean.version>
+        <commons-beanutils.version>1.9.2</commons-beanutils.version>
     </properties>
 
     <dependencies>
@@ -50,22 +53,24 @@
             <artifactId>sitemesh</artifactId>
             <version>${sitemesh.version}</version>
         </dependency>
+
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
-            <version>4.0.1</version>
+            <version>${javax.servlet-api.version}</version>
         </dependency>
+
         <dependency>
             <groupId>org.sonatype.sisu</groupId>
             <artifactId>sisu-inject-bean</artifactId>
-            <version>1.4.2</version>
+            <version>${sisu-inject-bean.version}</version>
         </dependency>
+
         <dependency>
             <groupId>commons-beanutils</groupId>
             <artifactId>commons-beanutils</artifactId>
-            <version>1.9.2</version>
+            <version>${commons-beanutils.version}</version>
         </dependency>
-
     </dependencies>
 
     <build>
