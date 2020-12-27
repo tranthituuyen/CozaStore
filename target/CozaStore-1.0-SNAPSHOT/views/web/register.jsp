@@ -30,18 +30,18 @@
                             </div>
                             <form class="user">
                                 <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="username" placeholder="Tên đăng nhập">
+                                    <input type="text" class="form-control form-control-user" id="username" placeholder="Tên đăng nhập">
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="email" placeholder="Địa chỉ email">
+                                    <input type="text" class="form-control form-control-user" id="email" placeholder="Địa chỉ email">
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="password" placeholder="Mật khẩu">
+                                    <input type="password" class="form-control form-control-user" id="password" placeholder="Mật khẩu">
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="repeatPassword" placeholder="Nhập lại mật khẩu">
+                                    <input type="password" class="form-control form-control-user" id="repeatPassword" placeholder="Nhập lại mật khẩu">
                                 </div>
 
                                 <a href="login.jsp" class="btn btn-primary btn-user btn-block">Đăng ký tài khoản</a>

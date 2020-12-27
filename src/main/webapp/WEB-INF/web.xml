@@ -4,13 +4,9 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
                              http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
-    <servlet>
-        <servlet-name>HomeController</servlet-name>
-        <servlet-class>vn.edu.nlu.controller.web.HomeController</servlet-class>
-    </servlet>
 
     <welcome-file-list>
-        <welcome-file>views/admin/dashboard.jsp</welcome-file>
+<!--        <welcome-file>views/admin/dashboard.jsp</welcome-file>-->
         <welcome-file>views/web/home.jsp</welcome-file>
     </welcome-file-list>
 
