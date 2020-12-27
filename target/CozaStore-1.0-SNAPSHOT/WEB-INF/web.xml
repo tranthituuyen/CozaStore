@@ -7,7 +7,7 @@
 
     <welcome-file-list>
 <!--        <welcome-file>views/admin/dashboard.jsp</welcome-file>-->
-        <welcome-file>views/web/home.jsp</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 
     <filter>
