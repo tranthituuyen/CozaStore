@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(urlPatterns = {"/admin-giao-dich"}, name = "admin/deal")
+@WebServlet(urlPatterns = {"/admin-quan-ly-giao-dich"}, name = "admin/deal-management")
 public class DealController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);

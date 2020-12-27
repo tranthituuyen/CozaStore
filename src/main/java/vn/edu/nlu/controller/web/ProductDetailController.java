@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-// sau này url này sẽ chứa id hay tên sản phẩm gì đó
+// mot sua lai duong dan la id hay ten san pham gi do
 @WebServlet(urlPatterns = {"/chi-tiet-san-pham"}, name = "product-detail-controller")
 public class ProductDetailController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

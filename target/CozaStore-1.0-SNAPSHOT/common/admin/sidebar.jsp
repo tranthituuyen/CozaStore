@@ -1,7 +1,7 @@
 <%@ page pageEncoding="UTF-8" %>
 <ul class="navbar-nav sidebar sidebar-dark accordion dashboardSidebar" id="accordionSidebar">
     <!-- Sidebar - Brand -->
-    <a href="<c:url value='/views/web/home.jsp' />" class="sidebar-brand d-flex align-items-center justify-content-center">
+    <a href="<c:url value='/trang-chu' />" class="sidebar-brand d-flex align-items-center justify-content-center">
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink" style="font-size: 36px"></i>
         </div>
@@ -13,7 +13,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="<c:url value='/views/admin/dashboard.jsp' />">
+        <a class="nav-link" href="<c:url value='/admin-trang-chu' />">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Thống kê</span>
         </a>
@@ -27,7 +27,7 @@
 
     <!-- Nav Item - quản lý danh mục -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="<c:url value='/views/admin/category-management.jsp' />">
+        <a class="nav-link collapsed" href="<c:url value='/admin-quan-ly-danh-muc' />">
             <div class="d-inline-flex">
                 <i class="fa fa-list-ul" style="width: 20px"></i>
             </div>
@@ -37,7 +37,7 @@
 
     <!-- Nav Item - quản lý sản phẩm -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#"
+        <a class="nav-link collapsed" href="<c:url value="/admin-quan-ly-san-pham" />"
            data-toggle="collapse" data-target="#collapse-3"
            aria-expanded="true" aria-controls="collapse-3">
             <div class="d-inline-flex">
@@ -51,14 +51,14 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Lựa chọn:</h6>
                 <a class="collapse-item" href="<c:url value="/views/admin/add-product.jsp" />">Thêm sản phẩm</a>
-                <a class="collapse-item" href="<c:url value="/views/admin/product-management.jsp" />">Xem sản phẩm</a>
+                <a class="collapse-item" href="<c:url value='/admin-quan-ly-san-pham' />">Xem sản phẩm</a>
             </div>
         </div>
     </li>
 
     <!-- Nav Item - quản lý đơn hàng -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#"
+        <a class="nav-link collapsed" href="<c:url value="/admin-quan-ly-don-hang" />"
            data-toggle="collapse" data-target="#collapse-6"
            aria-expanded="true" aria-controls="collapse-6">
             <div class="d-inline-flex">
@@ -71,7 +71,7 @@
              data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Lựa chọn:</h6>
-                <a class="collapse-item" href="order-management.html">Tất cả</a>
+                <a class="collapse-item" href="<c:url value="/admin-quan-ly-don-hang" />">Tất cả</a>
                 <a class="collapse-item" href="#">Đang xử lý</a>
                 <a class="collapse-item" href="#">Hoàn thành</a>
             </div>
@@ -102,7 +102,7 @@
 
     <!-- Nav Item - quản lý người dùng -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#"
+        <a class="nav-link collapsed" href="<c:url value="/admin-quan-ly-nguoi-dung" />"
            data-toggle="collapse" data-target="#collapse-5"
            aria-expanded="true" aria-controls="collapse-5">
             <div class="d-inline-flex">
@@ -115,7 +115,7 @@
              data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Lựa chọn:</h6>
-                <a class="collapse-item" href="user-management.html">Danh sách người dùng</a>
+                <a class="collapse-item" href="<c:url value="/admin-quan-ly-nguoi-dung" />">Danh sách người dùng</a>
                 <a class="collapse-item" href="#">Chỉnh sửa</a>
             </div>
         </div>
@@ -123,7 +123,7 @@
 
     <!-- Nav Item - quản lý bài đăng blog -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="blog-management.html">
+        <a class="nav-link collapsed" href="<c:url value="/admin-quan-ly-bai-viet" />">
             <i class="fa fa-book" style="width: 20px"></i>
             <span>Quản lý bài đăng Blog</span>
         </a>
@@ -131,7 +131,7 @@
 
     <!-- Nav Item - quản lý giao dịch -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="deal-management.html">
+        <a class="nav-link collapsed" href="<c:url value="/admin-quan-ly-giao-dich" />">
             <i class="fa fa-hand-holding-medical" style="width: 20px"></i>
             <span>Quản lý giao dịch</span>
         </a>
@@ -145,7 +145,7 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="<c:url value="/views/web/contact.jsp" />">
+        <a class="nav-link collapsed" href="<c:url value="/lien-he" />">
             <div class="d-inline-flex">
                 <i class="fas fa-location-arrow pt-1" style="width: 20px"></i>
             </div>

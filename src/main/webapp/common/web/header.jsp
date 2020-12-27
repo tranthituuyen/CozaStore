@@ -27,13 +27,13 @@
             <div class="menu-desktop">
                 <ul class="main-menu">
                     <li class="active-menu"><a href="<c:url value='/trang-chu' />">Trang chủ</a></li>
-                    <li><a href="<c:url value='/product' />">Cửa hàng</a></li>
+                    <li><a href="<c:url value='/san-pham' />">Cửa hàng</a></li>
                     <li class="label1" data-label1="hot">
                         <a href="">Xu hướng
                         </a></li>
-                    <li><a href="<c:url value="/views/web/blog.jsp" />">Blog</a></li>
-                    <li><a href="<c:url value='/views/web/about.jsp' />">Về chúng tôi</a></li>
-                    <li><a href="<c:url value='/views/web/contact.jsp' />">Liên hệ</a></li>
+                    <li><a href="<c:url value='/bai-viet' />">Blog</a></li>
+                    <li><a href="<c:url value='/ve-chung-toi' />">Về chúng tôi</a></li>
+                    <li><a href="<c:url value='/lien-he' />">Liên hệ</a></li>
                 </ul>
             </div>
 
@@ -92,7 +92,7 @@
         <li>
             <div class="right-top-bar flex-w h-full">
                 <a href="#" class="flex-c-m p-lr-10 trans-04">Hỗ trợ</a>
-                <a href="login.jsp" class="flex-c-m p-lr-10 trans-04">Tài khoản</a>
+                <a href="<c:url value="dang-nhap" />" class="flex-c-m p-lr-10 trans-04">Tài khoản</a>
                 <a href="#" class="flex-c-m p-lr-10 trans-04">EN</a>
                 <a href="#" class="flex-c-m p-lr-10 trans-04">USD</a>
             </div>
@@ -100,12 +100,12 @@
     </ul>
     <!-- mobile main mobile -->
     <ul class="main-menu-m">
-        <li><a href="home.html">Home</a></li>
-        <li><a href="<c:url value='/views/web/product.jsp' />.html">Cửa hàng</a></li>
-        <li><a href="<c:url value='/views/web/product.jsp' />.html">Xu hướng</a></li>
-        <li><a href="<c:url value="/views/web/blog.jsp" />">Blog</a></li>
-        <li><a href="<c:url value="/views/web/about.jsp" />">Về chúng tôi</a></li>
-        <li><a href="<c:url value='/views/web/contact.jsp' />">Liên hệ</a></li>
+        <li><a href="<c:url value='/trang-chu' />">Home</a></li>
+        <li><a href="<c:url value='/san-pham' />.html">Cửa hàng</a></li>
+        <li><a href="<c:url value='/san-pham' />.html">Xu hướng</a></li>
+        <li><a href="<c:url value='/bai-viet' />">Blog</a></li>
+        <li><a href="<c:url value='/ve-chung-toi' />">Về chúng tôi</a></li>
+        <li><a href="<c:url value='/lien-he' />">Liên hệ</a></li>
     </ul>
 </div>
 

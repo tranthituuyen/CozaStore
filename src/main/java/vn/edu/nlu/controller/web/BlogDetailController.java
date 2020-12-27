@@ -8,7 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(urlPatterns = {"/blog-detail"}, name = "blog-detail-controller")
+// chỗ này mai mốt đổi tên đường dẫn thành tiêu đề bài viết ha gì đó
+@WebServlet(urlPatterns = {"/chi-tiet-bai-viet"}, name = "blog-detail-controller")
 public class BlogDetailController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);

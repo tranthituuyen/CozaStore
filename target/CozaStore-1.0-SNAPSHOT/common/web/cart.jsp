@@ -18,7 +18,7 @@
                         <img src="<c:url value='/images/products/cart-item-1.jpg' />" alt="IMG">
                     </div>
                     <div class="header-cart-item-txt p-t-8">
-                        <a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">Sheer shirt</a>
+                        <a href="<c:url value='/views/web/product-detail.jsp' />" class="header-cart-item-name m-b-18 hov-cl1 trans-04">Sheer shirt</a>
                         <span class="header-cart-item-info">1 x 400.000đ</span>
                     </div>
                 </li>
@@ -28,7 +28,7 @@
                         <img src="<c:url value='/images/products/cart-item-2.jpg' />" alt="IMG">
                     </div>
                     <div class="header-cart-item-txt p-t-8">
-                        <a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">SSS. Icon Pants</a>
+                        <a href="<c:url value='/chi-tiet-san-pham' />" class="header-cart-item-name m-b-18 hov-cl1 trans-04">SSS. Icon Pants</a>
                         <span class="header-cart-item-info">1 x 494.000đ</span>
                     </div>
                 </li>
@@ -38,7 +38,7 @@
                         <img src="<c:url value='/images/products/cart-item-3.jpg' />" alt="IMG">
                     </div>
                     <div class="header-cart-item-txt p-t-8">
-                        <a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">SSS. Thomas Jacket</a>
+                        <a href="<c:url value='/chi-tiet-san-pham' />" class="header-cart-item-name m-b-18 hov-cl1 trans-04">SSS. Thomas Jacket</a>
                         <span class="header-cart-item-info">1 x 719.000đ</span>
                     </div>
                 </li>
@@ -49,7 +49,7 @@
                     </div>
 
                     <div class="header-cart-item-txt p-t-8">
-                        <a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">Sheer shirt</a>
+                        <a href="<c:url value='/chi-tiet-san-pham' />" class="header-cart-item-name m-b-18 hov-cl1 trans-04">Sheer shirt</a>
                         <span class="header-cart-item-info">1 x 400.000đ</span>
                     </div>
                 </li>
@@ -58,12 +58,12 @@
             <div class="w-full">
                 <div class="header-cart-total w-full p-tb-40">Tổng cộng: 1.613.000đ</div>
                 <div class="header-cart-buttons flex-w w-full">
-                    <a href="shopping-cart.jsp"
+                    <a href="<c:url value="/gio-hang" />"
                        class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
                         Xem giỏ hàng
                     </a>
 
-                    <a href="shopping-cart.jsp"
+                    <a href="<c:url value="/gio-hang" />"
                        class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
                         Thanh toán
                     </a>

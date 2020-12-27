@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(urlPatterns = {"/admin-danh-muc"}, name = "admin/category")
+@WebServlet(urlPatterns = {"/admin-quan-ly-danh-muc"}, name = "admin/category-management")
 public class CategoryController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
