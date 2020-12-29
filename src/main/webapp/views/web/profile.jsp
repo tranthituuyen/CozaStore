@@ -90,7 +90,7 @@
 
                 <!-- Nav Item - Pages Collapse Menu -->
                 <li class="nav-item">
-                    <a class="nav-link collapsed" href="<c:url value='/dang-nhap' />">
+                    <a class="nav-link collapsed" href="z-login.html">
                         <i class="fas fa-location-arrow" style="width: 20px"></i>
                         <span>Đăng xuất</span>
                     </a>
@@ -185,7 +185,7 @@
                                 <!-- Dropdown - User Information -->
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                      aria-labelledby="userDropdown">
-                                    <a class="dropdown-item" href="<c:url value='/trang-ca-nhan' />">
+                                    <a class="dropdown-item" href="profile.jsp">
                                         <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                         Hồ sơ của bạn
                                     </a>
@@ -198,7 +198,7 @@
                                         Nhật ký hoạt động
                                     </a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="<c:url value='/dang-nhap' />" data-toggle="modal"
+                                    <a class="dropdown-item" href="login.jsp" data-toggle="modal"
                                        data-target="#logoutModal">
                                         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                         Đăng xuất

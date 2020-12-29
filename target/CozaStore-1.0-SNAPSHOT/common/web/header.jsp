@@ -92,7 +92,7 @@
         <li>
             <div class="right-top-bar flex-w h-full">
                 <a href="#" class="flex-c-m p-lr-10 trans-04">Hỗ trợ</a>
-                <a href="<c:url value="dang-nhap" />" class="flex-c-m p-lr-10 trans-04">Tài khoản</a>
+                <a href="login.jsp" class="flex-c-m p-lr-10 trans-04">Tài khoản</a>
                 <a href="#" class="flex-c-m p-lr-10 trans-04">EN</a>
                 <a href="#" class="flex-c-m p-lr-10 trans-04">USD</a>
             </div>
@@ -100,7 +100,7 @@
     </ul>
     <!-- mobile main mobile -->
     <ul class="main-menu-m">
-        <li><a href="<c:url value='/trang-chu' />">Home</a></li>
+        <li><a href="home.html">Home</a></li>
         <li><a href="<c:url value='/san-pham' />.html">Cửa hàng</a></li>
         <li><a href="<c:url value='/san-pham' />.html">Xu hướng</a></li>
         <li><a href="<c:url value='/bai-viet' />">Blog</a></li>

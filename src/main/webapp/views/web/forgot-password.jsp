@@ -43,13 +43,13 @@
                                                        id="exampleInputEmail" aria-describedby="emailHelp"
                                                        placeholder="Nhập địa chỉ email...">
                                             </div>
-                                            <a href="<c:url value='/trang-chu' />" class="btn btn-primary btn-user btn-block">
+                                            <a href="login.jsp" class="btn btn-primary btn-user btn-block">
                                                 Đặt lại mật khẩu
                                             </a>
                                         </form>
                                         <hr>
                                         <div class="text-center">
-                                            <a class="small" href="<c:url value='/dang-nhap' />">Quay lại trang đăng nhập</a>
+                                            <a class="small" href="login.jsp">Quay lại trang đăng nhập</a>
                                         </div>
                                     </div>
                                 </div>

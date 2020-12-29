@@ -49,23 +49,23 @@
                                                     </label>
                                                 </div>
                                             </div>
-                                            <a href="<c:url value='/trang-chu' />" class="btn btn-primary btn-user btn-block">
+                                            <a href="home.jsp" class="btn btn-primary btn-user btn-block">
                                                 Đăng nhập
                                             </a>
                                             <hr>
-                                            <a href="<c:url value='/trang-chu' />" class="btn btn-google btn-user btn-block">
+                                            <a href="home.jsp" class="btn btn-google btn-user btn-block">
                                                 <i class="fab fa-google fa-fw"></i> Đăng nhập với Google
                                             </a>
-                                            <a href="<c:url value='/trang-chu' />" class="btn btn-facebook btn-user btn-block">
+                                            <a href="home.jsp" class="btn btn-facebook btn-user btn-block">
                                                 <i class="fab fa-facebook-f fa-fw"></i> Đăng nhập với Facebook
                                             </a>
                                         </form>
                                         <hr>
                                         <div class="text-center">
-                                            <a class="small" href="<c:url value='/quen-mat-khau' />">Quên mật khẩu?</a>
+                                            <a class="small" href="forgot-password.jsp">Quên mật khẩu?</a>
                                         </div>
                                         <div class="text-center">
-                                            <a class="small" href="<c:url value='/dang-ky' />">Tạo tài khoản!</a>
+                                            <a class="small" href="register.jsp">Tạo tài khoản!</a>
                                         </div>
                                     </div>
                                 </div>

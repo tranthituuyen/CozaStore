@@ -125,7 +125,7 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="<c:url value="/admin-quan-ly-bai-viet" />">
             <i class="fa fa-book" style="width: 20px"></i>
-            <span>Quản lý bài đăng</span>
+            <span>Quản lý bài đăng Blog</span>
         </a>
     </li>
 

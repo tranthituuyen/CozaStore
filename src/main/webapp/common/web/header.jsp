@@ -8,7 +8,7 @@
             <div class="left-top-bar user-select-none">Free ship toàn quốc với đơn hàng > 500k</div>
             <div class="right-top-bar flex-w h-full user-select-none">
                 <a href="#" class="flex-c-m trans-04 p-lr-25">Hỗ trợ</a>
-                <a href="<c:url value='/dang-nhap' />" class="flex-c-m trans-04 p-lr-25 ">Tài khoản</a>
+                <a href="login.jsp" class="flex-c-m trans-04 p-lr-25 ">Tài khoản</a>
                 <a href="#" class="flex-c-m trans-04 p-lr-25">EN</a>
                 <a href="#" class="flex-c-m trans-04 p-lr-25">USD</a>
             </div>

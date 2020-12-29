@@ -156,7 +156,7 @@
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                  aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="<c:url value="/trang-ca-nhan" />">
+                <a class="dropdown-item" href="profile.html">
                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                     Hồ sơ của bạn
                 </a>
@@ -169,7 +169,7 @@
                     Nhật ký hoạt động
                 </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="<c:url value='/dang-nhap' />" data-toggle="modal" data-target="#logoutModal">
+                <a class="dropdown-item" href="login.html" data-toggle="modal" data-target="#logoutModal">
                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                     Đăng xuất
                 </a>
