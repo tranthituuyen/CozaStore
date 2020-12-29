@@ -5,15 +5,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
         <title>Đăng nhập</title>
-        <link rel="icon" type="image/png" href="<c:url value='/templates/web/icons/favicon.png' />" media="all" />
-        <link rel="stylesheet" href="<c:url value='/templates/admin/fontawesome-5.15.1/css/all.min.css' />" media="all" />
-
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-              rel="stylesheet">
-
-        <link rel="stylesheet" href="<c:url value='/templates/admin/css/sb-admin-2.min.css' />" media="all" />
     </head>
 
     <body class="bg-gradient-primary">
@@ -31,14 +23,21 @@
                                         <div class="text-center">
                                             <h1 class="h4 text-gray-900 mb-4">Đăng nhập</h1>
                                         </div>
-                                        <form class="user">
+                                        <div class="login-form">
+                                            <div class="main-div">
+                                                <c:if test="${not empty message}">
+                                                    <div class="alert alert-${alert}">
+                                                            ${message}
+                                                    </div>
+                                                </c:if>
+                                        <form class="user" action="<c:url value="/dang-nhap"/> " id="formlogin" method="post">
                                             <div class="form-group">
-                                                <input type="email" class="form-control form-control-user"
+                                                  <input type="email" class="form-control form-control-user"
                                                        id="tenDangNhap" aria-describedby="emailHelp"
-                                                       placeholder="Tên đăng nhập...">
+                                                       placeholder="Tên đăng nhập..." />
                                             </div>
                                             <div class="form-group">
-                                                <input type="password" class="form-control form-control-user"
+                                                 <input type="password" class="form-control form-control-user"
                                                        id="matKhau" placeholder="Mật khẩu" />
                                             </div>
                                             <div class="form-group">
@@ -49,7 +48,7 @@
                                                     </label>
                                                 </div>
                                             </div>
-                                            <a href="home.jsp" class="btn btn-primary btn-user btn-block">
+                                            <a href="home.jsp" class="btn btn-primary btn-user btn-block"  >
                                                 Đăng nhập
                                             </a>
                                             <hr>
@@ -60,6 +59,8 @@
                                                 <i class="fab fa-facebook-f fa-fw"></i> Đăng nhập với Facebook
                                             </a>
                                         </form>
+                                            </div>
+                                        </div>
                                         <hr>
                                         <div class="text-center">
                                             <a class="small" href="forgot-password.jsp">Quên mật khẩu?</a>
@@ -75,11 +76,5 @@
                 </div>
             </div>
         </div>
-
-        <script src="<c:url value='/templates/admin/fontawesome-5.15.1/js/all.min.js' />" type="text/javascript"></script>
-        <script src="<c:url value='/templates/common/jquery/jquery-3.2.1.min.js' />" type="text/javascript"></script>
-        <script src="<c:url value='/templates/common/bootstrap/js/bootstrap.bundle.min.js' />" type="text/javascript"></script>
-        <script src="<c:url value='/templates/admin/jquery/jquery.easing.min.js' />" type="text/javascript"></script>
-        <script src="<c:url value='/templates/admin/jquery/sb-admin-2.min.js' />" type="text/javascript"></script>
     </body>
 </html>
