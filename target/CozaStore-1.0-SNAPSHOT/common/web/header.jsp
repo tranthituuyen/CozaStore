@@ -7,8 +7,20 @@
             <!-- topbar menu -->
             <div class="left-top-bar user-select-none">Free ship toàn quốc với đơn hàng > 500k</div>
             <div class="right-top-bar flex-w h-full user-select-none">
-                <a href="#" class="flex-c-m trans-04 p-lr-25">Hỗ trợ</a>
-                <a href="login.jsp" class="flex-c-m trans-04 p-lr-25 ">Tài khoản</a>
+                <a href="views/web/contact.jsp" class="flex-c-m trans-04 p-lr-25">Hỗ trợ</a>
+                <c:if test="${not empty USERMODEL}">
+                    <li class="nav-item">
+                        <a class="nav-link" href='#'>Wellcome, ${USERMODEL.fullName}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href='<c:url value="/thoat?action=logout"/>'>Thoát</a>
+                    </li>
+                </c:if>
+                <c:if test="${empty USERMODEL}">
+                    <li class="nav-item">
+                        <a class="flex-c-m trans-04 p-lr-25" href='<c:url value="/dang-nhap?action=login" />'>Đăng nhập</a>
+                    </li>
+                </c:if>
                 <a href="#" class="flex-c-m trans-04 p-lr-25">EN</a>
                 <a href="#" class="flex-c-m trans-04 p-lr-25">USD</a>
             </div>
@@ -92,7 +104,7 @@
         <li>
             <div class="right-top-bar flex-w h-full">
                 <a href="#" class="flex-c-m p-lr-10 trans-04">Hỗ trợ</a>
-                <a href="login.jsp" class="flex-c-m p-lr-10 trans-04">Tài khoản</a>
+                <a href="<c:url value="dang-nhap" />" class="flex-c-m p-lr-10 trans-04">Tài khoản</a>
                 <a href="#" class="flex-c-m p-lr-10 trans-04">EN</a>
                 <a href="#" class="flex-c-m p-lr-10 trans-04">USD</a>
             </div>
@@ -100,7 +112,7 @@
     </ul>
     <!-- mobile main mobile -->
     <ul class="main-menu-m">
-        <li><a href="home.html">Home</a></li>
+        <li><a href="<c:url value='/trang-chu' />">Home</a></li>
         <li><a href="<c:url value='/san-pham' />.html">Cửa hàng</a></li>
         <li><a href="<c:url value='/san-pham' />.html">Xu hướng</a></li>
         <li><a href="<c:url value='/bai-viet' />">Blog</a></li>

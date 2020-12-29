@@ -3,7 +3,6 @@ package vn.edu.nlu.utils;
 import javax.servlet.http.HttpServletRequest;
 
 public class SessionUtil {
-
     private static SessionUtil sessionUtil = null;
 
     public static SessionUtil getInstance() {
