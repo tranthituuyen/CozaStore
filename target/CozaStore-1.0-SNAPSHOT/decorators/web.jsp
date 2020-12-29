@@ -6,6 +6,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
         <title><decorator:title default="Trang chủ" /></title>
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+              rel="stylesheet">
 
         <!-- css -->
         <link rel="icon" type="image/png" href="<c:url value='/templates/web/icons/favicon.png' />" media="all" />
@@ -28,7 +30,7 @@
 
     <body class="animsition">
 
-        <!-- removed container class -->
+        <!-- body -->
         <decorator:body />
 
         <!-- footer -->
@@ -61,9 +63,13 @@
                 });
             })
         </script>
+
+        <%-- script --%>
         <script type="text/javascript">
             $('.parallax100').parallax100();
         </script>
+
+        <%-- script --%>
         <script type="text/javascript">
             $('.gallery-lb').each(function() { // the containers for all your galleries
                 $(this).magnificPopup({
@@ -76,6 +82,8 @@
                 });
             });
         </script>
+
+        <%-- script --%>
         <script type="text/javascript">
             $('.js-addwish-b2').on('click', function(e){
                 e.preventDefault();
@@ -110,8 +118,9 @@
                     swal(nameProduct, "đã thêm vào giỏ hàng !", "success");
                 });
             });
-
         </script>
+
+        <%-- script --%>
         <script type="text/javascript">
             $('.js-pscroll').each(function(){
                 $(this).css('position','relative');

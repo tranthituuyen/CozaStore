@@ -44,7 +44,7 @@
                                     <input type="password" class="form-control form-control-user" id="repeatPassword" placeholder="Nhập lại mật khẩu">
                                 </div>
 
-                                <a href="login.jsp" class="btn btn-primary btn-user btn-block">Đăng ký tài khoản</a>
+                                <a href="<c:url value='/dang-nhap' />" class="btn btn-primary btn-user btn-block">Đăng ký tài khoản</a>
                                 <hr>
                                 <div class="d-flex justify-content-center">
                                     <a href="#" class="btn btn-google btn-user mr-2 flex-grow-1">
@@ -57,7 +57,7 @@
                             </form>
                             <hr>
                             <div class="text-center">
-                                <span>Bạn đã có tài khoản?<a class="small" href="login.jsp">Đăng nhập ngay!</a></span>
+                                <span>Bạn đã có tài khoản?<a class="small" href="<c:url value='/dang-nhap' />">Đăng nhập ngay!</a></span>
                             </div>
                         </div>
                     </div>

@@ -32,7 +32,7 @@
                             </div>
                         </div>
                         <div class="col-auto qldh">
-                            <img class="qldh-img" src="../../images/icons/new-order.png" alt="">
+                            <img class="qldh-img" src="<c:url value='/templates/web/icons/new-order.png' />" alt="đơn hàng mới">
                         </div>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
                             </div>
                         </div>
                         <div class="col-auto qldh">
-                            <img class="qldh-img" src="../../images/icons/processing-order.png" alt="">
+                            <img class="qldh-img" src="<c:url value='/templates/web/icons/processing-order.png' />" alt="">
                         </div>
                     </div>
                 </div>
@@ -78,7 +78,7 @@
                             </div>
                         </div>
                         <div class="col-auto qldh">
-                            <img src="../../images/icons/successful-order.png" alt="" class="qldh-img">
+                            <img src="<c:url value='/templates/web/icons/successful-order.png' />" alt="" class="qldh-img">
                         </div>
                     </div>
                 </div>
@@ -99,7 +99,7 @@
                             </div>
                         </div>
                         <div class="col-auto qldh">
-                            <img src="../../images/icons/cancel-order.png" alt="" class="qldh-img">
+                            <img src="<c:url value='/templates/web/icons/cancel-order.png' />" alt="" class="qldh-img">
                         </div>
                     </div>
                 </div>
@@ -193,9 +193,8 @@
                             <tbody>
                                 <tr>
                                     <td class="align-middle">
-                                        <a href="../../WEB-INF/view/detail-order.html">
-                                            #201208001
-                                        </a>
+                                        <%-- đường dẫn tới trang detail order đó ớ--%>
+                                        <a href="<c:url value='/admin-quan-ly-don-hang' />">#201208001</a>
                                     </td>
                                     <td class="align-middle">KH001</td>
                                     <td class="align-middle">Đinh Thị Thùy Trang</td>
@@ -207,9 +206,8 @@
 
                                 <tr>
                                     <td class="align-middle">
-                                        <a href="../../WEB-INF/view/detail-order.html">
-                                            #201208002
-                                        </a>
+                                        <%-- đường dẫn tới trang detail order đó ớ--%>
+                                        <a href="<c:url value='/admin-quan-ly-don-hang' />">#201208002</a>
                                     </td>
                                     <td class="align-middle">KH002</td>
                                     <td class="align-middle">Đỗ Thị Quỳnh Anh</td>
@@ -221,9 +219,8 @@
 
                                 <tr>
                                     <td class="align-middle">
-                                        <a href="../../WEB-INF/view/detail-order.html">
-                                            #201208003
-                                        </a>
+                                        <%-- đường dẫn tới trang detail order đó ớ--%>
+                                        <a href="<c:url value='/admin-quan-ly-don-hang' />">#201208003</a>
                                     </td>
                                     <td class="align-middle">KH003</td>
                                     <td class="align-middle">Ngụy Hoàng Thanh Thảo</td>
@@ -235,9 +232,8 @@
 
                                 <tr>
                                     <td class="align-middle">
-                                        <a href="../../WEB-INF/view/detail-order.html">
-                                            #201208004
-                                        </a>
+                                        <%-- đường dẫn tới trang detail order đó ớ--%>
+                                        <a href="<c:url value='/admin-quan-ly-don-hang' />">#201208004</a>
                                     </td>
                                     <td class="align-middle">KH004</td>
                                     <td class="align-middle">Hạo An</td>
@@ -249,9 +245,8 @@
 
                                 <tr>
                                     <td class="align-middle">
-                                        <a href="../../WEB-INF/view/detail-order.html">
-                                            #201208005
-                                        </a>
+                                        <%-- đường dẫn tới trang detail order đó ớ--%>
+                                        <a href="<c:url value='/admin-quan-ly-don-hang' />">#201208005</a>
                                     </td>
                                     <td class="align-middle">TN001</td>
                                     <td class="align-middle">Phạm Nguyễn Thanh Trà</td>
