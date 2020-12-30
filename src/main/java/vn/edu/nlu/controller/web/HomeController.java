@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ResourceBundle;
 
-@WebServlet(urlPatterns = {"/trang-chu","/dang-nhap","/thoat"}, name = "home-controller")
+@WebServlet(urlPatterns = {"/trang-chu", "/dang-nhap", "/thoat"}, name = "home-controller")
 public class HomeController extends HttpServlet {
     ResourceBundle resourceBundle = ResourceBundle.getBundle("message");
 
