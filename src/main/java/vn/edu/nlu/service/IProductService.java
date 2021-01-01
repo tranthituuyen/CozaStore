@@ -1,5 +1,9 @@
 package vn.edu.nlu.service;
 
-public interface IProductService {
+import vn.edu.nlu.model.Product;
 
+import java.util.List;
+
+public interface IProductService {
+    List<Product> findAll();
 }
