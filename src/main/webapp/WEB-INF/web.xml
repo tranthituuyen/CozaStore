@@ -7,9 +7,12 @@
 
 
     <welcome-file-list>
-<!--        <welcome-file>views/admin/dashboard.jsp</welcome-file>-->
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
+
+    <session-config>
+        <tracking-mode>COOKIE</tracking-mode>
+    </session-config>
 
     <filter>
         <filter-name>sitemesh</filter-name>
