@@ -8,6 +8,7 @@ public class Product implements Serializable {
     private String productName;
     private int price;
     private String description;
+    private String cover;
     private boolean status;
 
     // empty constructor
@@ -51,6 +52,14 @@ public class Product implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getCover() {
+        return cover;
+    }
+
+    public void setCover(String cover) {
+        this.cover = cover;
     }
 
     public boolean isStatus() {

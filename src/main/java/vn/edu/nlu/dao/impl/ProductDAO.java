@@ -40,6 +40,7 @@ public class ProductDAO implements IProductDAO {
                     product.setProductId(resultSet.getString("masanpham"));
                     product.setProductName(resultSet.getString("tensanpham"));
                     product.setPrice(resultSet.getInt("gia"));
+                    product.setCover(resultSet.getString("anhbia"));
                     results.add(product);
                 }
                 return results;

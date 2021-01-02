@@ -136,7 +136,7 @@
                             <!-- Block2 -->
                             <div class="block2">
                                 <div class="block2-pic hov-img0">
-                                    <img src="<c:url value='/images/products/product-01.jpg' />" alt="IMG-PRODUCT">
+                                    <img src="<c:url value='${product.getCover()}' />" alt="IMG-PRODUCT">
                                     <a class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1"
                                        href="#">Xem nhanh
                                     </a>
@@ -145,7 +145,7 @@
                                 <div class="block2-txt flex-w flex-t p-t-14">
                                     <div class="block2-txt-child1 flex-col-l ">
                                         <a href="<c:url value='/views/web/product-detail.jsp' />"
-                                           class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">${product.getProductName()}
+                                           class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6 text-uppercase">${product.getProductName()}
                                         </a>
                                         <span class="stext-105 cl3">${product.getPrice()}</span>
                                     </div>
