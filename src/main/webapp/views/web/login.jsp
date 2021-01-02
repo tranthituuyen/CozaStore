@@ -32,8 +32,8 @@
                                                 </c:if>
                                         <form class="user" action="<c:url value="/dang-nhap"/> " id="formlogin" method="post">
                                             <div class="form-group">
-                                                  <input type="email" class="form-control form-control-user"
-                                                       id="tenDangNhap" aria-describedby="emailHelp"
+                                                  <input type="text" class="form-control form-control-user"
+                                                       id="tenDangNhap" aria-describedby="tenDangNhap"
                                                        placeholder="Tên đăng nhập..." />
                                             </div>
                                             <div class="form-group">
@@ -48,14 +48,14 @@
                                                     </label>
                                                 </div>
                                             </div>
-                                            <a href="home.jsp" class="btn btn-primary btn-user btn-block"  >
+                                            <a href="<c:url value="/trang-chu" />" class="btn btn-primary btn-user btn-block"  >
                                                 Đăng nhập
                                             </a>
                                             <hr>
-                                            <a href="home.jsp" class="btn btn-google btn-user btn-block">
+                                            <a href="<c:url value="/trang-chu" />" class="btn btn-google btn-user btn-block">
                                                 <i class="fab fa-google fa-fw"></i> Đăng nhập với Google
                                             </a>
-                                            <a href="home.jsp" class="btn btn-facebook btn-user btn-block">
+                                            <a href="<c:url value="/trang-chu" />" class="btn btn-facebook btn-user btn-block">
                                                 <i class="fab fa-facebook-f fa-fw"></i> Đăng nhập với Facebook
                                             </a>
                                         </form>
