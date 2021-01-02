@@ -6,6 +6,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Trang chủ</title>
+
+        <style type="text/css">
+            * {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+        </style>
     </head>
 
     <body class="animsition">

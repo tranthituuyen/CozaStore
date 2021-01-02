@@ -4,7 +4,7 @@ import vn.edu.nlu.model.Product;
 
 import java.util.List;
 
-public interface IProductDAO {
+public interface IProductDAO extends GenericDAO<Product> {
 
     List<Product> findAll();
 }

@@ -3,8 +3,8 @@
 /*//////////////////////////////////////////////////////////////////
 [ REBOOT ]*/
 *, *:before, *:after {
-	margin: 0; 
-	padding: 0; 
+	margin: 0;
+	padding: 0;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -3192,63 +3192,63 @@ iframe {border: none;}
 [ Transition ]*/
 .trans-01 {
 	-webkit-transition: all 0.1s;
-    -o-transition: all 0.1s;
-    -moz-transition: all 0.1s;
-    transition: all 0.1s;
+	-o-transition: all 0.1s;
+	-moz-transition: all 0.1s;
+	transition: all 0.1s;
 }
 .trans-02 {
 	-webkit-transition: all 0.2s;
-    -o-transition: all 0.2s;
-    -moz-transition: all 0.2s;
-    transition: all 0.2s;
+	-o-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	transition: all 0.2s;
 }
 .trans-03 {
 	-webkit-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    transition: all 0.3s;
+	-o-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
 }
 .trans-04 {
 	-webkit-transition: all 0.4s;
-    -o-transition: all 0.4s;
-    -moz-transition: all 0.4s;
-    transition: all 0.4s;
+	-o-transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	transition: all 0.4s;
 }
 .trans-05 {
 	-webkit-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    transition: all 0.5s;
+	-o-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	transition: all 0.5s;
 }
 .trans-06 {
 	-webkit-transition: all 0.6s;
-    -o-transition: all 0.6s;
-    -moz-transition: all 0.6s;
-    transition: all 0.6s;
+	-o-transition: all 0.6s;
+	-moz-transition: all 0.6s;
+	transition: all 0.6s;
 }
 .trans-07 {
 	-webkit-transition: all 0.7s;
-    -o-transition: all 0.7s;
-    -moz-transition: all 0.7s;
-    transition: all 0.7s;
+	-o-transition: all 0.7s;
+	-moz-transition: all 0.7s;
+	transition: all 0.7s;
 }
 .trans-08 {
 	-webkit-transition: all 0.8s;
-    -o-transition: all 0.8s;
-    -moz-transition: all 0.8s;
-    transition: all 0.8s;
+	-o-transition: all 0.8s;
+	-moz-transition: all 0.8s;
+	transition: all 0.8s;
 }
 .trans-09 {
 	-webkit-transition: all 0.9s;
-    -o-transition: all 0.9s;
-    -moz-transition: all 0.9s;
-    transition: all 0.9s;
+	-o-transition: all 0.9s;
+	-moz-transition: all 0.9s;
+	transition: all 0.9s;
 }
 .trans-10 {
 	-webkit-transition: all 1s;
-    -o-transition: all 1s;
-    -moz-transition: all 1s;
-    transition: all 1s;
+	-o-transition: all 1s;
+	-moz-transition: all 1s;
+	transition: all 1s;
 }
 
 
@@ -3605,9 +3605,9 @@ iframe {border: none;}
 	top: 50%;
 	left: 50%;
 	-webkit-transform: translate(-50%, -50%);
-  	-moz-transform: translate(-50%, -50%);
-  	-ms-transform: translate(-50%, -50%);
-  	-o-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 }
 
@@ -3616,9 +3616,9 @@ iframe {border: none;}
 	top: 0;
 	left: 50%;
 	-webkit-transform: translateX(-50%);
-  	-moz-transform: translateX(-50%);
-  	-ms-transform: translateX(-50%);
-  	-o-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
 	transform: translateX(-50%);
 }
 
@@ -3627,9 +3627,9 @@ iframe {border: none;}
 	bottom: 0;
 	left: 50%;
 	-webkit-transform: translateX(-50%);
-  	-moz-transform: translateX(-50%);
-  	-ms-transform: translateX(-50%);
-  	-o-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
 	transform: translateX(-50%);
 }
 
@@ -3638,9 +3638,9 @@ iframe {border: none;}
 	left: 0;
 	top: 50%;
 	-webkit-transform: translateY(-50%);
-  	-moz-transform: translateY(-50%);
-  	-ms-transform: translateY(-50%);
-  	-o-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
 	transform: translateY(-50%);
 }
 
@@ -3649,9 +3649,9 @@ iframe {border: none;}
 	right: 0;
 	top: 50%;
 	-webkit-transform: translateY(-50%);
-  	-moz-transform: translateY(-50%);
-  	-ms-transform: translateY(-50%);
-  	-o-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
 	transform: translateY(-50%);
 }
 
@@ -3685,16 +3685,16 @@ iframe {border: none;}
 [ Other ]*/
 
 .parallax100 {
-  background-attachment: fixed;
-  background-position: center 0;
-  background-repeat: no-repeat;
-  background-size: cover;
+	background-attachment: fixed;
+	background-position: center 0;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 @media (max-width: 992px) {
-  .parallax100 {
-    background-attachment: inherit;
-  }
+	.parallax100 {
+		background-attachment: inherit;
+	}
 }
 
 
