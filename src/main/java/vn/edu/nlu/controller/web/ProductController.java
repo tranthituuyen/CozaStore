@@ -1,5 +1,6 @@
 package vn.edu.nlu.controller.web;
 
+import vn.edu.nlu.model.Product;
 import vn.edu.nlu.service.IProductService;
 
 import javax.inject.Inject;
@@ -22,7 +23,19 @@ public class ProductController extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String id = "win-coat";
+        String productId = "";
+        String categoryId = "czsm";
+        String name = "new shirt";
+        int price = 120000;
+
+        Product newProduct = new Product();
+        newProduct.setProductId(productId);
+        newProduct.setCategoryId(categoryId);
+        newProduct.setProductName(name);
+        newProduct.setPrice(price);
+
+        productService.save(newProduct);
+
         request.setAttribute("products", productService.findAll());
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/web/product.jsp");
         requestDispatcher.forward(request, response);

@@ -16,4 +16,11 @@ public class ProductService implements IProductService {
     public List<Product> findAll() {
         return productDAO.findAll();
     }
+
+    @Override
+    public Product save(Product product) {
+        String newId = productDAO.save(product);
+        System.out.println("ching cong!");
+        return null;
+    }
 }
