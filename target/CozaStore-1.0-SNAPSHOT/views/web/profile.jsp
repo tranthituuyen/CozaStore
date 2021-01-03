@@ -72,7 +72,7 @@
                 <!-- Nav Item - đơn mua -->
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="#">
-                        <i class="fa fa-user-tie" style="width: 20px"></i>
+                        <i class="fa fa-userModel-tie" style="width: 20px"></i>
                         <span>Đơn mua</span>
                     </a>
                 </li>
@@ -80,7 +80,7 @@
                 <!-- Nav Item - thông báo -->
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="#">
-                        <i class="fa fa-user-friends" style="width: 20px"></i>
+                        <i class="fa fa-userModel-friends" style="width: 20px"></i>
                         <span>Thông báo</span>
                     </a>
                 </li>
@@ -174,7 +174,7 @@
 
                             <div class="topbar-divider d-none d-sm-block"></div>
 
-                            <!-- Nav Item - User Information -->
+                            <!-- Nav Item - UserModel Information -->
                             <li class="nav-item dropdown no-arrow">
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -182,11 +182,11 @@
                                     <img class="img-profile rounded-circle"
                                          src="<c:url value='/images/avt/avatar.jpg' />" />
                                 </a>
-                                <!-- Dropdown - User Information -->
+                                <!-- Dropdown - UserModel Information -->
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                      aria-labelledby="userDropdown">
                                     <a class="dropdown-item" href="profile.jsp">
-                                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        <i class="fas fa-userModel fa-sm fa-fw mr-2 text-gray-400"></i>
                                         Hồ sơ của bạn
                                     </a>
                                     <a class="dropdown-item" href="#">
@@ -310,7 +310,7 @@
                                     </div>
 
                                     <div class="flex-grow-1 d-flex flex-column align-items-center justify-content-center">
-                                        <i class="far fa-user-circle mb-3" style="width: 100px; height: 100px"></i>
+                                        <i class="far fa-userModel-circle mb-3" style="width: 100px; height: 100px"></i>
                                         <button class="btn btn-sm btn-outline-primary p-0 mb-3">
                                             <label for="changeAvtImg" class="mb-0 p-1">Chọn ảnh</label>
                                         </button>

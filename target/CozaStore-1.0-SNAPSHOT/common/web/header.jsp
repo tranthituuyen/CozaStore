@@ -5,21 +5,15 @@
     <div class="top-bar">
         <div class="content-topbar flex-sb-m h-full container">
             <!-- topbar menu -->
-            <div class="left-top-bar user-select-none">Free ship toàn quốc với đơn hàng > 500k</div>
-            <div class="right-top-bar flex-w h-full user-select-none">
+            <div class="left-top-bar userModel-select-none">Free ship toàn quốc với đơn hàng > 500k</div>
+            <div class="right-top-bar flex-w h-full userModel-select-none">
                 <a href="<c:url value="/lien-he" />" class="flex-c-m trans-04 p-lr-25">Hỗ trợ</a>
                 <c:if test="${not empty USERMODEL}">
-                    <li class="nav-item">
-                        <a class="nav-link" href='#'>Wellcome, ${USERMODEL.fullName}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href='<c:url value="/thoat?action=logout"/>'>Thoát</a>
-                    </li>
+                        <a class="flex-c-m trans-04 p-lr-25" href='#'>Wellcome, ${USERMODEL.fullName}</a>
+                        <a class="flex-c-m trans-04 p-lr-25" href='<c:url value="/thoat?action=logout"/>'>Thoát</a>
                 </c:if>
                 <c:if test="${empty USERMODEL}">
-                    <li class="nav-item">
                         <a class="flex-c-m trans-04 p-lr-25" href='<c:url value="/dang-nhap?action=login" />'>Đăng nhập</a>
-                    </li>
                 </c:if>
                 <a href="#" class="flex-c-m trans-04 p-lr-25">EN</a>
                 <a href="#" class="flex-c-m trans-04 p-lr-25">USD</a>
@@ -28,7 +22,7 @@
     </div>
 
     <!-- menu desktop -->
-    <div class="wrap-menu-desktop user-select-none">
+    <div class="wrap-menu-desktop userModel-select-none">
         <nav class="limiter-menu-desktop container">
             <!-- Logo desktop -->
             <a href="<c:url value='/trang-chu' />" class="logo">

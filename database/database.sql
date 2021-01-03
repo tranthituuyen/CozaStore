@@ -240,10 +240,10 @@ INSERT INTO `sanpham` VALUES ('turtle-neck-sweatshi', 'czsm', 'turtle neck sweat
 INSERT INTO `sanpham` VALUES ('win-coat', 'czak', 'win coat', 999000, NULL, '/images/products/ao-khoac/wincoat-xam-pt-1.jpg', b'1');
 
 -- ----------------------------
--- Table structure for user
+-- Table structure for userModel
 -- ----------------------------
-DROP TABLE IF EXISTS `user`;
-CREATE TABLE `user`  (
+DROP TABLE IF EXISTS `userModel`;
+CREATE TABLE `userModel`  (
                          `id` bigint NOT NULL AUTO_INCREMENT,
                          `username` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
                          `password` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
@@ -260,7 +260,7 @@ CREATE TABLE `user`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of user
+-- Records of userModel
 -- ----------------------------
 
 SET FOREIGN_KEY_CHECKS = 1;

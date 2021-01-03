@@ -9,7 +9,7 @@
     </head>
     <body>
         <!-- Page Heading -->
-        <div class="d-sm-flex align-items-center justify-content-between mb-4 user-select-none">
+        <div class="d-sm-flex align-items-center justify-content-between mb-4 userModel-select-none">
             <h1 class="h3 mb-0 font-weight-bold">Quản lý nhân sự</h1>
         </div>
 

@@ -37,13 +37,13 @@
                                                 chúng tôi sẽ gửi cho bạn liên kết để bạn đặt lại mật khẩu!
                                             </p>
                                         </div>
-                                        <form class="user">
+                                        <form class="userModel">
                                             <div class="form-group">
-                                                <input type="email" class="form-control form-control-user"
+                                                <input type="email" class="form-control form-control-userModel"
                                                        id="exampleInputEmail" aria-describedby="emailHelp"
                                                        placeholder="Nhập địa chỉ email...">
                                             </div>
-                                            <a href="login.jsp" class="btn btn-primary btn-user btn-block">
+                                            <a href="login.jsp" class="btn btn-primary btn-userModel btn-block">
                                                 Đặt lại mật khẩu
                                             </a>
                                         </form>

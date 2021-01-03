@@ -9,6 +9,15 @@ public class UserModel extends AbstractModel<UserModel> {
     private Long roleId;
     private RoleModel role = new RoleModel();
 
+    public UserModel(){
+
+    }
+    public UserModel(String userName, String password){
+        super();
+        this.userName = userName;
+        this.password = password;
+    }
+
     public String getUserName() {
         return userName;
     }

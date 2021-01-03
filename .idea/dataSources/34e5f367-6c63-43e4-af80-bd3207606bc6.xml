@@ -1054,101 +1054,156 @@
       <ObjectGrants>ALL PRIVILEGES!
 </ObjectGrants>
     </user>
-    <table id="335" parent="2" name="role"/>
-    <table id="336" parent="2" name="user"/>
-    <column id="337" parent="335" name="id">
+    <table id="335" parent="2" name="blog"/>
+    <table id="336" parent="2" name="blogdetail"/>
+    <table id="337" parent="2" name="giaodich"/>
+    <table id="338" parent="2" name="giaodichdetail"/>
+    <table id="339" parent="2" name="khuyenmai"/>
+    <table id="340" parent="2" name="role"/>
+    <table id="341" parent="2" name="user"/>
+    <column id="342" parent="335" name="id">
       <Position>1</Position>
-      <DataType>bigint(20)|0s</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>null</SequenceIdentity>
-    </column>
-    <column id="338" parent="335" name="name">
-      <Position>2</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="339" parent="335" name="code">
-      <Position>3</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="340" parent="335" name="createddate">
-      <Position>4</Position>
-      <DataType>timestamp|0s</DataType>
-    </column>
-    <column id="341" parent="335" name="modifieddate">
-      <Position>5</Position>
-      <DataType>timestamp|0s</DataType>
-    </column>
-    <column id="342" parent="335" name="createdby">
-      <Position>6</Position>
-      <DataType>varchar(255)|0s</DataType>
-    </column>
-    <column id="343" parent="335" name="modifiedby">
-      <Position>7</Position>
-      <DataType>varchar(255)|0s</DataType>
-    </column>
-    <key id="344" parent="335" name="PRIMARY">
+    <key id="343" parent="335" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="345" parent="336" name="id">
+    <column id="344" parent="336" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="345" parent="336" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="346" parent="337" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="347" parent="337" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="348" parent="338" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="349" parent="338" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="350" parent="339" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="351" parent="339" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="352" parent="340" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="346" parent="336" name="username">
+    <column id="353" parent="340" name="name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="354" parent="340" name="code">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="355" parent="340" name="createddate">
+      <Position>4</Position>
+      <DataType>timestamp|0s</DataType>
+    </column>
+    <column id="356" parent="340" name="modifieddate">
+      <Position>5</Position>
+      <DataType>timestamp|0s</DataType>
+    </column>
+    <column id="357" parent="340" name="createdby">
+      <Position>6</Position>
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <column id="358" parent="340" name="modifiedby">
+      <Position>7</Position>
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <key id="359" parent="340" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="360" parent="341" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="361" parent="341" name="username">
       <Position>2</Position>
       <DataType>varchar(150)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="347" parent="336" name="password">
+    <column id="362" parent="341" name="password">
       <Position>3</Position>
       <DataType>varchar(150)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="348" parent="336" name="fullname">
+    <column id="363" parent="341" name="fullname">
       <Position>4</Position>
       <DataType>varchar(150)|0s</DataType>
     </column>
-    <column id="349" parent="336" name="status">
+    <column id="364" parent="341" name="status">
       <Position>5</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="350" parent="336" name="roleid">
+    <column id="365" parent="341" name="roleid">
       <Position>6</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="351" parent="336" name="createddate">
+    <column id="366" parent="341" name="createddate">
       <Position>7</Position>
       <DataType>timestamp|0s</DataType>
     </column>
-    <column id="352" parent="336" name="modifieddate">
+    <column id="367" parent="341" name="modifieddate">
       <Position>8</Position>
       <DataType>timestamp|0s</DataType>
     </column>
-    <column id="353" parent="336" name="createdby">
+    <column id="368" parent="341" name="createdby">
       <Position>9</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="354" parent="336" name="modifiedby">
+    <column id="369" parent="341" name="modifiedby">
       <Position>10</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <index id="355" parent="336" name="fk_user_role">
+    <index id="370" parent="341" name="fk_user_role">
       <ColNames>roleid</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="356" parent="336" name="PRIMARY">
+    <key id="371" parent="341" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="357" parent="336" name="fk_user_role">
+    <foreign-key id="372" parent="341" name="fk_user_role">
       <ColNames>roleid</ColNames>
       <RefTableName>role</RefTableName>
       <RefColNames>id</RefColNames>

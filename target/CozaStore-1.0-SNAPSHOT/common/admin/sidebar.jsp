@@ -84,7 +84,7 @@
            data-toggle="collapse" data-target="#collapse-4"
            aria-expanded="true" aria-controls="collapse-4">
             <div class="d-inline-flex">
-                <i class="fa fa-user-tie" style="width: 20px"></i>
+                <i class="fa fa-userModel-tie" style="width: 20px"></i>
             </div>
             <span>Quản lý nhân sự</span>
         </a>
@@ -106,7 +106,7 @@
            data-toggle="collapse" data-target="#collapse-5"
            aria-expanded="true" aria-controls="collapse-5">
             <div class="d-inline-flex">
-                <i class="fa fa-user-friends" style="width: 20px"></i>
+                <i class="fa fa-userModel-friends" style="width: 20px"></i>
             </div>
             <span>Quản lý người dùng</span>
         </a>

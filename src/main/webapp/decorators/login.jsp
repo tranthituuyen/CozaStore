@@ -5,8 +5,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <<title><decorator:title default="Đăng nhập" /></title>
-
+    <title><decorator:title default="Đăng nhập" /></title>
     <!-- css -->
     <link rel="icon" type="image/png" href="<c:url value='/templates/web/icons/favicon.png' />" media="all"/>
     <link rel="stylesheet" href="<c:url value='/templates/admin/fontawesome-5.15.1/css/all.min.css' />" media="all"/>

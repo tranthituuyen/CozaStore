@@ -1,4 +1,7 @@
 package vn.edu.nlu.dao;
 
-public interface IUserDAO {
-}
+import vn.edu.nlu.model.UserModel;
+
+public interface IUserDAO  extends GenericDAO<UserModel> {
+    UserModel findByUserNameAndPasswordAndStatus(String userName, String password, Integer status);
+    }

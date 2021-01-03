@@ -10,7 +10,7 @@ CREATE TABLE role(
   modifiedby VARCHAR(255) NULL
 );
 
-CREATE TABLE user (
+CREATE TABLE userModel (
   id bigint NOT NULL PRIMARY KEY auto_increment,
   username VARCHAR(150) NOT NULL,
   password VARCHAR(150) NOT NULL,
@@ -23,7 +23,7 @@ CREATE TABLE user (
   modifiedby VARCHAR(255) NULL
 );
 
-ALTER TABLE user ADD CONSTRAINT fk_user_role FOREIGN KEY (roleid) REFERENCES role(id);
+ALTER TABLE userModel ADD CONSTRAINT fk_user_role FOREIGN KEY (roleid) REFERENCES role(id);
 
 # chitietsanpham
 CREATE TABLE `chitietsanpham`  (
