@@ -5,9 +5,11 @@
                              http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
+    <listener>
+        <listener-class>org.jboss.weld.environment.servlet.Listener</listener-class>
+    </listener>
 
     <welcome-file-list>
-<!--        <welcome-file>views/admin/dashboard.jsp</welcome-file>-->
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 
@@ -20,4 +22,8 @@
         <filter-name>sitemesh</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+
+    <session-config>
+        <tracking-mode>COOKIE</tracking-mode>
+    </session-config>
 </web-app>

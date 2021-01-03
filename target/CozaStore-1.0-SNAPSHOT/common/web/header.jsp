@@ -7,7 +7,7 @@
             <!-- topbar menu -->
             <div class="left-top-bar user-select-none">Free ship toàn quốc với đơn hàng > 500k</div>
             <div class="right-top-bar flex-w h-full user-select-none">
-                <a href="views/web/contact.jsp" class="flex-c-m trans-04 p-lr-25">Hỗ trợ</a>
+                <a href="<c:url value="/lien-he" />" class="flex-c-m trans-04 p-lr-25">Hỗ trợ</a>
                 <c:if test="${not empty USERMODEL}">
                     <li class="nav-item">
                         <a class="nav-link" href='#'>Wellcome, ${USERMODEL.fullName}</a>
