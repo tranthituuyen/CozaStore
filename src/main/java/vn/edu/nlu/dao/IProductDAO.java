@@ -7,4 +7,6 @@ import java.util.List;
 public interface IProductDAO extends GenericDAO<Product> {
 
     List<Product> findAll();
+
+    String save(Product product);
 }

@@ -11,7 +11,7 @@ public class AbstractDAO<T> implements GenericDAO<T> {
     public Connection getConnection() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            String url = "jdbc:mysql://localhost:3306/cozastore";
+            String url = "jdbc:mysql://localhost:3306/cozastore?useUnicode=true&characterEncoding=utf-8";
             String user = "root";
             String password = "";
             return DriverManager.getConnection(url, user, password);
