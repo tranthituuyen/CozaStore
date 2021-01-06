@@ -11,7 +11,7 @@
     <body>
         <!-- Page Heading -->
         <div class="mb-2">
-            <a href="userModel-management.jsp" class="userModel-select-none text-decoration-none">
+            <a href="user-management.jsp" class="user-select-none text-decoration-none">
                 <i class="fas fa-angle-left"></i>
                 Quay lại
             </a>

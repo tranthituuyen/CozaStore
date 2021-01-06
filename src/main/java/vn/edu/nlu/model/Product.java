@@ -2,40 +2,40 @@ package vn.edu.nlu.model;
 
 import java.io.Serializable;
 
-public class Product implements Serializable {
-    private String productId;
-    private String categoryId;
-    private String productName;
+public class Product extends AbstractModel implements Serializable {
+    private String code;
+    private String categoryCode;
+    private String name;
     private int price;
-    private String description;
     private String cover;
+    private String description;
     private boolean status;
 
     // empty constructor
     public Product() {}
 
-    public String getProductId() {
-        return productId;
+    public String getCode() {
+        return code;
     }
 
-    public void setProductId(String productId) {
-        this.productId = productId;
+    public void setCode(String code) {
+        this.code = code;
     }
 
-    public String getCategoryId() {
-        return categoryId;
+    public String getCategoryCode() {
+        return categoryCode;
     }
 
-    public void setCategoryId(String categoryId) {
-        this.categoryId = categoryId;
+    public void setCategoryCode(String categoryCode) {
+        this.categoryCode = categoryCode;
     }
 
-    public String getProductName() {
-        return productName;
+    public String getName() {
+        return name;
     }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getPrice() {
@@ -69,4 +69,5 @@ public class Product implements Serializable {
     public void setStatus(boolean status) {
         this.status = status;
     }
+
 }

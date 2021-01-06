@@ -12,7 +12,7 @@ public class UserMapper implements RowMapper<UserModel> {
     public UserModel mapRow(ResultSet resultSet) {
         try {
             UserModel userModel = new UserModel();
-            userModel.setId(resultSet.getLong("id"));
+            userModel.setId(resultSet.getInt("id"));
             userModel.setUserName(resultSet.getString("userName"));
             userModel.setFullName(resultSet.getString("fullName"));
             userModel.setPassword(resultSet.getString("password"));

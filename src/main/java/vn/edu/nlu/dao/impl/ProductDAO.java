@@ -4,7 +4,6 @@ import vn.edu.nlu.dao.IProductDAO;
 import vn.edu.nlu.mapper.ProductMapper;
 import vn.edu.nlu.model.Product;
 
-import java.sql.*;
 import java.util.List;
 
 public class ProductDAO extends AbstractDAO<Product> implements IProductDAO {
@@ -16,54 +15,39 @@ public class ProductDAO extends AbstractDAO<Product> implements IProductDAO {
     }
 
     @Override
-    public String save(Product product) {
-        Connection connection = null;
-        PreparedStatement statement = null;
-        ResultSet resultSet = null;
-        String id = null;
-        try {
-            String sql = "INSERT INTO sanpham (masanpham, madanhmuc, tensanpham, gia) VALUES (?, ?, ?, ?)";
-            connection = getConnection();
-            connection.setAutoCommit(false);
-            statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+    public Product findOne(Integer id) {
+        String sql = "SELECT * FROM sanpham WHERE id = ?";
+        List<Product> products = query(sql, new ProductMapper(), id);
+        return products.isEmpty() ? null : products.get(0);
+    }
 
-            statement.setString(1, product.getProductId());
-            statement.setString(2, product.getCategoryId());
-            statement.setString(3, product.getProductName());
-            statement.setInt(4, product.getPrice());
+    @Override
+    public List<Product> findByCategoryCode(String categoryCode) {
+        String sql = "SELECT * FROM sanpham WHERE madanhmuc = ?";
+        return query(sql, new ProductMapper(), categoryCode);
+    }
 
-            statement.executeUpdate();
+    @Override
+    public Integer save(Product product) {
+        String sql = "INSERT INTO sanpham (masanpham, madanhmuc, tensanpham, gia, anhbia, mota, trangthai) " +
+                     "VALUES (?, ?, ?, ?, ?, ?, ?)";
+        return insert(sql, product.getCode(), product.getCategoryCode(), product.getName(), product.getPrice(),
+                product.getCover(), product.getDescription(), product.isStatus());
+    }
 
-            resultSet = statement.getGeneratedKeys();
+    @Override
+    public void update(Product updateProduct) {
+        StringBuilder sql = new StringBuilder("UPDATE sanpham SET masanpham = ?, madanhmuc = ?,");
+        sql.append(" tensanpham = ?, gia = ?, anhbia = ?, mota = ?, trangthai = ? WHERE id  = ?");
 
-            if (resultSet.next()) {
-                id = resultSet.getString(1);
-            }
-            connection.commit();
-            return id;
-        } catch (SQLException e) {
-            if (connection != null) {
-                try {
-                    connection.rollback();
-                } catch (SQLException ex) {
-                    ex.printStackTrace();
-                }
-            }
-            return null;
-        } finally {
-            try {
-                if (resultSet != null) {
-                    resultSet.close();
-                }
-                if (statement != null) {
-                    statement.close();
-                }
-                if (connection != null) {
-                    connection.close();
-                }
-            } catch (SQLException e) {
-                return null;
-            }
-        }
+        update(sql.toString(), updateProduct.getCode(), updateProduct.getCategoryCode(), updateProduct.getName(),
+                updateProduct.getPrice(), updateProduct.getCover(), updateProduct.getDescription(),
+                updateProduct.isStatus(), updateProduct.getId());
+    }
+
+    @Override
+    public void delete(int id) {
+        String sql = "DELETE FROM sanpham WHERE id = ?";
+        update(sql, id);
     }
 }

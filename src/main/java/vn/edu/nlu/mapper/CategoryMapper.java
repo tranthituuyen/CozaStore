@@ -1,19 +1,20 @@
 package vn.edu.nlu.mapper;
 
-import vn.edu.nlu.model.CategoryModel;
+import vn.edu.nlu.model.Category;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class CategoryMapper implements RowMapper<CategoryModel> {
+public class CategoryMapper implements RowMapper<Category> {
 
     @Override
-    public CategoryModel mapRow(ResultSet resultSet) {
+    public Category mapRow(ResultSet resultSet) {
         try {
-            CategoryModel category = new CategoryModel();
-            category.setId(resultSet.getLong("id"));
-            category.setCode(resultSet.getString("code"));
-            category.setName(resultSet.getString("name"));
+            Category category = new Category();
+            category.setId(resultSet.getInt("id"));
+            category.setCode(resultSet.getString("madanhmuc"));
+            category.setName(resultSet.getString("tendanhmuc"));
+            category.setImage(resultSet.getString("hinhanh"));
             return category;
         } catch (SQLException e) {
             return null;

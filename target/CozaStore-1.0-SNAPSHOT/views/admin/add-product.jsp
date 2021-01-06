@@ -11,7 +11,7 @@
     <body id="page-top">
         <!-- Page Heading -->
         <div class="mb-2">
-            <a href="<c:url value="/admin-quan-ly-san-pham" />" class="userModel-select-none text-decoration-none">
+            <a href="<c:url value="/admin-quan-ly-san-pham" />" class="user-select-none text-decoration-none">
                 <i class="fas fa-angle-left"></i>
                 Quay lại
             </a>

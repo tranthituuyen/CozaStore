@@ -104,7 +104,7 @@
                                 </label>
                                 <button class="ml-auto btn btn-sm btn-ms-primary btnEditAddProductImg">Thêm</button>
                             </div>
-                            <button class="ml-auto col-1 btn btn-sm btn-outline-danger userModel-select-none btnDeleteProductImg">
+                            <button class="ml-auto col-1 btn btn-sm btn-outline-danger user-select-none btnDeleteProductImg">
                                 <i class="fas fa-minus-circle"></i>
                                 Xóa
                             </button>
@@ -116,7 +116,7 @@
 
                     <div class="col col-md-12 mb-4">
                         <div class="d-flex flex-column">
-                            <button class="ml-auto col-1 btn btn-sm btn-outline-danger userModel-select-none btnDeleteProductImg">
+                            <button class="ml-auto col-1 btn btn-sm btn-outline-danger user-select-none btnDeleteProductImg">
                                 <i class="fas fa-minus-circle"></i>
                                 Xóa
                             </button>
@@ -127,7 +127,7 @@
                     </div>
                     <div class="col col-md-12">
                         <div class="d-flex flex-column">
-                            <button class="ml-auto col-1 btn btn-sm btn-outline-danger userModel-select-none btnDeleteProductImg">
+                            <button class="ml-auto col-1 btn btn-sm btn-outline-danger user-select-none btnDeleteProductImg">
                                 <i class="fas fa-minus-circle"></i>
                                 Xóa
                             </button>

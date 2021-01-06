@@ -23,20 +23,20 @@ public class ProductController extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String productId = "";
-        String categoryId = "czsm";
-        String name = "new shirt";
+
+        String code = "aa-test-shirt";
+        String categoryCode = "so-mi";
+        String name = "test shirt";
         int price = 120000;
 
-        Product newProduct = new Product();
-        newProduct.setProductId(productId);
-        newProduct.setCategoryId(categoryId);
-        newProduct.setProductName(name);
-        newProduct.setPrice(price);
+        Product product = new Product();
+        product.setCode(code);
+        product.setCategoryCode(categoryCode);
+        product.setName(name);
+        product.setPrice(price);
 
-        productService.save(newProduct);
+        productService.save(product);
 
-        request.setAttribute("products", productService.findAll());
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/web/product.jsp");
         requestDispatcher.forward(request, response);
     }

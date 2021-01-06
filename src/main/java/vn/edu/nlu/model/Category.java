@@ -3,33 +3,42 @@ package vn.edu.nlu.model;
 import java.io.Serializable;
 
 public class Category implements Serializable {
-    private String categoryId;
-    private String categoryName;
-    private String categoryImage;
+    private int id;
+    private String code;
+    private String name;
+    private String image;
 
     public Category() {}
 
-    public String getCategoryId() {
-        return categoryId;
+    public int getId() {
+        return id;
     }
 
-    public void setCategoryId(String categoryId) {
-        this.categoryId = categoryId;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getCategoryName() {
-        return categoryName;
+    public String getCode() {
+        return code;
     }
 
-    public void setCategoryName(String categoryName) {
-        this.categoryName = categoryName;
+    public void setCode(String code) {
+        this.code = code;
     }
 
-    public String getCategoryImage() {
-        return categoryImage;
+    public String getName() {
+        return name;
     }
 
-    public void setCategoryImage(String categoryImage) {
-        this.categoryImage = categoryImage;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

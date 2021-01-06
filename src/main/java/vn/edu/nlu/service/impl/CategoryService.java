@@ -1,7 +1,7 @@
 package vn.edu.nlu.service.impl;
 
 import vn.edu.nlu.dao.ICategoryDAO;
-import vn.edu.nlu.model.CategoryModel;
+import vn.edu.nlu.model.Category;
 import vn.edu.nlu.service.ICategoryService;
 
 import javax.inject.Inject;
@@ -13,7 +13,7 @@ public class CategoryService implements ICategoryService {
     private ICategoryDAO categoryDao;
 
     @Override
-    public List<CategoryModel> findAll() {
+    public List<Category> findAll() {
         return categoryDao.findAll();
     }
 }

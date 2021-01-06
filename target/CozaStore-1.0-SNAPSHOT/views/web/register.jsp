@@ -17,7 +17,7 @@
     </head>
 
     <body class="bg-gradient-primary">
-        <div class="container userModel-select-none">
+        <div class="container user-select-none">
         <div class="card o-hidden border-0 shadow-lg my-5">
             <div class="card-body p-0">
                 <!-- Nested Row within Card Body -->
@@ -28,29 +28,29 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Tạo tài khoản!</h1>
                             </div>
-                            <form class="userModel">
+                            <form class="user">
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-userModel" id="username" placeholder="Tên đăng nhập">
+                                    <input type="text" class="form-control form-control-user" id="username" placeholder="Tên đăng nhập">
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-userModel" id="email" placeholder="Địa chỉ email">
+                                    <input type="text" class="form-control form-control-user" id="email" placeholder="Địa chỉ email">
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="password" class="form-control form-control-userModel" id="password" placeholder="Mật khẩu">
+                                    <input type="password" class="form-control form-control-user" id="password" placeholder="Mật khẩu">
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control form-control-userModel" id="repeatPassword" placeholder="Nhập lại mật khẩu">
+                                    <input type="password" class="form-control form-control-user" id="repeatPassword" placeholder="Nhập lại mật khẩu">
                                 </div>
 
-                                <a href="login.jsp" class="btn btn-primary btn-userModel btn-block">Đăng ký tài khoản</a>
+                                <a href="login.jsp" class="btn btn-primary btn-user btn-block">Đăng ký tài khoản</a>
                                 <hr>
                                 <div class="d-flex justify-content-center">
-                                    <a href="#" class="btn btn-google btn-userModel mr-2 flex-grow-1">
+                                    <a href="#" class="btn btn-google btn-user mr-2 flex-grow-1">
                                         <i class="fab fa-google fa-fw"></i> Đăng ký với Google
                                     </a>
-                                    <a href="#" class="btn btn-facebook btn-userModel flex-grow-1">
+                                    <a href="#" class="btn btn-facebook btn-user flex-grow-1">
                                         <i class="fab fa-facebook-f fa-fw"></i> Đăng ký với Facebook
                                     </a>
                                 </div>

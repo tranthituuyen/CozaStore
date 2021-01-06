@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AbstractDAO<T> implements GenericDAO<T> {
+
     public Connection getConnection() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -25,14 +26,15 @@ public class AbstractDAO<T> implements GenericDAO<T> {
     public <T1> List<T1> query(String sql, RowMapper<T1> rowMapper, Object... parameters) {
         List<T1> results = new ArrayList<>();
         Connection connection = null;
-        PreparedStatement preparedStatement = null;
+        PreparedStatement statement = null;
         ResultSet resultSet = null;
 
         try {
             connection = getConnection();
-            preparedStatement = connection.prepareStatement(sql);
-            setParameter(preparedStatement, parameters);
-            resultSet = preparedStatement.executeQuery();
+            statement = connection.prepareStatement(sql);
+            setParameter(statement, parameters);
+            resultSet = statement.executeQuery();
+
             while (resultSet.next()) {
                 results.add(rowMapper.mapRow(resultSet));
             }
@@ -44,8 +46,8 @@ public class AbstractDAO<T> implements GenericDAO<T> {
                 if (resultSet != null) {
                     resultSet.close();
                 }
-                if (preparedStatement != null) {
-                    preparedStatement.close();
+                if (statement != null) {
+                    statement.close();
                 }
                 if (connection != null) {
                     connection.close();
@@ -56,18 +58,106 @@ public class AbstractDAO<T> implements GenericDAO<T> {
         }
     }
 
-    private void setParameter(PreparedStatement preparedStatement, Object... parameters) {
+    private void setParameter(PreparedStatement statement, Object... parameters) {
         try {
             for (int i = 0; i < parameters.length; i++) {
                 Object parameter = parameters[i];
                 int index = i + 1;
                 if (parameter instanceof String) {
-                    preparedStatement.setString(index, (String) parameter);
+                    statement.setString(index, (String) parameter);
+                } else if (parameter instanceof Integer) {
+                    statement.setInt(index, (Integer) parameter);
+                } else if (parameter instanceof Long) {
+                    statement.setLong(index, (Long) parameter);
+                } else if (parameter instanceof Timestamp) {
+                    statement.setTimestamp(index, (Timestamp) parameter);
+                } else if (parameter instanceof Boolean) {
+                    statement.setBoolean(index, (Boolean) parameter);
+                } else if (parameter == null) {
+                    statement.setNull(index, Types.NULL);
                 }
-                // else if cac kieru
+                // else if cac kieu
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public void update(String sql, Object... parameters) {
+        Connection connection = null;
+        PreparedStatement statement = null;
+        try {
+            connection = getConnection();
+            connection.setAutoCommit(false);
+            statement = connection.prepareStatement((sql));
+            setParameter(statement, parameters);
+            statement.executeUpdate();
+            connection.commit();
+        } catch (SQLException e) {
+            if (connection != null) {
+                try {
+                    connection.rollback();
+                } catch (SQLException e1) {
+                    e1.printStackTrace();
+                }
+            }
+        } finally {
+            try {
+                if (connection != null) {
+                    connection.close();
+                }
+                if (statement != null) {
+                    statement.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    @Override
+    public Integer insert(String sql, Object... parameters) {
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        try {
+            Integer id = null;
+            connection = getConnection();
+            connection.setAutoCommit(false);
+            statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            setParameter(statement, parameters);
+            statement.executeUpdate();
+            resultSet = statement.getGeneratedKeys();
+            if (resultSet.next()) {
+                id = resultSet.getInt(1);
+            }
+            connection.commit();
+            return id;
+        } catch (SQLException e) {
+            if (connection != null) {
+                try {
+                    connection.rollback();
+                } catch (SQLException e1) {
+                    e1.printStackTrace();
+                }
+            }
+        } finally {
+            try {
+                if (connection != null) {
+                    connection.close();
+                }
+                if (statement != null) {
+                    statement.close();
+                }
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
+    }
+
 }

@@ -5,12 +5,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AbstractModel<T> {
-    private Long id;
+    private Integer id;
     private Timestamp createdDate;
     private Timestamp modifiedDate;
     private String createdBy;
     private String modifiedBy;
-    private long[] ids;
+    private int[] ids;
     private List<T> listResult = new ArrayList<>();
     private Integer page;
     private Integer maxPageItem;
@@ -22,11 +22,11 @@ public class AbstractModel<T> {
     private String message;
     private String type;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -62,11 +62,11 @@ public class AbstractModel<T> {
         this.modifiedBy = modifiedBy;
     }
 
-    public long[] getIds() {
+    public int[] getIds() {
         return ids;
     }
 
-    public void setIds(long[] ids) {
+    public void setIds(int[] ids) {
         this.ids = ids;
     }
 

@@ -10,10 +10,14 @@ public class ProductMapper implements RowMapper<Product> {
     public Product mapRow(ResultSet resultSet) {
         Product product = new Product();
         try {
-            product.setProductId(resultSet.getString("masanpham"));
-            product.setProductName(resultSet.getString("tensanpham"));
+            product.setId(resultSet.getInt("id"));
+            product.setCode(resultSet.getString("masanpham"));
+            product.setCategoryCode(resultSet.getString("madanhmuc"));
+            product.setName(resultSet.getString("tensanpham"));
             product.setPrice(resultSet.getInt("gia"));
             product.setCover(resultSet.getString("anhbia"));
+            product.setDescription(resultSet.getString("mota"));
+            product.setStatus(resultSet.getBoolean("trangthai"));
             return product;
         } catch (SQLException e) {
             return null;
