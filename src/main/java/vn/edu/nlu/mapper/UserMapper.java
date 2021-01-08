@@ -3,29 +3,35 @@ package vn.edu.nlu.mapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import vn.edu.nlu.model.RoleModel;
-import vn.edu.nlu.model.UserModel;
+import vn.edu.nlu.model.Role;
+import vn.edu.nlu.model.User;
 
-public class UserMapper implements RowMapper<UserModel> {
+public class UserMapper implements RowMapper<User> {
 
     @Override
-    public UserModel mapRow(ResultSet resultSet) {
+    public User mapRow(ResultSet resultSet) {
         try {
-            UserModel userModel = new UserModel();
-            userModel.setId(resultSet.getInt("id"));
-            userModel.setUserName(resultSet.getString("userName"));
-            userModel.setFullName(resultSet.getString("fullName"));
-            userModel.setPassword(resultSet.getString("password"));
-            userModel.setStatus(resultSet.getInt("status"));
+            User user = new User();
+            user.setId(resultSet.getInt("id"));
+            user.setUsername(resultSet.getString("username"));
+            user.setPassword(resultSet.getString("password"));
+            user.setFullName(resultSet.getString("fullname"));
+            user.setStatus(resultSet.getInt("status"));
+            user.setRoleId(resultSet.getInt("roleid"));
+            user.setCreatedDate(resultSet.getTimestamp("createddate"));
+            user.setCreatedBy(resultSet.getString("createdby"));
+            user.setModifiedDate(resultSet.getTimestamp("modifieddate"));
+            user.setModifiedBy(resultSet.getString("modifiedby"));
+
             try {
-                RoleModel role = new RoleModel();
+                Role role = new Role();
                 role.setCode(resultSet.getString("code"));
                 role.setName(resultSet.getString("name"));
-                userModel.setRole(role);
+                user.setRole(role);
             } catch (Exception e) {
                 System.out.print(e.getMessage());
             }
-            return userModel;
+            return user;
         } catch (SQLException e) {
             return null;
         }

@@ -18,6 +18,15 @@ public class ProductMapper implements RowMapper<Product> {
             product.setCover(resultSet.getString("anhbia"));
             product.setDescription(resultSet.getString("mota"));
             product.setStatus(resultSet.getBoolean("trangthai"));
+            product.setCreatedDate(resultSet.getTimestamp("createddate"));
+            product.setCreatedBy(resultSet.getString("createdby"));
+
+            if (resultSet.getTimestamp("modifieddate") != null) {
+                product.setModifiedDate(resultSet.getTimestamp("modifieddate"));
+            }
+            if (resultSet.getString("modifiedby") != null) {
+                product.setModifiedBy(resultSet.getString("modifiedby"));
+            }
             return product;
         } catch (SQLException e) {
             return null;

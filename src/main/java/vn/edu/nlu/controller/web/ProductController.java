@@ -1,6 +1,9 @@
 package vn.edu.nlu.controller.web;
 
+import vn.edu.nlu.constant.SystemConstant;
+import vn.edu.nlu.model.Category;
 import vn.edu.nlu.model.Product;
+import vn.edu.nlu.service.ICategoryService;
 import vn.edu.nlu.service.IProductService;
 
 import javax.inject.Inject;
@@ -18,24 +21,21 @@ public class ProductController extends HttpServlet {
     @Inject
     private IProductService productService;
 
+    @Inject
+    private ICategoryService categoryService;
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        String code = "aa-test-shirt";
-        String categoryCode = "so-mi";
-        String name = "test shirt";
-        int price = 120000;
-
         Product product = new Product();
-        product.setCode(code);
-        product.setCategoryCode(categoryCode);
-        product.setName(name);
-        product.setPrice(price);
+        product.setListResult(productService.findAll());
+        request.setAttribute("products", product);
 
-        productService.save(product);
+        Category categories = new Category();
+        categories.setListResult(categoryService.findAll());
+        request.setAttribute("categories", categories);
 
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/web/product.jsp");
         requestDispatcher.forward(request, response);

@@ -33,7 +33,7 @@
                     <%@ include file="/common/admin/topbar.jsp" %>
 
                     <%-- begin content --%>
-                    <div class="container-fluid userModel-select-none">
+                    <div class="container-fluid user-select-none">
                         <decorator:body />
                     </div>
                 </div>

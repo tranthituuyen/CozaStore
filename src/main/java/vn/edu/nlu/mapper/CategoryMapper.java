@@ -15,6 +15,15 @@ public class CategoryMapper implements RowMapper<Category> {
             category.setCode(resultSet.getString("madanhmuc"));
             category.setName(resultSet.getString("tendanhmuc"));
             category.setImage(resultSet.getString("hinhanh"));
+            category.setCreatedDate(resultSet.getTimestamp("createddate"));
+            category.setCreatedBy(resultSet.getString("createdby"));
+
+            if (resultSet.getTimestamp("modifieddate") != null) {
+                category.setModifiedDate(resultSet.getTimestamp("modifieddate"));
+            }
+            if (resultSet.getString("modifiedby") != null) {
+                category.setModifiedBy(resultSet.getString("modifiedby"));
+            }
             return category;
         } catch (SQLException e) {
             return null;

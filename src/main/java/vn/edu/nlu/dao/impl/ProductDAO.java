@@ -29,20 +29,24 @@ public class ProductDAO extends AbstractDAO<Product> implements IProductDAO {
 
     @Override
     public Integer save(Product product) {
-        String sql = "INSERT INTO sanpham (masanpham, madanhmuc, tensanpham, gia, anhbia, mota, trangthai) " +
-                     "VALUES (?, ?, ?, ?, ?, ?, ?)";
-        return insert(sql, product.getCode(), product.getCategoryCode(), product.getName(), product.getPrice(),
-                product.getCover(), product.getDescription(), product.isStatus());
+        StringBuilder sql = new StringBuilder("INSERT INTO sanpham (masanpham, madanhmuc, tensanpham, gia, ");
+        sql.append("anhbia, mota, trangthai, createddate, createdby) ");
+        sql.append("VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
+        return insert(sql.toString(), product.getCode(), product.getCategoryCode(), product.getName(), product.getPrice(),
+                product.getCover(), product.getDescription(), product.isStatus(), product.getCreatedDate(), product.getCreatedBy());
     }
 
     @Override
     public void update(Product updateProduct) {
-        StringBuilder sql = new StringBuilder("UPDATE sanpham SET masanpham = ?, madanhmuc = ?,");
-        sql.append(" tensanpham = ?, gia = ?, anhbia = ?, mota = ?, trangthai = ? WHERE id  = ?");
+        StringBuilder sql = new StringBuilder("UPDATE sanpham SET masanpham = ?, madanhmuc = ?, tensanpham = ?, gia = ?, ");
+        sql.append("anhbia = ?, mota = ?, trangthai = ?, createddate = ?, createdby = ?, modifieddate = ?, modifiedby = ? ");
+        sql.append("WHERE id  = ?");
 
         update(sql.toString(), updateProduct.getCode(), updateProduct.getCategoryCode(), updateProduct.getName(),
                 updateProduct.getPrice(), updateProduct.getCover(), updateProduct.getDescription(),
-                updateProduct.isStatus(), updateProduct.getId());
+                updateProduct.isStatus(), updateProduct.getCreatedDate(), updateProduct.getCreatedBy(),
+                updateProduct.getModifiedDate(), updateProduct.getModifiedBy(), updateProduct.getId());
     }
 
     @Override

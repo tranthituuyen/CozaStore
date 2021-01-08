@@ -1,7 +1,16 @@
 package vn.edu.nlu.dao;
 
-import vn.edu.nlu.model.UserModel;
+import vn.edu.nlu.model.User;
 
-public interface IUserDAO  extends GenericDAO<UserModel> {
-    UserModel findByUserNameAndPasswordAndStatus(String userName, String password, Integer status);
-    }
+import java.util.List;
+
+public interface IUserDAO extends GenericDAO<User> {
+
+    List<User> findAll();
+
+    User findByUserNameAndPasswordAndStatus(String username, String password, Integer status);
+
+    Integer save(User user);
+
+    void update(User updateUser);
+}

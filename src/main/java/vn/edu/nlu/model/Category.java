@@ -2,21 +2,12 @@ package vn.edu.nlu.model;
 
 import java.io.Serializable;
 
-public class Category implements Serializable {
-    private int id;
+public class Category extends AbstractModel<Category> implements Serializable {
     private String code;
     private String name;
     private String image;
 
     public Category() {}
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getCode() {
         return code;

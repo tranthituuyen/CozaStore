@@ -5,6 +5,7 @@ import vn.edu.nlu.model.Product;
 import vn.edu.nlu.service.IProductService;
 
 import javax.inject.Inject;
+import java.sql.Timestamp;
 import java.util.List;
 
 public class ProductService implements IProductService {
@@ -24,12 +25,19 @@ public class ProductService implements IProductService {
 
     @Override
     public Product save(Product product) {
+        product.setCreatedDate(new Timestamp(System.currentTimeMillis()));
+//        product.setCreatedBy("");
         Integer newId = productDAO.save(product);
         return productDAO.findOne(newId);
     }
 
     @Override
     public Product update(Product updateProduct) {
+        Product oldProduct = productDAO.findOne(updateProduct.getId());
+        updateProduct.setCreatedDate(oldProduct.getCreatedDate());
+        updateProduct.setCreatedBy(oldProduct.getCreatedBy());
+        updateProduct.setModifiedDate(new Timestamp(System.currentTimeMillis()));
+//        updateProduct.setModifiedBy("");
         productDAO.update(updateProduct);
         return productDAO.findOne(updateProduct.getId());
     }
@@ -37,6 +45,7 @@ public class ProductService implements IProductService {
     @Override
     public void delete(int[] ids) {
         for (int id : ids) {
+            // xoa phan ben bang con truoc con truoc
             productDAO.delete(id);
         }
     }

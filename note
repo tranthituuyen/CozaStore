@@ -1,0 +1,26 @@
+cấp một vùng nhớ chứa chữ trương
+cấp tiếp một vùng nhớ chứa chữ trương tùng
+cấp tiếp một vùng nhớ chứa chữ trương tùng lâm
+
+mỗi lần đều tạo một vùng nhớ => dư thừa
+
+StringBuilder:
+	tạo một vùng nhớ chứa chữ trương
+	cộng thêm chữ tùng vào vùng nhớ có chữ trương
+	cộng tiếp chữ lâm vào
+	=> không lãng phí bộ nhớ
+	=> lãng phí bộ nhớ làm sao control được performen của nó (tốc độ của hệ thống)
+
+	nhưng mà thực ra trong java có một khái niệm gọi là garbage collection
+	=> đi thu lượm mấy vùng nhớ tạo ra mà không dùng, xóa đi
+
+	nhưng mà để cái này hoạt động, phải tốn dung lượng hỗ trợ nó hoạt động => chưa tối ưu
+
+==============================
+==
+==============================
+ - luôn luôn trả về một danh sách (bài viết, sản phẩm, thể loại,...)
+
+ - view - model - controller
+ => luôn luôn sẽ có mọt biến modal trả ra từ controller ra view
+ => ngược lại, khi đẩy từ view vào data cũng cần một modal

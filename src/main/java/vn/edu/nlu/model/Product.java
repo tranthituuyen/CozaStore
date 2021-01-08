@@ -2,7 +2,7 @@ package vn.edu.nlu.model;
 
 import java.io.Serializable;
 
-public class Product extends AbstractModel implements Serializable {
+public class Product extends AbstractModel<Product> implements Serializable {
     private String code;
     private String categoryCode;
     private String name;

@@ -1,5 +1,7 @@
 package vn.edu.nlu.controller.web;
 
+import vn.edu.nlu.model.Category;
+import vn.edu.nlu.model.Product;
 import vn.edu.nlu.service.ICategoryService;
 import vn.edu.nlu.service.IProductService;
 
@@ -16,6 +18,9 @@ import java.io.IOException;
 public class HomeController extends HttpServlet {
 
     @Inject
+    private IProductService productService;
+
+    @Inject
     private ICategoryService categoryService;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -23,7 +28,14 @@ public class HomeController extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("categories", categoryService.findAll());
+        Product product = new Product();
+        product.setListResult(productService.findAll());
+        request.setAttribute("products", product);
+
+        Category categories = new Category();
+        categories.setListResult(categoryService.findAll());
+        request.setAttribute("categories", categories);
+
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/web/home.jsp");
         requestDispatcher.forward(request, response);
     }

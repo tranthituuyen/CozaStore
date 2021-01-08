@@ -6,6 +6,12 @@ import java.util.List;
 
 public interface ICategoryDAO extends GenericDAO<Category> {
     List<Category> findAll();
-//    Category findOne(long id);
-//    Category findOneByCode(String code);
+
+    Category findOne(Integer id);
+
+    Integer save(Category category);
+
+    void update(Category updateCategory);
+
+    void delete(int id);
 }

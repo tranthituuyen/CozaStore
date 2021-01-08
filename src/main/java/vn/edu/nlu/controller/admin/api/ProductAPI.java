@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(urlPatterns = {"/api-admin-product"}, name = "api")
+@WebServlet(urlPatterns = {"/api-admin-product"}, name = "api-product")
 public class ProductAPI extends HttpServlet {
 
     @Inject
@@ -25,6 +25,7 @@ public class ProductAPI extends HttpServlet {
         response.setContentType("application/json");
         Product product = HttpUtil.of(request.getReader()).toModel(Product.class);
         product = productService.save(product);
+        System.out.println(product);
         mapper.writeValue(response.getOutputStream(), product);
     }
 

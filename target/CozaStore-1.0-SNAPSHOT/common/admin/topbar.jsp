@@ -1,5 +1,5 @@
 <%@ page pageEncoding="UTF-8" %>
-<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow userModel-select-none">
+<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow user-select-none">
     <!-- Sidebar Toggle (Topbar) -->
     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
         <i class="fa fa-bars"></i>
@@ -98,7 +98,7 @@
                 </h6>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                     <div class="dropdown-list-image mr-3">
-                        <i class="rounded-circle far fa-userModel" style="font-size: 36px"></i>
+                        <i class="rounded-circle far fa-user" style="font-size: 36px"></i>
                         <div class="status-indicator bg-success"></div>
                     </div>
                     <div class="font-weight-bold">
@@ -110,7 +110,7 @@
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                     <div class="dropdown-list-image mr-3">
-                        <i class="rounded-circle fas fa-userModel" style="font-size: 36px"></i>
+                        <i class="rounded-circle fas fa-user" style="font-size: 36px"></i>
                         <div class="status-indicator"></div>
                     </div>
                     <div>
@@ -120,7 +120,7 @@
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                     <div class="dropdown-list-image mr-3">
-                        <i class="rounded-circle far fa-userModel" style="font-size: 36px"></i>
+                        <i class="rounded-circle far fa-user" style="font-size: 36px"></i>
                         <div class="status-indicator bg-warning"></div>
                     </div>
                     <div>
@@ -157,7 +157,7 @@
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                  aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="profile.html">
-                    <i class="fas fa-userModel fa-sm fa-fw mr-2 text-gray-400"></i>
+                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                     Hồ sơ của bạn
                 </a>
                 <a class="dropdown-item" href="#">

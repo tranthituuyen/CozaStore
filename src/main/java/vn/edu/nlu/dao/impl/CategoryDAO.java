@@ -14,6 +14,39 @@ public class CategoryDAO extends AbstractDAO<Category> implements ICategoryDAO {
         return query(sql, new CategoryMapper());
     }
 
+    @Override
+    public Category findOne(Integer id) {
+        String sql = "SELECT * FROM danhmuc WHERE id = ?";
+        List<Category> list = query(sql, new CategoryMapper(), id);
+        return list.isEmpty() ? null : list.get(0);
+    }
+
+    @Override
+    public Integer save(Category category) {
+        StringBuilder sql = new StringBuilder("INSERT INTO danhmuc (madanhmuc, tendanhmuc, hinhanh, createddate, createdby )");
+        sql.append("VALUES (?, ?, ?, ?, ?)");
+
+        return insert(sql.toString(), category.getCode(), category.getName(), category.getImage(),
+                category.getCreatedDate(), category.getCreatedBy());
+    }
+
+    @Override
+    public void update(Category updateCategory) {
+        StringBuilder sql = new StringBuilder("UPDATE danhmuc SET madanhmuc = ?, tendanhmuc = ?, hinhanh = ?, ");
+        sql.append("createddate = ?, createdby = ?, modifieddate = ?, modifiedby = ? ");
+        sql.append("WHERE id  = ?");
+
+        update(sql.toString(), updateCategory.getCode(), updateCategory.getName(), updateCategory.getImage(),
+                updateCategory.getCreatedDate(), updateCategory.getCreatedBy(), updateCategory.getModifiedDate(),
+                updateCategory.getModifiedBy(), updateCategory.getId());
+    }
+
+    @Override
+    public void delete(int id) {
+        String sql = "DELETE FROM danhmuc WHERE id = ?";
+        update(sql, id);
+    }
+
     /**
      @Override public Category findOne(long id) {
      // sai cau query (ten column)

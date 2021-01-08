@@ -1,7 +1,16 @@
 package vn.edu.nlu.service;
 
-import vn.edu.nlu.model.UserModel;
+import vn.edu.nlu.model.User;
+
+import java.util.List;
 
 public interface IUserService {
-    UserModel findByUserNameAndPasswordAndStatus(String userName, String password, Integer status);
+    List<User> findAll();
+
+    User findByUserNameAndPasswordAndStatus(String username, String password, Integer status);
+
+    User save(User user);
+
+    User update(User updateUser);
+
 }
