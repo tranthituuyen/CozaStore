@@ -72,13 +72,18 @@
         <script src="<c:url value='/templates/web/js/main.js' />" type="text/javascript"></script>
 
         <%-- script --%>
+
         <script type="text/javascript">
-            const mainMenu = document.querySelectorAll('.main-menu > li > a');
-            const webMenu = $(".main-menu > li > a");
-            console.log(webMenu)
-            webMenu.each((element) => {
-                element.find().addClass("active-menu");
-            });
+            var menu = $(".main-menu > li > a");
+            for (var i = 0; i < menu.length; i++) {
+                menu[i].onclick = function (e) {
+                    console.log(menu)
+                    $(menu).each(function () {
+                        $(this).removeClass("active-menu");
+                    });
+                    $(e.target).parent().addClass("active-menu");
+                }
+            }
         </script>
 
         <script type="text/javascript">
