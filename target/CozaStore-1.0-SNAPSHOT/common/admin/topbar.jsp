@@ -1,5 +1,8 @@
 <%@ page pageEncoding="UTF-8" %>
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow user-select-none">
+    <!-- Page Heading -->
+    <h3 id="page-heading" class="mb-0 text-gray-800"></h3>
+
     <!-- Sidebar Toggle (Topbar) -->
     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
         <i class="fa fa-bars"></i>
@@ -124,7 +127,9 @@
                         <div class="status-indicator bg-warning"></div>
                     </div>
                     <div>
-                        <div class="text-truncate">Báo cáo của tháng trước trông rất tuyệt, tôi rất vui với tiến độ cho đến nay, hãy tiếp tục công việc tốt!</div>
+                        <div class="text-truncate">Báo cáo của tháng trước trông rất tuyệt, tôi rất vui với tiến độ
+                            cho đến nay, hãy tiếp tục công việc tốt!
+                        </div>
                         <div class="small text-gray-500">Thiên Anh · 2d</div>
                     </div>
                 </a>
@@ -151,7 +156,7 @@
                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Uyên Trần</span>
                 <img class="img-profile rounded-circle"
-                     src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" />
+                     src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"/>
             </a>
             <!-- Dropdown - UserModel Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"

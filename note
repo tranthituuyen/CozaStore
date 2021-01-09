@@ -17,10 +17,14 @@ StringBuilder:
 	nhưng mà để cái này hoạt động, phải tốn dung lượng hỗ trợ nó hoạt động => chưa tối ưu
 
 ==============================
-==
+== why StringBuilder ?
 ==============================
  - luôn luôn trả về một danh sách (bài viết, sản phẩm, thể loại,...)
 
  - view - model - controller
  => luôn luôn sẽ có mọt biến modal trả ra từ controller ra view
  => ngược lại, khi đẩy từ view vào data cũng cần một modal
+
+ ==============================
+ == pagination
+ ==============================

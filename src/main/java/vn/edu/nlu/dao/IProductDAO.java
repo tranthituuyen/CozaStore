@@ -8,6 +8,10 @@ public interface IProductDAO extends GenericDAO<Product> {
 
     List<Product> findAll();
 
+    List<Product> findAll(Integer offset, Integer limit);
+
+    List<Product> findBestSelling();
+
     Product findOne(Integer id);
 
     List<Product> findByCategoryCode(String categoryId);
@@ -17,4 +21,6 @@ public interface IProductDAO extends GenericDAO<Product> {
     void update(Product updateProduct);
 
     void delete(int id);
+
+    int getTotalItem();
 }

@@ -1,4 +1,4 @@
-package vn.edu.nlu.controller.api;
+package vn.edu.nlu.controller.admin.api;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

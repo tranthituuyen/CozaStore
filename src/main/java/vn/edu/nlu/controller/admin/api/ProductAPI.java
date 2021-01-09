@@ -1,8 +1,8 @@
-package vn.edu.nlu.controller.api;
+package vn.edu.nlu.controller.admin.api;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import vn.edu.nlu.model.Category;
-import vn.edu.nlu.service.ICategoryService;
+import vn.edu.nlu.model.Product;
+import vn.edu.nlu.service.IProductService;
 import vn.edu.nlu.utils.HttpUtil;
 
 import javax.inject.Inject;
@@ -13,20 +13,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(urlPatterns = {"/api-admin-category"}, name = "api")
-public class CategoryAPI extends HttpServlet {
+// thêm sửa xóa sản phẩm
+@WebServlet(urlPatterns = {"/api-admin-product"}, name = "api-product")
+public class ProductAPI extends HttpServlet {
 
     @Inject
-    private ICategoryService categoryService;
+    private IProductService productService;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ObjectMapper mapper = new ObjectMapper();
         request.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
-        response.setCharacterEncoding("UTF-8");
-        Category category = HttpUtil.of(request.getReader()).toModel(Category.class);
-        category = categoryService.save(category);
-        mapper.writeValue(response.getOutputStream(), category);
+        Product product = HttpUtil.of(request.getReader()).toModel(Product.class);
+        product = productService.save(product);
+        System.out.println(product);
+        mapper.writeValue(response.getOutputStream(), product);
     }
 
     @Override
@@ -34,10 +35,9 @@ public class CategoryAPI extends HttpServlet {
         ObjectMapper mapper = new ObjectMapper();
         request.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
-        response.setCharacterEncoding("UTF-8");
-        Category updateCategory = HttpUtil.of(request.getReader()).toModel(Category.class);
-        updateCategory = categoryService.update(updateCategory);
-        mapper.writeValue(response.getOutputStream(), updateCategory);
+        Product updateProduct = HttpUtil.of(request.getReader()).toModel(Product.class);
+        updateProduct = productService.update(updateProduct);
+        mapper.writeValue(response.getOutputStream(), updateProduct);
     }
 
     @Override
@@ -45,9 +45,8 @@ public class CategoryAPI extends HttpServlet {
         ObjectMapper mapper = new ObjectMapper();
         request.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
-        response.setCharacterEncoding("UTF-8");
-        Category category = HttpUtil.of(request.getReader()).toModel(Category.class);
-        categoryService.delete(category.getIds());
+        Product product = HttpUtil.of(request.getReader()).toModel(Product.class);
+        productService.delete(product.getIds());
         mapper.writeValue(response.getOutputStream(), "{}");
     }
 

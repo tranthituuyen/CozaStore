@@ -24,6 +24,11 @@ public class ProductService implements IProductService {
     }
 
     @Override
+    public List<Product> findBestSelling() {
+        return productDAO.findBestSelling();
+    }
+
+    @Override
     public Product save(Product product) {
         product.setCreatedDate(new Timestamp(System.currentTimeMillis()));
 //        product.setCreatedBy("");
@@ -48,6 +53,16 @@ public class ProductService implements IProductService {
             // xoa phan ben bang con truoc con truoc
             productDAO.delete(id);
         }
+    }
+
+    @Override
+    public int getTotalItems() {
+        return productDAO.getTotalItem();
+    }
+
+    @Override
+    public List<Product> findAll(Integer offset, Integer limit) {
+        return productDAO.findAll(offset, limit);
     }
 
 }

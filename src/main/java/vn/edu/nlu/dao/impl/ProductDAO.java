@@ -15,6 +15,20 @@ public class ProductDAO extends AbstractDAO<Product> implements IProductDAO {
     }
 
     @Override
+    public List<Product> findAll(Integer offset, Integer limit) {
+        String sql = "SELECT * FROM sanpham LIMIT ?, ?";
+        return query(sql, new ProductMapper(), offset, limit);
+    }
+
+    @Override
+    // method này để lọc ra 20 sản phẩm bán chạy nhất
+    public List<Product> findBestSelling() {
+        // nhưng tạm thời chưa có hóa đơn nào nên tạm thời lọc ra trước 10 sản phẩm thôi, phải sửa lại sau
+        String sql = "SELECT * FROM sanpham LIMIT ?, ?";
+        return query(sql, new ProductMapper(), 0, 10);
+    }
+
+    @Override
     public Product findOne(Integer id) {
         String sql = "SELECT * FROM sanpham WHERE id = ?";
         List<Product> products = query(sql, new ProductMapper(), id);
@@ -53,5 +67,11 @@ public class ProductDAO extends AbstractDAO<Product> implements IProductDAO {
     public void delete(int id) {
         String sql = "DELETE FROM sanpham WHERE id = ?";
         update(sql, id);
+    }
+
+    @Override
+    public int getTotalItem() {
+        String sql = "SELECT COUNT(*) FROM sanpham";
+        return count(sql);
     }
 }

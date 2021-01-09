@@ -10,9 +10,15 @@ public interface IProductService {
 
     List<Product> findByCategoryCode(String categoryCode);
 
+    List<Product> findBestSelling();
+
     Product save(Product product);
 
     Product update(Product product);
 
     void delete(int[] ids);
+
+    int getTotalItems();
+
+    List<Product> findAll(Integer offset, Integer limit);
 }
