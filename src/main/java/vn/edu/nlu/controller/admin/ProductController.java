@@ -30,36 +30,34 @@ public class ProductController extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Category category = new Category();
         Product product = new Product();
 
-//        String pageStr = request.getParameter("page");
-//        String maxPageItemStr = request.getParameter("maxPageItem");
-//
-//        if (pageStr != null) {
-//            product.setPage(Integer.parseInt(pageStr));
-//        } else {
-//            product.setPage(1);
-//        }
-//
-//        if (maxPageItemStr != null) {
-//            product.setMaxPageItem(Integer.parseInt(maxPageItemStr));
-//        }
-//
-//        System.out.println("1. " + (product.getPage() - 1));
-//        System.out.println("2. " + product.getMaxPageItem());
-//        System.out.println("3. " + (product.getPage() - 1) * product.getMaxPageItem());
-//        Integer offset = (product.getPage() - 1) * product.getMaxPageItem();
-//        product.setListResult(productService.findAll(offset, product.getMaxPageItem()));
-//        product.setTotalItem(productService.getTotalItems());
-//        product.setTotalPage((int) Math.ceil((double) product.getTotalItem() / product.getMaxPageItem()));
+        String pageStr = request.getParameter("page");
+        String maxPageItemStr = request.getParameter("maxPageItem");
 
-        product.setListResult(productService.findAll());
+        if (pageStr != null) {
+            product.setPage(Integer.parseInt(pageStr));
+        } else {
+            product.setPage(1);
+        }
+
+        if (maxPageItemStr != null) {
+            product.setMaxPageItem(Integer.parseInt(maxPageItemStr));
+        } else {
+            product.setMaxPageItem(10);
+        }
+
+        Integer offset = (product.getPage() - 1) * product.getMaxPageItem();
+        product.setListResult(productService.findAll(offset, product.getMaxPageItem()));
+        product.setTotalItem(productService.getTotalItems());
+        product.setTotalPage((int) Math.ceil((double) product.getTotalItem() / product.getMaxPageItem()));
+
         request.setAttribute(SystemConstant.MODEL, product);
 
         List<Product> bestSelling = productService.findBestSelling();
         request.setAttribute("bestSelling", bestSelling);
 
-        Category category = new Category();
         category.setListResult(categoryService.findAll());
         request.setAttribute("categories", category);
 

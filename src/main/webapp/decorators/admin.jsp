@@ -17,6 +17,11 @@
         <link rel="stylesheet" href="<c:url value='/templates/admin/css/sb-admin-2.min.css' />" media="all"/>
         <link rel="stylesheet" href="<c:url value='/templates/admin/data-table/data-table.bootstrap-4.min.css' />">
         <link rel="stylesheet" href="<c:url value='/templates/admin/css/new-style.css' />" media="all"/>
+
+        <script src="<c:url value='/templates/common/jquery/jquery-3.5.1.min.js' />" type="text/javascript"></script>
+        <script src="<c:url value="/templates/common/bootstrap/js/bootstrap.min.js" />" type="text/javascript"></script>
+        <script src="<c:url value="/templates/common/pagination/jquery.twbsPagination.min.js" />"
+                type="text/javascript"></script>
     </head>
 
     <body id="page-top" onload="setPageHeading()">
@@ -193,8 +198,6 @@
         <%-- script --%>
         <script src="<c:url value='/templates/admin/fontawesome-5.15.1/js/all.min.js' />"
                 type="text/javascript"></script>
-        <script src="<c:url value='/templates/common/jquery/jquery-3.5.1.min.js' />" type="text/javascript"></script>
-        <script src="<c:url value="/templates/common/bootstrap/js/bootstrap.min.js" />" type="text/javascript"></script>
         <script src="<c:url value='/templates/common/bootstrap/js/bootstrap.bundle.min.js' />"
                 type="text/javascript"></script>
         <script src="<c:url value='/templates/admin/jquery/jquery.easing.min.js' />" type="text/javascript"></script>
@@ -205,28 +208,6 @@
         <script src="<c:url value='/templates/admin/jquery/chart-area-demo.js' />" type="text/javascript"></script>
         <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
         <script src="<c:url value='/templates/admin/js/detail-order.js' />" type=""></script>
-        <script src="<c:url value="/templates/common/pagination/jquery.twbsPagination.min.js" />"
-                type="text/javascript"></script>
-
-        <script type="text/javascript">
-            var totalPages = ${model.totalPage};
-            var currentPage = ${model.page};
-            var limit = 5;
-            $(function () {
-                window.pagObj = $('#pagination').twbsPagination({
-                    totalPages: totalPages,
-                    visiblePages: 10,
-                    startPage: currentPage,
-                    onPageClick: function (event, page) {
-                        if (currentPage != page) {
-                            $('#maxPageItem').val(limit);
-                            $('#page').val(page);
-                            $('#formSubmit').submit();
-                        }
-                    }
-                });
-            });
-        </script>
 
         <%-- sidebar --%>
         <script type="text/javascript">

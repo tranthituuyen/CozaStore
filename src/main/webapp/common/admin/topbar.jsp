@@ -1,7 +1,7 @@
 <%@ page pageEncoding="UTF-8" %>
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow user-select-none">
     <!-- Page Heading -->
-    <h3 id="page-heading" class="mb-0 text-gray-800"></h3>
+    <h4 id="page-heading" class="mb-0 text-primary font-weight-bold pl-2 text-uppercase"></h4>
 
     <!-- Sidebar Toggle (Topbar) -->
     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
