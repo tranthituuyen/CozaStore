@@ -2,6 +2,7 @@ package vn.edu.nlu.service.impl;
 
 import vn.edu.nlu.dao.IProductDAO;
 import vn.edu.nlu.model.Product;
+import vn.edu.nlu.paging.Pageable;
 import vn.edu.nlu.service.IProductService;
 
 import javax.inject.Inject;
@@ -61,8 +62,8 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public List<Product> findAll(Integer offset, Integer limit) {
-        return productDAO.findAll(offset, limit);
+    public List<Product> findAll(Pageable pageable) {
+        return productDAO.findAll(pageable);
     }
 
 }

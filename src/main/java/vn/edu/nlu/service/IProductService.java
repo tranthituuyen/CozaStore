@@ -1,6 +1,7 @@
 package vn.edu.nlu.service;
 
 import vn.edu.nlu.model.Product;
+import vn.edu.nlu.paging.Pageable;
 
 import java.util.List;
 
@@ -20,5 +21,5 @@ public interface IProductService {
 
     int getTotalItems();
 
-    List<Product> findAll(Integer offset, Integer limit);
+    List<Product> findAll(Pageable pageable);
 }

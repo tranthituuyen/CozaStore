@@ -3,6 +3,7 @@ package vn.edu.nlu.dao.impl;
 import vn.edu.nlu.dao.IProductDAO;
 import vn.edu.nlu.mapper.ProductMapper;
 import vn.edu.nlu.model.Product;
+import vn.edu.nlu.paging.Pageable;
 
 import java.util.List;
 
@@ -15,17 +16,25 @@ public class ProductDAO extends AbstractDAO<Product> implements IProductDAO {
     }
 
     @Override
-    public List<Product> findAll(Integer offset, Integer limit) {
-        String sql = "SELECT * FROM sanpham LIMIT ?, ?";
-        return query(sql, new ProductMapper(), offset, limit);
+    public List<Product> findAll(Pageable pageable) {
+        StringBuilder sql = new StringBuilder("SELECT * FROM sanpham");
+        if (pageable.getSorter().getSortName() != null && pageable.getSorter().getSortBy() != null) {
+            sql.append(" ORDER BY ").append(pageable.getSorter().getSortName()).append(" ").append(pageable.getSorter().getSortBy());
+            System.out.println("sorted!");
+        }
+        if (pageable.getOffset() != null && pageable.getLimit() != null) {
+            sql.append(" LIMIT ").append(pageable.getOffset()).append(", ").append(pageable.getLimit());
+            System.out.println("limited!");
+        }
+        return query(sql.toString(), new ProductMapper());
     }
 
     @Override
     // method này để lọc ra 20 sản phẩm bán chạy nhất
     public List<Product> findBestSelling() {
-        // nhưng tạm thời chưa có hóa đơn nào nên tạm thời lọc ra trước 10 sản phẩm thôi, phải sửa lại sau
+        // nhưng tạm thời chưa có hóa đơn nào nên tạm thời lọc ra trước 20 sản phẩm thôi, phải sửa lại sau
         String sql = "SELECT * FROM sanpham LIMIT ?, ?";
-        return query(sql, new ProductMapper(), 0, 10);
+        return query(sql, new ProductMapper(), 0, 20);
     }
 
     @Override

@@ -6,6 +6,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Thống kê - Quản lý sản phẩm</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"
+                type="text/javascript"></script>
     </head>
 
     <body>
@@ -29,9 +33,8 @@
             <!-- List all product -->
             <div class="col-xl-4 col-md-6 mb-4 user-select-none">
                 <div class="card shadow h-100">
-                    <a href="<c:url value='/admin-quan-ly-san-pham?page=${model.page}&maxPageItem=${model.maxPageItem}' />"
-                       id="listAllProductLink"
-                       class="mb-0 text-decoration-none">
+                    <a id="listAllProductLink" class="mb-0 text-decoration-none"
+                       href="<c:url value='/admin-quan-ly-san-pham?page=1&maxPageItem=20&sortName=tensanpham&sortBy=desc' />">
                         <div class="card-body m-auto">
                             <h5 class="mb-0 text-center text-success">
                                 <i class="fa fa-cube mr-2"></i>
@@ -58,7 +61,7 @@
         </div>
 
         <!-- best seller tab -->
-        <div id="bestSellingTab" class="d-none card shadow mb-4">
+        <div id="bestSellingTab" class="card shadow mb-4">
             <div class="card-body">
                 <h5 class="font-weight-bold text-gray-800 mb-0">Top 20 sản phẩm bán chạy nhất</h5>
                 <br>
@@ -117,10 +120,8 @@
         </div>
 
         <!-- list all product -->
-        <form id="formSubmit"
-              action="<c:url value="/admin-quan-ly-san-pham?page=${model.page}&maxPageItem=${model.maxPageItem}" />"
-              method="get">
-            <div id="listAllProductTab" class="card shadow mb-4">
+        <form id="formSubmit" action="<c:url value='/admin-quan-ly-san-pham' />" method="get">
+            <div id="listAllProductTab" class="d-none card shadow mb-4">
                 <div class="card-header py-3">
                     <div class="d-flex justify-content-start align-items-center">
                         <div class="form-inline mb-0 mr-3">
@@ -137,7 +138,7 @@
                             </form>
                         </div>
 
-                        <button type="button" class="btn btn-sm btn-ms-primary">
+                        <button type="button" class="btn btn-ms-primary">
                             <h6 class="font-weight-bold mb-0">Lọc</h6>
                         </button>
                     </div>
@@ -201,6 +202,8 @@
                         <ul class="pagination" id="pagination"></ul>
                         <input type="hidden" value="" id="page" name="page"/>
                         <input type="hidden" value="" id="maxPageItem" name="maxPageItem"/>
+                        <input type="hidden" value="" id="sortName" name="sortName" />
+                        <input type="hidden" value="" id="sortBy" name="sortBy" />
                     </div>
                 </div>
             </div>
@@ -370,17 +373,20 @@
         <script type="text/javascript">
             var totalPages = ${model.totalPage};
             var currentPage = ${model.page};
-            var limit = 10;
+            var limit = 20;
             $(function () {
                 window.pagObj = $('#pagination').twbsPagination({
                     totalPages: totalPages,
-                    visiblePages: 5,
+                    visiblePages: 7,
                     startPage: currentPage,
                     onPageClick: function (event, page) {
-                        if (currentPage != page) {
-                            event.preventDefault();
+                        bestSellingTab.classList.add('d-none');
+                        listAllProductTab.classList.remove('d-none');
+                        if (currentPage !== page) {
                             $('#maxPageItem').val(limit);
                             $('#page').val(page);
+                            $('#sortName').val("tensanpham");
+                            $('#sortBy').val("desc");
                             $('#formSubmit').submit();
                         }
                     }

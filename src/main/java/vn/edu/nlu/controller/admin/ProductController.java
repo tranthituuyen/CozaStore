@@ -3,8 +3,12 @@ package vn.edu.nlu.controller.admin;
 import vn.edu.nlu.constant.SystemConstant;
 import vn.edu.nlu.model.Category;
 import vn.edu.nlu.model.Product;
+import vn.edu.nlu.paging.PageRequest;
+import vn.edu.nlu.paging.Pageable;
 import vn.edu.nlu.service.ICategoryService;
 import vn.edu.nlu.service.IProductService;
+import vn.edu.nlu.sort.Sorter;
+import vn.edu.nlu.utils.FormUtil;
 
 import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
@@ -31,34 +35,27 @@ public class ProductController extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Category category = new Category();
-        Product product = new Product();
+        category.setListResult(categoryService.findAll());
+        Product product = FormUtil.toModel(Product.class, request);
+        List<Product> bestSelling = productService.findBestSelling();
 
-        String pageStr = request.getParameter("page");
-        String maxPageItemStr = request.getParameter("maxPageItem");
+        Pageable pageable = new PageRequest(product.getPage(), product.getMaxPageItem(),
+                new Sorter(product.getSortName(), product.getSortBy()));
 
-        if (pageStr != null) {
-            product.setPage(Integer.parseInt(pageStr));
-        } else {
-            product.setPage(1);
-        }
+        int count = 1;
+        System.out.println("i = " + count);
+        System.out.println("page = " + pageable.getPage());
+        System.out.println("maxPageItem = " + pageable.getLimit());
+        System.out.println("sortName = " + pageable.getSorter().getSortName());
+        System.out.println("sortBy = " + pageable.getSorter().getSortBy());
+        count++;
 
-        if (maxPageItemStr != null) {
-            product.setMaxPageItem(Integer.parseInt(maxPageItemStr));
-        } else {
-            product.setMaxPageItem(10);
-        }
-
-        Integer offset = (product.getPage() - 1) * product.getMaxPageItem();
-        product.setListResult(productService.findAll(offset, product.getMaxPageItem()));
+        product.setListResult(productService.findAll(pageable));
         product.setTotalItem(productService.getTotalItems());
         product.setTotalPage((int) Math.ceil((double) product.getTotalItem() / product.getMaxPageItem()));
 
         request.setAttribute(SystemConstant.MODEL, product);
-
-        List<Product> bestSelling = productService.findBestSelling();
         request.setAttribute("bestSelling", bestSelling);
-
-        category.setListResult(categoryService.findAll());
         request.setAttribute("categories", category);
 
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/admin/product-management.jsp");

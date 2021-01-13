@@ -1,6 +1,7 @@
 package vn.edu.nlu.dao;
 
 import vn.edu.nlu.model.Product;
+import vn.edu.nlu.paging.Pageable;
 
 import java.util.List;
 
@@ -8,7 +9,7 @@ public interface IProductDAO extends GenericDAO<Product> {
 
     List<Product> findAll();
 
-    List<Product> findAll(Integer offset, Integer limit);
+    List<Product> findAll(Pageable pageable);
 
     List<Product> findBestSelling();
 

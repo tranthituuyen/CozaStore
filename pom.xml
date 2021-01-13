@@ -21,6 +21,7 @@
         <javax.servlet-api.version>4.0.1</javax.servlet-api.version>
         <sisu-inject-bean.version>1.4.2</sisu-inject-bean.version>
         <commons-beanutils.version>1.9.2</commons-beanutils.version>
+        <commons.beanutils.version>1.9.3</commons.beanutils.version>
     </properties>
 
     <dependencies>
@@ -116,6 +117,14 @@
             <artifactId>jackson-core-asl</artifactId>
             <version>1.9.2</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/commons-beanutils/commons-beanutils -->
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>${commons.beanutils.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>

@@ -50,14 +50,17 @@
     <orderEntry type="library" name="Maven: javax.servlet:javax.servlet-api:4.0.1" level="project" />
     <orderEntry type="library" name="Maven: org.sonatype.sisu:sisu-inject-bean:1.4.2" level="project" />
     <orderEntry type="library" name="Maven: org.sonatype.sisu:sisu-guice:noaop:2.1.7" level="project" />
-    <orderEntry type="library" name="Maven: commons-beanutils:commons-beanutils:1.9.2" level="project" />
-    <orderEntry type="library" name="Maven: commons-logging:commons-logging:1.1.1" level="project" />
-    <orderEntry type="library" name="Maven: commons-collections:commons-collections:3.2.1" level="project" />
+    <orderEntry type="library" name="Maven: commons-beanutils:commons-beanutils:1.9.3" level="project" />
+    <orderEntry type="library" name="Maven: commons-logging:commons-logging:1.2" level="project" />
+    <orderEntry type="library" name="Maven: commons-collections:commons-collections:3.2.2" level="project" />
     <orderEntry type="library" name="Maven: org.jboss.weld.servlet:weld-servlet:1.1.13.Final" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.9.8" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.9.8" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.0" level="project" />
     <orderEntry type="library" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.9.2" level="project" />
     <orderEntry type="library" name="Maven: org.codehaus.jackson:jackson-core-asl:1.9.2" level="project" />
+    <orderEntry type="library" name="gijgo" level="application" />
+    <orderEntry type="library" name="jquery-3.3.1" level="application" />
+    <orderEntry type="library" name="bootstrap" level="application" />
   </component>
 </module>

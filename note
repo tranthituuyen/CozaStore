@@ -26,5 +26,9 @@ StringBuilder:
  => ngược lại, khi đẩy từ view vào data cũng cần một modal
 
  ==============================
- == pagination
+ == BeanUtils.populate(object, request.getParameterMap());
  ==============================
+ chuyển hết mấy cái param put vô Map với key:value, key:value
+ key là một string thì hong nói ời, nhưng mà á, value có thể có 2
+ giá trị: sort theo cột nào, chiều nào chẳng hạn, nên nó sẽ là
+ một mảng string

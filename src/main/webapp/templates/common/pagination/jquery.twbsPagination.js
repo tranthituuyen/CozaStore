@@ -41,7 +41,7 @@
         }
 
         // hide if only one page exists
-        if (this.options.hideOnlyOnePage && this.options.totalPages == 1) {
+        if (this.options.hideOnlyOnePage && this.options.totalPages === 1) {
             if (this.options.initiateStartPageClick) {
                 this.$element.trigger('page', 1);
             }
