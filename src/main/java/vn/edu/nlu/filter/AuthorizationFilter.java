@@ -25,12 +25,6 @@ public class AuthorizationFilter implements Filter {
         String contextPath = request.getContextPath();
         String uri = request.getRequestURI();
 
-        System.out.println("contextPath + /admin = " + contextPath + "/admin");
-        System.out.println("if condition = " + uri.startsWith(contextPath + "/admin"));
-        System.out.println("URI = " + uri);
-        System.out.println("URL = " + request.getRequestURL());
-        System.out.println("=========================================================================================");
-
         if (uri.startsWith(contextPath + "/admin")) {
             User model = (User) SessionUtil.getInstance().getValue(request, "USER");
             if (model != null) {
