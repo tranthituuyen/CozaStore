@@ -6,18 +6,21 @@ import vn.edu.nlu.mapper.RowMapper;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 
 public class AbstractDAO<T> implements GenericDAO<T> {
 
+    ResourceBundle bundle = ResourceBundle.getBundle("database");
+
     public Connection getConnection() {
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            String url = "jdbc:mysql://localhost:3306/cozastore?useUnicode=true&characterEncoding=utf-8";
-            String user = "root";
-            String password = "";
+            Class.forName(bundle.getString("driverName"));
+            String url = bundle.getString("url");
+            String user = bundle.getString("user");
+            String password = bundle.getString("password");
             return DriverManager.getConnection(url, user, password);
         } catch (ClassNotFoundException | SQLException e) {
-            System.out.println("error at getConnection() class ProductDAO");
+            System.out.println("Run XAMPP. Start MySQL !!!!!");
             return null;
         }
     }

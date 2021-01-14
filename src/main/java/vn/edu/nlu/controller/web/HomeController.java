@@ -17,9 +17,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ResourceBundle;
 
 @WebServlet(urlPatterns = {"/trang-chu", "/dang-nhap", "/thoat"}, name = "home-controller")
 public class HomeController extends HttpServlet {
+
+    ResourceBundle bundle = ResourceBundle.getBundle("message");
 
     @Inject
     private IUserService userService;
@@ -36,7 +39,6 @@ public class HomeController extends HttpServlet {
             if (action.equals("login")) {
                 User model = FormUtil.toModel(User.class, request);
                 model = userService.findByUserNameAndPasswordAndStatus(model.getUsername(), model.getPassword(), 1);
-                System.out.println("username = " + model.getUsername() + ", password = " + model.getPassword() + ", status = " + model.getStatus());
 
                 if (model != null) {
                     SessionUtil.getInstance().putValue(request, "USER", model);
@@ -45,10 +47,9 @@ public class HomeController extends HttpServlet {
                     } else if (model.getRole().getCode().equals("admin")) {
                         response.sendRedirect(request.getContextPath() + "/admin-trang-chu");
                     }
-
-
                 } else {
-                    response.sendRedirect(request.getContextPath() + "/dang-nhap?action=login");
+                    response.sendRedirect(request.getContextPath() +
+                            "/dang-nhap?action=login&message=username_password_invalid&alert=danger");
                 }
             }
         }
@@ -58,6 +59,14 @@ public class HomeController extends HttpServlet {
         String action = request.getParameter("action");
         if (action != null) {
             if (action.equals("login")) {
+                String message = request.getParameter("message");
+                String alert = request.getParameter("alert");
+
+                if (message != null && alert != null) {
+                    request.setAttribute("message", bundle.getString(message));
+                    request.setAttribute("alert", alert);
+                }
+
                 RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/web/login.jsp");
                 requestDispatcher.forward(request, response);
             } else if (action.equals("logout")) {
