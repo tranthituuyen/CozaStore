@@ -5,14 +5,13 @@ import vn.edu.nlu.dao.impl.UserDAO;
 import vn.edu.nlu.model.User;
 import vn.edu.nlu.service.IUserService;
 
+import javax.inject.Inject;
 import java.util.List;
 
 public class UserService implements IUserService {
-    private IUserDAO userDAO;
 
-    public UserService() {
-        userDAO = new UserDAO();
-    }
+    @Inject
+    private IUserDAO userDAO;
 
     @Override
     public List<User> findAll() {

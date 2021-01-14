@@ -15,8 +15,9 @@ public class UserMapper implements RowMapper<User> {
             user.setId(resultSet.getInt("id"));
             user.setUsername(resultSet.getString("username"));
             user.setPassword(resultSet.getString("password"));
-            user.setFullName(resultSet.getString("fullname"));
+            user.setFullname(resultSet.getString("fullname"));
             user.setStatus(resultSet.getInt("status"));
+            //
             user.setRoleId(resultSet.getInt("roleid"));
             user.setCreatedDate(resultSet.getTimestamp("createddate"));
             user.setCreatedBy(resultSet.getString("createdby"));

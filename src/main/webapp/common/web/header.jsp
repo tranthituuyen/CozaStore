@@ -1,4 +1,5 @@
-<%@ page pageEncoding="UTF-8" %>
+<%@ page language="java" pageEncoding="UTF-8" %>
+
 <!-- Header desktop -->
 <div class="container-menu-desktop">
     <!-- Topbar -->
@@ -8,15 +9,13 @@
             <div class="left-top-bar user-select-none">Free ship toàn quốc với đơn hàng > 500k</div>
             <div class="right-top-bar flex-w h-full user-select-none">
                 <a href="<c:url value="/lien-he" />" class="flex-c-m trans-04 p-lr-25">Hỗ trợ</a>
-                <c:if test="${not empty USERMODEL}">
-                    <a class="flex-c-m trans-04 p-lr-25" href='#'>Wellcome, ${USERMODEL.fullName}</a>
-                    <a class="flex-c-m trans-04 p-lr-25" href='<c:url value="/thoat?action=logout"/>'>Thoát</a>
+                <c:if test="${not empty USER}">
+                    <a class="flex-c-m trans-04 p-lr-25" href='#'>Xin chào, ${USER.fullname}</a>
+                    <a class="flex-c-m trans-04 p-lr-25" href="<c:url value='/thoat?action=logout'/>">Thoát</a>
                 </c:if>
-                <c:if test="${empty USERMODEL}">
-                    <a class="flex-c-m trans-04 p-lr-25" href='<c:url value="/dang-nhap?action=login" />'>Đăng nhập</a>
+                <c:if test="${empty USER}">
+                    <a class="flex-c-m trans-04 p-lr-25" href="<c:url value='/dang-nhap?action=login' />">Đăng nhập</a>
                 </c:if>
-                <a href="#" class="flex-c-m trans-04 p-lr-25">EN</a>
-                <a href="#" class="flex-c-m trans-04 p-lr-25">USD</a>
             </div>
         </div>
     </div>

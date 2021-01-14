@@ -71,7 +71,7 @@
                     </div>
                     <div class="modal-footer">
                         <button class="btn btn-secondary" type="button" data-dismiss="modal">Hủy</button>
-                        <a class="btn btn-primary" href="<c:url value="/dang-nhap" />">Đăng xuất</a>
+                        <a class="btn btn-primary" href="<c:url value="/dang-nhap?action=logout" />">Đăng xuất</a>
                     </div>
                 </div>
             </div>

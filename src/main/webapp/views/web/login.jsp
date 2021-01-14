@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<%@ page language="java" pageEncoding="UTF-8" %>
 <%@ include file="/common/taglib.jsp" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -25,12 +25,12 @@
                                         </div>
                                         <div class="login-form">
                                             <div class="main-div">
-                                                <c:if test="${not empty message}">
-                                                    <div class="alert alert-${alert}">
-                                                            ${message}
-                                                    </div>
-                                                </c:if>
-                                                <form class="user" action="<c:url value="/dang-nhap"/> " id="formlogin"
+<%--                                                <c:if test="${not empty message}">--%>
+<%--                                                    <div class="alert alert-${alert}">--%>
+<%--                                                            ${message}--%>
+<%--                                                    </div>--%>
+<%--                                                </c:if>--%>
+                                                <form class="user" action="<c:url value="/trang-chu"/> " id="formlogin"
                                                       method="post">
                                                     <div class="form-group">
                                                         <input type="text" class="form-control form-control-user"
@@ -53,12 +53,13 @@
                                                         </div>
                                                     </div>
 
-                                                    <input type="hidden" value="login" name="action" />
+                                                    <input type="hidden" value="login" name="action"/>
 
-                                                    <a href="<c:url value="/trang-chu" />"
-                                                       class="btn btn-primary btn-user btn-block">
+                                                    <button type="submit" class="btn btn-primary btn-user btn-block">
                                                         Đăng nhập
-                                                    </a>
+                                                    </button>
+
+                                                    <!-- ====== -->
                                                     <hr>
                                                     <a href="<c:url value="/trang-chu" />"
                                                        class="btn btn-google btn-user btn-block">

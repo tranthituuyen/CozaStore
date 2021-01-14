@@ -32,3 +32,14 @@ StringBuilder:
  key là một string thì hong nói ời, nhưng mà á, value có thể có 2
  giá trị: sort theo cột nào, chiều nào chẳng hạn, nên nó sẽ là
  một mảng string
+
+
+==================================
+== authentication | authoriazation
+==================================
+
+1.  đăng nhập vào hệ thống => có tồn tại => authen
+2.
+    * user => home | admin => admin-home
+    * chặn người dùng thường truy cập vào link admin-
+    * admin cũng có phân quyền admin

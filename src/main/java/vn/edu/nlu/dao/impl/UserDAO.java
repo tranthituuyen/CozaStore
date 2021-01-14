@@ -16,7 +16,12 @@ public class UserDAO extends AbstractDAO<User> implements IUserDAO {
 
     @Override
     public User findByUserNameAndPasswordAndStatus(String username, String password, Integer status) {
-        return null;
+        StringBuilder sql = new StringBuilder("SELECT * FROM user AS u ");
+        sql.append("INNER JOIN role AS r ON u.roleid = r.id ");
+        sql.append("WHERE username = ? AND password = ? AND status = ?");
+
+        List<User> user = query(sql.toString(), new UserMapper(), username, password, status);
+        return user.isEmpty() ? null : user.get(0);
     }
 
     @Override
