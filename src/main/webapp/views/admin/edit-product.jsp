@@ -93,12 +93,14 @@
         </div>
     </div>
 
+    <%-- set page-heading --%>
     <script type="text/javascript">
         function setPageHeading() {
             document.getElementById('page-heading').innerText = "Thông tin sản phẩm"
         }
     </script>
 
+    <%-- using ajax add, edit product --%>
     <script>
         $('#btnAddOrUpdateProduct').click(function (e) {
             console.log($('#btnAddOrUpdateProduct'))
