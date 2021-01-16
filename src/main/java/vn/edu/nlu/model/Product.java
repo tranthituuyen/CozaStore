@@ -10,6 +10,7 @@ public class Product extends AbstractModel<Product> implements Serializable {
     private String cover;
     private String description;
     private boolean status;
+    private String categoryName;
 
     // empty constructor
     public Product() {}

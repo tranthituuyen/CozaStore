@@ -12,4 +12,6 @@ public interface ICategoryService {
     Category update(Category updateCategory);
 
     void delete(int[] ids);
+
+    Category findOne(Integer id);
 }

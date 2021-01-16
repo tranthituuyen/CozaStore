@@ -22,4 +22,6 @@ public interface IProductService {
     int getTotalItems();
 
     List<Product> findAll(Pageable pageable);
+
+    Product findOne(Integer id);
 }

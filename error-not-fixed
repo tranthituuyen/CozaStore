@@ -1,0 +1,4 @@
+1. edit product:
+    - trong method findOne(), có một lỗi xảy ra khiến cho lúc truy vấn sql nó chỉ trỏ đến những sản phẩm có id
+    trùng với id của category, vượt ngoài id này sẽ bị lỗi NullPoint...Exception
+    => fix gấp!

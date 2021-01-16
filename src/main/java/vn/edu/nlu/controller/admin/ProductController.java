@@ -38,27 +38,31 @@ public class ProductController extends HttpServlet {
         category.setListResult(categoryService.findAll());
         Product product = FormUtil.toModel(Product.class, request);
         List<Product> bestSelling = productService.findBestSelling();
+        String view = "";
 
-        Pageable pageable = new PageRequest(product.getPage(), product.getMaxPageItem(),
-                new Sorter(product.getSortName(), product.getSortBy()));
+        if (product.getType().equals(SystemConstant.LIST)) {
+            Pageable pageable = new PageRequest(product.getPage(), product.getMaxPageItem(),
+                    new Sorter(product.getSortName(), product.getSortBy()));
 
-        int count = 1;
-        System.out.println("i = " + count);
-        System.out.println("page = " + pageable.getPage());
-        System.out.println("maxPageItem = " + pageable.getLimit());
-        System.out.println("sortName = " + pageable.getSorter().getSortName());
-        System.out.println("sortBy = " + pageable.getSorter().getSortBy());
-        count++;
+            product.setListResult(productService.findAll(pageable));
+            product.setTotalItem(productService.getTotalItems());
+            product.setTotalPage((int) Math.ceil((double) product.getTotalItem() / product.getMaxPageItem()));
 
-        product.setListResult(productService.findAll(pageable));
-        product.setTotalItem(productService.getTotalItems());
-        product.setTotalPage((int) Math.ceil((double) product.getTotalItem() / product.getMaxPageItem()));
+            request.setAttribute("bestSelling", bestSelling);
 
-        request.setAttribute(SystemConstant.MODEL, product);
-        request.setAttribute("bestSelling", bestSelling);
+            view = "/views/admin/product-management.jsp";
+        } else if (product.getType().equals(SystemConstant.EDIT)) {
+            if (product.getId() != null) {
+                product = productService.findOne(product.getId());
+            } else {
+
+            }
+            view = "/views/admin/edit-product.jsp";
+        }
+
         request.setAttribute("categories", category);
-
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/admin/product-management.jsp");
-        requestDispatcher.forward(request, response);
+        request.setAttribute(SystemConstant.MODEL, product);
+        RequestDispatcher rd = request.getRequestDispatcher(view);
+        rd.forward(request, response);
     }
 }

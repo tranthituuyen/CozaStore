@@ -1,6 +1,8 @@
 package vn.edu.nlu.service.impl;
 
+import vn.edu.nlu.dao.ICategoryDAO;
 import vn.edu.nlu.dao.IProductDAO;
+import vn.edu.nlu.model.Category;
 import vn.edu.nlu.model.Product;
 import vn.edu.nlu.paging.Pageable;
 import vn.edu.nlu.service.IProductService;
@@ -13,6 +15,9 @@ public class ProductService implements IProductService {
 
     @Inject
     private IProductDAO productDAO;
+
+    @Inject
+    private ICategoryDAO categoryDAO;
 
     @Override
     public List<Product> findAll() {
@@ -32,7 +37,6 @@ public class ProductService implements IProductService {
     @Override
     public Product save(Product product) {
         product.setCreatedDate(new Timestamp(System.currentTimeMillis()));
-//        product.setCreatedBy("");
         Integer newId = productDAO.save(product);
         return productDAO.findOne(newId);
     }
@@ -43,7 +47,6 @@ public class ProductService implements IProductService {
         updateProduct.setCreatedDate(oldProduct.getCreatedDate());
         updateProduct.setCreatedBy(oldProduct.getCreatedBy());
         updateProduct.setModifiedDate(new Timestamp(System.currentTimeMillis()));
-//        updateProduct.setModifiedBy("");
         productDAO.update(updateProduct);
         return productDAO.findOne(updateProduct.getId());
     }
@@ -64,6 +67,14 @@ public class ProductService implements IProductService {
     @Override
     public List<Product> findAll(Pageable pageable) {
         return productDAO.findAll(pageable);
+    }
+
+    @Override
+    public Product findOne(Integer id) {
+        Product product = productDAO.findOne(id);
+        Category category = categoryDAO.findOne(product.getId());
+        product.setCategoryCode(category.getCode());
+        return product;
     }
 
 }

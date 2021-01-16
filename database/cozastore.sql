@@ -98,21 +98,21 @@ INSERT INTO `sanpham` VALUES (9, 'seize-shirt', 'so-mi', 'seize shirt', 449000, 
 INSERT INTO `sanpham` VALUES (10, 'joy-short', 'quan-short', 'joy short', 349000, 'JoyShorts_Nau_PT_2.jpg', '', b'1', '2021-01-08 14:29:48', 'Tú Uyên', NULL, NULL);
 INSERT INTO `sanpham` VALUES (11, 'dos-shirt', 'so-mi', 'dos shirt', 399000, 'dosshirt-den-pt-1.jpg', '', b'1', '2021-01-08 14:31:12', 'Tú Uyên', NULL, NULL);
 INSERT INTO `sanpham` VALUES (12, 'morning-sweatshirt', 'so-mi', 'morning sweatshirt', 349000, 'MorningSS_Trang_PT_2.jpg', '', b'1', '2021-01-08 14:45:05', 'Tú Uyên', NULL, NULL);
-INSERT INTO `sanpham` VALUES (14, 'fluffy-blouse', 'so-mi', 'fluffy blouse', 399000, 'FluffyBlouse_Nau_PT_1.jpg', '', b'1', '2021-01-08 14:38:55', 'Tú Uyên', NULL, NULL);
-INSERT INTO `sanpham` VALUES (15, 'basic-cross-bag', 'balo-tui-xach', 'basic cross bag', 349000, 'basiccrossbag-den-pt-1.jpg', '', b'1', '2021-01-08 14:39:55', 'Tú Uyên', NULL, NULL);
-INSERT INTO `sanpham` VALUES (16, 'biker-jacket', 'ao-khoac', 'biker jacket', 1199000, 'BikerV3_Den_PT_2.jpg', '', b'1', '2021-01-08 14:40:42', 'Tú Uyên', NULL, NULL);
-INSERT INTO `sanpham` VALUES (17, 'finn-shoes', 'giay-dep', 'finn shoes', 599000, 'FINN-SHOES-01.jpg', '', b'1', '2021-01-08 14:41:24', 'Tú Uyên', NULL, NULL);
-INSERT INTO `sanpham` VALUES (18, 'gian-short', 'quan-short', 'gian short', 369000, 'gianshort5.jpg', '', b'1', '2021-01-08 14:42:12', 'Tú Uyên', NULL, NULL);
-INSERT INTO `sanpham` VALUES (19, 'gingham-shirt-her', 'so-mi', 'gingham shirt her', 399000, 'ginghamshirther-xanh-pt-1.jpg', '', b'1', '2021-01-08 14:43:06', 'Tú Uyên', NULL, NULL);
-INSERT INTO `sanpham` VALUES (20, 'sheer-shirt', 'so-mi', 'sheer shirt', 449000, 'sheershirt-xanh-pt-2.jpg', '', b'1', '2021-01-08 14:46:44', 'Tú Uyên', NULL, NULL);
-INSERT INTO `sanpham` VALUES (21, 'parcel-bag', 'balo-tui-xach', 'parcel bag', 399000, 'ParcelBag_PT_2.jpg', '', b'1', '2021-01-08 14:27:34', 'Tú Uyên', NULL, NULL);
-INSERT INTO `sanpham` VALUES (22, 'millen-shirt', 'so-mi', 'millen shirt', 419000, 'MillenShirt_Den_PT_1.jpg', '', b'1', '2021-01-08 14:44:37', 'Tú Uyên', NULL, NULL);
-INSERT INTO `sanpham` VALUES (23, 'bali-short', 'quan-short', 'bali short', 349000, 'balishorts_be_pt_1.jpg', '', b'1', '2021-01-08 14:32:21', 'Tú Uyên', NULL, NULL);
-INSERT INTO `sanpham` VALUES (24, 'joy-shoes', 'giay-dep', 'joy shoes', 520000, 'sss-joy-shoes-den.jpg', '', b'1', '2021-01-08 14:30:29', 'Tú Uyên', '2021-01-08 14:37:11', 'Tú Uyên');
-INSERT INTO `sanpham` VALUES (25, 'low-pocket-shirt', 'so-mi', 'low pocket shirt', 399000, 'lowpocketshirt7.jpg', '', b'1', '2021-01-08 14:43:44', 'Tú Uyên', NULL, NULL);
-INSERT INTO `sanpham` VALUES (26, 'sky-sweater', 'ao-thun', 'sky sweater', 549000, 'SkySweater_Xanh_PT_2.jpg', '', b'1', '2021-01-08 14:47:20', 'Tú Uyên', NULL, NULL);
-INSERT INTO `sanpham` VALUES (27, 'thames-short', 'quan-short', 'thames short', 250000, 'thames_shorts__1__min-scaled.jpg', '', b'1', '2021-01-08 14:47:57', 'Tú Uyên', NULL, NULL);
-INSERT INTO `sanpham` VALUES (28, 'win-coat', 'ao-khoac', 'win coat', 999000, 'wincoat-xam-pt-1.jpg', '', b'1', '2021-01-08 14:51:39', 'Tú Uyên', NULL, NULL);
+INSERT INTO `sanpham` VALUES (13, 'fluffy-blouse', 'so-mi', 'fluffy blouse', 399000, 'FluffyBlouse_Nau_PT_1.jpg', '', b'1', '2021-01-08 14:38:55', 'Tú Uyên', NULL, NULL);
+INSERT INTO `sanpham` VALUES (14, 'basic-cross-bag', 'balo-tui-xach', 'basic cross bag', 349000, 'basiccrossbag-den-pt-1.jpg', '', b'1', '2021-01-08 14:39:55', 'Tú Uyên', NULL, NULL);
+INSERT INTO `sanpham` VALUES (15, 'biker-jacket', 'ao-khoac', 'biker jacket', 1199000, 'BikerV3_Den_PT_2.jpg', '', b'1', '2021-01-08 14:40:42', 'Tú Uyên', NULL, NULL);
+INSERT INTO `sanpham` VALUES (16, 'finn-shoes', 'giay-dep', 'finn shoes', 599000, 'FINN-SHOES-01.jpg', '', b'1', '2021-01-08 14:41:24', 'Tú Uyên', NULL, NULL);
+INSERT INTO `sanpham` VALUES (17, 'gian-short', 'quan-short', 'gian short', 369000, 'gianshort5.jpg', '', b'1', '2021-01-08 14:42:12', 'Tú Uyên', NULL, NULL);
+INSERT INTO `sanpham` VALUES (18, 'gingham-shirt-her', 'so-mi', 'gingham shirt her', 399000, 'ginghamshirther-xanh-pt-1.jpg', '', b'1', '2021-01-08 14:43:06', 'Tú Uyên', NULL, NULL);
+INSERT INTO `sanpham` VALUES (19, 'sheer-shirt', 'so-mi', 'sheer shirt', 449000, 'sheershirt-xanh-pt-2.jpg', '', b'1', '2021-01-08 14:46:44', 'Tú Uyên', NULL, NULL);
+INSERT INTO `sanpham` VALUES (20, 'parcel-bag', 'balo-tui-xach', 'parcel bag', 399000, 'ParcelBag_PT_2.jpg', '', b'1', '2021-01-08 14:27:34', 'Tú Uyên', NULL, NULL);
+INSERT INTO `sanpham` VALUES (21, 'millen-shirt', 'so-mi', 'millen shirt', 419000, 'MillenShirt_Den_PT_1.jpg', '', b'1', '2021-01-08 14:44:37', 'Tú Uyên', NULL, NULL);
+INSERT INTO `sanpham` VALUES (22, 'bali-short', 'quan-short', 'bali short', 349000, 'balishorts_be_pt_1.jpg', '', b'1', '2021-01-08 14:32:21', 'Tú Uyên', NULL, NULL);
+INSERT INTO `sanpham` VALUES (23, 'joy-shoes', 'giay-dep', 'joy shoes', 520000, 'sss-joy-shoes-den.jpg', '', b'1', '2021-01-08 14:30:29', 'Tú Uyên', '2021-01-08 14:37:11', 'Tú Uyên');
+INSERT INTO `sanpham` VALUES (24, 'low-pocket-shirt', 'so-mi', 'low pocket shirt', 399000, 'lowpocketshirt7.jpg', '', b'1', '2021-01-08 14:43:44', 'Tú Uyên', NULL, NULL);
+INSERT INTO `sanpham` VALUES (25, 'sky-sweater', 'ao-thun', 'sky sweater', 549000, 'SkySweater_Xanh_PT_2.jpg', '', b'1', '2021-01-08 14:47:20', 'Tú Uyên', NULL, NULL);
+INSERT INTO `sanpham` VALUES (26, 'thames-short', 'quan-short', 'thames short', 250000, 'thames_shorts__1__min-scaled.jpg', '', b'1', '2021-01-08 14:47:57', 'Tú Uyên', NULL, NULL);
+INSERT INTO `sanpham` VALUES (27, 'win-coat', 'ao-khoac', 'win coat', 999000, 'wincoat-xam-pt-1.jpg', '', b'1', '2021-01-08 14:51:39', 'Tú Uyên', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for user

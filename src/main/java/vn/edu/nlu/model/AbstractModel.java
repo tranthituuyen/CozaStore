@@ -20,7 +20,7 @@ public class AbstractModel<T> {
     private String sortBy;
     private String alert;
     private String message;
-    private String type;
+    private String type = "list";
 
     public Integer getId() {
         return id;

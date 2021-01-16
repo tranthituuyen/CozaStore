@@ -17,8 +17,8 @@ public class CategoryDAO extends AbstractDAO<Category> implements ICategoryDAO {
     @Override
     public Category findOne(Integer id) {
         String sql = "SELECT * FROM danhmuc WHERE id = ?";
-        List<Category> list = query(sql, new CategoryMapper(), id);
-        return list.isEmpty() ? null : list.get(0);
+        List<Category> category = query(sql, new CategoryMapper(), id);
+        return category.isEmpty() ? null : category.get(0);
     }
 
     @Override
@@ -46,21 +46,4 @@ public class CategoryDAO extends AbstractDAO<Category> implements ICategoryDAO {
         String sql = "DELETE FROM danhmuc WHERE id = ?";
         update(sql, id);
     }
-
-    /**
-     @Override public Category findOne(long id) {
-     // sai cau query (ten column)
-     String sql = "SELECT * FROM danhmuc WHERE id = ?";
-     List<Category> category = query(sql, new CategoryMapper(), id);
-     return category.isEmpty() ? null : category.get(0);
-     }
-     */
-    /**
-     @Override public Category findOneByCode(String code) {
-     // sai cau query (ten column)
-     String sql = "SELECT * FROM danhmuc WHERE code = ?";
-     List<Category> category = query(sql, new CategoryMapper(), code);
-     return category.isEmpty() ? null : category.get(0);
-     }
-     */
 }
