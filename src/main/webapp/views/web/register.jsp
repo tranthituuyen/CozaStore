@@ -30,11 +30,11 @@
                             </div>
                             <form class="user">
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-user" id="username" placeholder="Tên đăng nhập">
+                                    <input type="text" class="form-control form-control-user" name="username" id="username" placeholder="Tên đăng nhập">
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-user" id="email" placeholder="Địa chỉ email">
+                                    <input type="text" class="form-control form-control-user"  id="email" placeholder="Địa chỉ email">
                                 </div>
 
                                 <div class="form-group">

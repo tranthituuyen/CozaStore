@@ -153,6 +153,22 @@
                 }
             });
         }
+
+        function deleteProduct(data) {
+            $.ajax({
+                url: '${APIurl}',
+                type: 'PUT',
+                contentType: 'application/json',
+                data: JSON.stringify(data),
+                dataType: 'json',
+                success: function (result) {
+                    console.log(result)
+                },
+                error: function (error) {
+                    console.log(error)
+                }
+            });
+        }
     </script>
 </body>
 </html>

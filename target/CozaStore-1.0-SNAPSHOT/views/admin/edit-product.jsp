@@ -93,12 +93,14 @@
         </div>
     </div>
 
+    <%-- set page-heading --%>
     <script type="text/javascript">
         function setPageHeading() {
             document.getElementById('page-heading').innerText = "Thông tin sản phẩm"
         }
     </script>
 
+    <%-- using ajax add, edit product --%>
     <script>
         $('#btnAddOrUpdateProduct').click(function (e) {
             console.log($('#btnAddOrUpdateProduct'))
@@ -137,6 +139,22 @@
         }
 
         function updateProduct(data) {
+            $.ajax({
+                url: '${APIurl}',
+                type: 'PUT',
+                contentType: 'application/json',
+                data: JSON.stringify(data),
+                dataType: 'json',
+                success: function (result) {
+                    console.log(result)
+                },
+                error: function (error) {
+                    console.log(error)
+                }
+            });
+        }
+
+        function deleteProduct(data) {
             $.ajax({
                 url: '${APIurl}',
                 type: 'PUT',

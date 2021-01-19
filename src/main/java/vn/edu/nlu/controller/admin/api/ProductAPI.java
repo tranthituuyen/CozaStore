@@ -30,7 +30,6 @@ public class ProductAPI extends HttpServlet {
         Product product = HttpUtil.of(request.getReader()).toModel(Product.class);
         product.setCreatedBy(((User) SessionUtil.getInstance().getValue(request, "USER")).getUsername());
         product = productService.save(product);
-        System.out.println(product);
         mapper.writeValue(response.getOutputStream(), product);
     }
 

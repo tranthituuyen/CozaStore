@@ -20,11 +20,9 @@ public class ProductDAO extends AbstractDAO<Product> implements IProductDAO {
         StringBuilder sql = new StringBuilder("SELECT * FROM sanpham");
         if (pageable.getSorter().getSortName() != null && pageable.getSorter().getSortBy() != null) {
             sql.append(" ORDER BY ").append(pageable.getSorter().getSortName()).append(" ").append(pageable.getSorter().getSortBy());
-            System.out.println("sorted!");
         }
         if (pageable.getOffset() != null && pageable.getLimit() != null) {
             sql.append(" LIMIT ").append(pageable.getOffset()).append(", ").append(pageable.getLimit());
-            System.out.println("limited!");
         }
         return query(sql.toString(), new ProductMapper());
     }
