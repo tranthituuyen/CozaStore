@@ -161,6 +161,11 @@
             </div>
 
             <div class="card-body">
+                <c:if test="${not empty messageResponse}">
+                    <div class="alert alert-${alert}">
+                            ${messageResponse}
+                    </div>
+                </c:if>
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataListProduct" width="100%" cellspacing="0">
                         <thead>
@@ -303,10 +308,10 @@
                 contentType: 'application/json',
                 data: JSON.stringify(data),
                 success: function (result) {
-                    window.location.href = '${ProductURL}?type=list&maxPageItem=20&page=1';
+                    window.location.href = '${ProductURL}?type=list&maxPageItem=20&page=1&message=delete_success';
                 },
                 error: function (error) {
-                    console.log(error)
+                    window.location.href = '${ProductURL}?type=list&maxPageItem=20&page=1&message=error_system';
                 }
             });
         }

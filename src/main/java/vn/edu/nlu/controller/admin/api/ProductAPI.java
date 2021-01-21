@@ -28,7 +28,7 @@ public class ProductAPI extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
         Product product = HttpUtil.of(request.getReader()).toModel(Product.class);
-        product.setCreatedBy(((User) SessionUtil.getInstance().getValue(request, "USER")).getUsername());
+        product.setCreatedBy(((User) SessionUtil.getInstance().getValue(request, "USER")).getFullname());
         product = productService.save(product);
         mapper.writeValue(response.getOutputStream(), product);
     }

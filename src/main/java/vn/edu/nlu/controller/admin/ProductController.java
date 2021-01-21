@@ -9,6 +9,7 @@ import vn.edu.nlu.service.ICategoryService;
 import vn.edu.nlu.service.IProductService;
 import vn.edu.nlu.sort.Sorter;
 import vn.edu.nlu.utils.FormUtil;
+import vn.edu.nlu.utils.MessageUtil;
 
 import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
@@ -54,12 +55,11 @@ public class ProductController extends HttpServlet {
         } else if (product.getType().equals(SystemConstant.EDIT)) {
             if (product.getId() != null) {
                 product = productService.findOne(product.getId());
-            } else {
-
             }
             view = "/views/admin/edit-product.jsp";
         }
 
+        MessageUtil.showMessage(request);
         request.setAttribute("categories", category);
         request.setAttribute(SystemConstant.MODEL, product);
         RequestDispatcher rd = request.getRequestDispatcher(view);

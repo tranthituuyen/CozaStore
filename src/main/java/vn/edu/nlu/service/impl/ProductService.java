@@ -72,7 +72,7 @@ public class ProductService implements IProductService {
     @Override
     public Product findOne(Integer id) {
         Product product = productDAO.findOne(id);
-        Category category = categoryDAO.findOne(product.getId());
+        Category category = categoryDAO.findOne(product.getCategoryCode());
         product.setCategoryCode(category.getCode());
         return product;
     }

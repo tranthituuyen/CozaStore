@@ -22,6 +22,14 @@ public class CategoryDAO extends AbstractDAO<Category> implements ICategoryDAO {
     }
 
     @Override
+    public Category findOne(String code) {
+        String sql = "SELECT * FROM danhmuc WHERE madanhmuc = ?";
+        List<Category> category = query(sql, new CategoryMapper(), code);
+        return category.isEmpty() ? null : category.get(0);
+    }
+
+
+    @Override
     public Integer save(Category category) {
         StringBuilder sql = new StringBuilder("INSERT INTO danhmuc (madanhmuc, tendanhmuc, hinhanh, createddate, createdby )");
         sql.append("VALUES (?, ?, ?, ?, ?)");
