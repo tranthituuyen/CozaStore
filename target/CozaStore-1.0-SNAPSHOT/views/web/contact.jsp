@@ -7,7 +7,7 @@
         <title>Liên hệ</title>
     </head>
 
-    <body class="animsition">
+    <body class="animsition" onload='document.form1.email.focus()'>
 
         <!-- Header -->
         <header class="header-v4"><%@ include file="/common/web/header.jsp"%></header>
@@ -26,20 +26,20 @@
             <div class="container">
                 <div class="flex-w flex-tr">
                     <div class="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
-                        <form>
+                        <form id="from-lienhe" action="./lien-he" name="form1"  method="post">
                             <h4 class="mtext-105 cl2 txt-center p-b-30">Đóng góp ý kiến</h4>
                             <div class="bor8 m-b-20 how-pos4-parent">
                                 <input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="text"
-                                       name="email" placeholder="Email...">
+                                       name="email" placeholder="Email..." onchange="ValidateEmail(document.form1.email)">
                                 <img class="how-pos4 pointer-none" src="<c:url value='/templates/web/icons/icon-email.png' />" alt="ICON">
                             </div>
 
                             <div class="bor8 m-b-30">
                                 <textarea class="stext-111 cl2 plh3 size-120 p-lr-28 p-tb-25"
-                                          name="msg" placeholder="Chúng tôi có thể giúp gì cho bạn?"></textarea>
+                                          name="content" placeholder="Chúng tôi có thể giúp gì cho bạn?"></textarea>
                             </div>
 
-                            <button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">Gửi</button>
+                            <button type="submit" name="submit"  onclick="return gui();" class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer" >Gửi</button>
                         </form>
                     </div>
 
@@ -84,5 +84,26 @@
                     tabindex="0">
             </iframe>
         </div>
+    <script>
+        function ValidateEmail(inputText)
+        {
+            var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            if(inputText.value.match(mailformat))
+            {
+                document.form1.email.focus();
+                return true;
+            }
+            else
+            {
+                alert("bạn nhập sai địa chỉ email, mời bạn nhập lại !");
+                document.form1.email.focus();
+                return false;
+            }
+        }
+        function gui() {
+            alert("Gửi thành công !");
+            return true;
+        }
+    </script>
     </body>
 </html>
