@@ -7,7 +7,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Chỉnh sửa thông tin</title>
+    <title>Thông tin sản phẩm</title>
 </head>
 
 <body>
@@ -125,8 +125,24 @@
 
                         <div class="form-inline mb-2">
                             <label for="status" class="d-block edit-product-label">Trạng thái:</label>
-                            <input type="text" id="status" name="status" value="${model.status}"
-                                   class="form-control flex-grow-1"/>
+                            <select name="status" id="status" class="form-control flex-grow-1">
+                                <c:if test="${empty model.id}">
+                                    <option value="true">Mở bán</option>
+                                    <option value="false">Tạm hết hàng</option>
+                                </c:if>
+                                <c:if test="${not empty model.id}">
+                                    <c:choose>
+                                        <c:when test="${model.status == false}">
+                                            <option value="false">Tạm hết hàng</option>
+                                            <option value="true">Mở bán</option>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <option value="true">Mở bán</option>
+                                            <option value="false">Tạm hết hàng</option>
+                                        </c:otherwise>
+                                    </c:choose>
+                                </c:if>
+                            </select>
                         </div>
 
                         <div class="d-flex justify-content-start">
@@ -158,7 +174,7 @@
     <script type="text/javascript">
         <%-- set page-heading --%>
 
-        function setPageHeading() {
+        window.onload = function setPageHeading() {
             document.getElementById('page-heading').innerText = "Thông tin sản phẩm"
         }
 
@@ -202,7 +218,7 @@
                     window.location.href = '${ProductURL}?type=edit&id=' + result.id + '&message=insert_success';
                 },
                 error: function (error) {
-                    window.location.href = '${ProductURL}?type=list&maxPageItem=20&page=1&message=error_system';
+                    window.location.href = '${ProductURL}?type=list&maxPageItem=10&page=1&message=error_system';
                 }
             });
         }
@@ -218,7 +234,7 @@
                     window.location.href = '${ProductURL}?type=edit&id=' + result.id + '&message=update_success';
                 },
                 error: function (error) {
-                    window.location.href = '${ProductURL}?type=list&maxPageItem=20&page=1&message=error_system';
+                    window.location.href = '${ProductURL}?type=list&maxPageItem=10&page=1&message=error_system';
                 }
             });
         }

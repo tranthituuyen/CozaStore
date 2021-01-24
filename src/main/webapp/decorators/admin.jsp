@@ -26,7 +26,7 @@
     <script src="<c:url value="/ckeditor/ckeditor.js" />" type="text/javascript"></script>
 </head>
 
-<body id="page-top" onload="setPageHeading()">
+<body id="page-top">
     <%-- wrapper --%>
     <div id="wrapper">
         <%-- sidebar --%>
