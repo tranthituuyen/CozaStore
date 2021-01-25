@@ -28,6 +28,12 @@ public class ProductDAO extends AbstractDAO<Product> implements IProductDAO {
     }
 
     @Override
+    public List<Product> findAllLimit(int from, int limit) {
+        String sql = "SELECT * FROM sanpham LIMIT ?, ?";
+        return query(sql, new ProductMapper(), from, limit);
+    }
+
+    @Override
     // method này để lọc ra 20 sản phẩm bán chạy nhất
     public List<Product> findBestSelling() {
         // nhưng tạm thời chưa có hóa đơn nào nên tạm thời lọc ra trước 20 sản phẩm thôi, phải sửa lại sau
@@ -36,9 +42,18 @@ public class ProductDAO extends AbstractDAO<Product> implements IProductDAO {
     }
 
     @Override
-    public List<Product> findBySex() {
-        String sql = "";
-        return null;
+    public List<Product> findByFilter(String param) {
+        StringBuilder sql = new StringBuilder("SELECT * FROM sanpham");
+        if (param != null) {
+            if (param.equals("thoitrangnam")) {
+                sql.append(" WHERE danhcho = 'nam' OR danhcho = 'unisex'");
+            } else if (param.equals("thoitrangnu")) {
+                sql.append(" WHERE danhcho = 'nu' OR danhcho = 'unisex'");
+            } else if (param.equals("phukien")) {
+                sql.append(" WHERE madanhmuc = 'giay-dep' OR madanhmuc = 'dong-ho' OR madanhmuc = 'balo-tui-xach'");
+            }
+        }
+        return query(sql.toString(), new ProductMapper(), param);
     }
 
     @Override
@@ -64,17 +79,17 @@ public class ProductDAO extends AbstractDAO<Product> implements IProductDAO {
     @Override
     public Integer save(Product product) {
         StringBuilder sql = new StringBuilder("INSERT INTO sanpham (masanpham, madanhmuc, tensanpham, gia, ");
-        sql.append("anhbia, mota, trangthai, createddate, createdby) ");
-        sql.append("VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        sql.append("anhbia, danhcho, mota, trangthai, createddate, createdby) ");
+        sql.append("VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
         return insert(sql.toString(), product.getCode(), product.getCategoryCode(), product.getName(), product.getPrice(),
-                product.getCover(), product.getDescription(), product.isStatus(), product.getCreatedDate(), product.getCreatedBy());
+                product.getCover(), product.getSex(), product.getDescription(), product.isStatus(), product.getCreatedDate(), product.getCreatedBy());
     }
 
     @Override
     public void update(Product updateProduct) {
         StringBuilder sql = new StringBuilder("UPDATE sanpham SET masanpham = ?, madanhmuc = ?, tensanpham = ?, gia = ?, ");
-        sql.append("anhbia = ?, mota = ?, trangthai = ?, createddate = ?, createdby = ?, modifieddate = ?, modifiedby = ? ");
+        sql.append("anhbia = ?, danhcho = ?, mota = ?, trangthai = ?, createddate = ?, createdby = ?, modifieddate = ?, modifiedby = ? ");
         sql.append("WHERE id  = ?");
 
         update(sql.toString(), updateProduct.getCode(), updateProduct.getCategoryCode(), updateProduct.getName(),

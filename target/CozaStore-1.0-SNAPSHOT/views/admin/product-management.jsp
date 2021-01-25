@@ -139,6 +139,7 @@
                                 <th class="align-middle">Mã sản phẩm</th>
                                 <th class="align-middle">Tên sản phẩm</th>
                                 <th class="align-middle">Hình ảnh</th>
+                                <th class="align-middle">Dành cho</th>
                                 <th class="align-middle">Giá</th>
                                 <th class="align-middle">Số lượng</th>
                                 <th class="align-middle">Trạng thái</th>
@@ -156,13 +157,17 @@
                                     <td class="align-middle">${item.categoryName}</td>
                                     <td class="align-middle">${item.code}</td>
                                     <td class="align-middle">
-                                        <a href="<c:url value='/san-pham?type=detail&productcode=${item.code}' />">${item.name}</a>
+                                        <a href="<c:url value='/san-pham?type=detail&productcode=${item.code}' />"
+                                           class="text-capitalize">
+                                                ${item.name}
+                                        </a>
                                     </td>
                                     <td>
                                         <div class="bg-img" style="background-image: url('<c:url
                                                 value="/images/products/${item.categoryCode}/${item.cover}"/>');">
                                         </div>
                                     </td>
+                                    <td class="align-middle text-capitalize">${item.sex}</td>
                                     <td class="align-middle">${item.price}</td>
                                         <%-- hard coding--%>
                                     <td class="align-middle">12</td>

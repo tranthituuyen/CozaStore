@@ -34,7 +34,7 @@
                 <c:url var="listURL" value="/admin-quan-ly-san-pham">
                     <c:param name="type" value="list"/>
                     <c:param name="page" value="1"/>
-                    <c:param name="maxPageItem" value="20"/>
+                    <c:param name="maxPageItem" value="10"/>
                     <c:param name="sortName" value="id"/>
                     <c:param name="sortBy" value="asc"/>
                 </c:url>
@@ -120,6 +120,12 @@
                         <div class="form-inline mb-2">
                             <label for="cover" class="d-block edit-product-label">Ảnh bìa:</label>
                             <input type="text" id="cover" name="cover" value="${model.cover}"
+                                   class="form-control flex-grow-1"/>
+                        </div>
+
+                        <div class="form-inline mb-2">
+                            <label for="sex" class="d-block edit-product-label">Dành cho:</label>
+                            <input type="text" id="sex" name="sex" value="${model.sex}"
                                    class="form-control flex-grow-1"/>
                         </div>
 

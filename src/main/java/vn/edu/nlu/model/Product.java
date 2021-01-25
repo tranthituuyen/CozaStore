@@ -8,12 +8,14 @@ public class Product extends AbstractModel<Product> implements Serializable {
     private String name;
     private int price;
     private String cover;
+    private String sex;
     private String description;
     private boolean status;
     private String categoryName;
 
     // empty constructor
-    public Product() {}
+    public Product() {
+    }
 
     public String getCode() {
         return code;
@@ -69,6 +71,14 @@ public class Product extends AbstractModel<Product> implements Serializable {
 
     public void setStatus(boolean status) {
         this.status = status;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getSex() {
+        return sex;
     }
 
     public String getCategoryName() {

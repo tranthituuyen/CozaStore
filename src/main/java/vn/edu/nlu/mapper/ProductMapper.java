@@ -16,6 +16,7 @@ public class ProductMapper implements RowMapper<Product> {
             product.setName(resultSet.getString("tensanpham"));
             product.setPrice(resultSet.getInt("gia"));
             product.setCover(resultSet.getString("anhbia"));
+            product.setSex(resultSet.getString("danhcho"));
             product.setDescription(resultSet.getString("mota"));
             product.setStatus(resultSet.getBoolean("trangthai"));
             product.setCreatedDate(resultSet.getTimestamp("createddate"));

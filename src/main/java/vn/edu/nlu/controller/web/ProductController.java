@@ -30,33 +30,44 @@ public class ProductController extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int from = 10, limit = 10;
         String view = "";
         String productCode = request.getParameter("productcode");
+        String type = request.getParameter("type");
+        String find = request.getParameter("find");
         Category categories = new Category();
         Product product = new Product();
 
-        String detail = request.getParameter("type");
-        if (detail != null && detail.equals(SystemConstant.DETAIL)) {
-            product = productService.findOne(productCode);
-            List<Product> relatedProducts = productService.findByCategoryCode(product.getCategoryCode());
+        if (type != null) {
+            switch (type) {
+                case SystemConstant.DETAIL:
+                    product = productService.findOne(productCode);
+                    List<Product> relatedProducts = productService.findByCategoryCode(product.getCategoryCode());
 
-            System.out.println(product.getDescription());
-            request.setAttribute("relatedProducts", relatedProducts);
-            view = "/views/web/product-detail.jsp";
-        } else if (detail == null || detail.equals("")) {
+                    request.setAttribute("relatedProducts", relatedProducts);
+                    view = "/views/web/product-detail.jsp";
+                    break;
+                case SystemConstant.FILTER:
+                    product.setListResult(productService.findByFilter(find));
+                    view = "/views/web/product.jsp";
+                    break;
+                case SystemConstant.LIST:
+                    String fromStr = request.getParameter("from");
+                    String limitStr = request.getParameter("to");
+                    product.setListResult(productService.findAllLimit(Integer.parseInt(fromStr), limit));
+                    view = "/views/web/product.jsp";
+                    break;
+            }
+        } else {
             categories.setListResult(categoryService.findAll());
-            product.setListResult(productService.findAll());
+            product.setListResult(productService.findAllLimit(0, from));
 
             request.setAttribute("categories", categories);
             view = "/views/web/product.jsp";
         }
 
-
-        //=============================================================================================
-
-
-
         request.setAttribute(SystemConstant.MODEL, product);
+        request.setAttribute("from", from + 10);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher(view);
         requestDispatcher.forward(request, response);
     }

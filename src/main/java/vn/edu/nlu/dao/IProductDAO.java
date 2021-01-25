@@ -11,9 +11,11 @@ public interface IProductDAO extends GenericDAO<Product> {
 
     List<Product> findAll(Pageable pageable);
 
+    List<Product> findAllLimit(int from, int limit);
+
     List<Product> findBestSelling();
 
-    List<Product> findBySex();
+    List<Product> findByFilter(String param);
 
     Product findOne(Integer id);
 

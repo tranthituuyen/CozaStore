@@ -9,7 +9,11 @@ public interface IProductService {
 
     List<Product> findAll();
 
+    List<Product> findAllLimit(int from, int limit);
+
     List<Product> findByCategoryCode(String categoryCode);
+
+    List<Product> findByFilter(String param);
 
     List<Product> findBestSelling();
 

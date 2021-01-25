@@ -25,8 +25,18 @@ public class ProductService implements IProductService {
     }
 
     @Override
+    public List<Product> findAllLimit(int from, int limit) {
+        return productDAO.findAllLimit(from, limit);
+    }
+
+    @Override
     public List<Product> findByCategoryCode(String categoryCode) {
         return productDAO.findByCategoryCode(categoryCode);
+    }
+
+    @Override
+    public List<Product> findByFilter(String param) {
+        return productDAO.findByFilter(param);
     }
 
     @Override

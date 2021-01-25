@@ -83,8 +83,8 @@ public class HomeController extends HttpServlet {
             request.setAttribute("categories", categories);
             request.setAttribute("products", product);
 
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/web/home.jsp");
-            requestDispatcher.forward(request, response);
+            RequestDispatcher rd = request.getRequestDispatcher("/views/web/home.jsp");
+            rd.forward(request, response);
         }
     }
 }
