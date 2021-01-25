@@ -208,9 +208,9 @@
             <!-- Load more -->
             <div class="flex-c-m flex-w w-full p-t-45">
                 <c:url var="listProduct" value="/san-pham">
-                    <c:param name="type" value="list" />
-                    <c:param name="from" value="${from}" />
-                    <c:param name="to" value="${from + 10}" />
+                    <c:param name="type" value="list"/>
+                    <c:param name="from" value="${from}"/>
+                    <c:param name="to" value="${from + 20}"/>
                 </c:url>
                 <a href="${listProduct}" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
                     Xem thêm
@@ -221,5 +221,15 @@
 
     <!-- xem nhanh modal -->
     <%@ include file="/common/web/quick-view.jsp" %>
+
+    <%-- script --%>
+    <script type="text/javascript">
+        window.onload = function () {
+            $('ul.main-menu li').each((_, element) => {
+                $(element).removeClass('active-menu')
+            })
+            $('li#store').addClass('active-menu');
+        }
+    </script>
 </body>
 </html>

@@ -192,4 +192,14 @@
             </div>
         </section>
     </body>
+
+    <%-- script --%>
+    <script type="text/javascript">
+        window.onload = function () {
+            $('ul.main-menu li').each((_, element) => {
+                $(element).removeClass('active-menu')
+            })
+            $('li#blog').addClass('active-menu');
+        }
+    </script>
 </html>

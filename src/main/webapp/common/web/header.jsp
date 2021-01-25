@@ -31,12 +31,12 @@
             <!-- Menu desktop -->
             <div class="menu-desktop">
                 <ul class="main-menu">
-                    <li class="active-menu"><a href="<c:url value='/trang-chu' />">Trang chủ</a></li>
-                    <li><a href="<c:url value='/san-pham' />">Cửa hàng</a></li>
-                    <li class="label1" data-label1="hot"><a href="">Xu hướng</a></li>
-                    <li><a href="<c:url value='/bai-viet' />">Blog</a></li>
-                    <li><a href="<c:url value='/ve-chung-toi' />">Về chúng tôi</a></li>
-                    <li><a href="<c:url value="/lien-he"/>">Liên hệ</a></li>
+                    <li id="home"><a href="<c:url value='/trang-chu' />">Trang chủ</a></li>
+                    <li id="store"><a href="<c:url value='/san-pham' />">Cửa hàng</a></li>
+                    <li id="hot" class="label1" data-label1="hot"><a href="<c:url value='/san-pham' />">Xu hướng</a></li>
+                    <li id="blog"><a href="<c:url value='/bai-viet' />">Blog</a></li>
+                    <li id="aboutus"><a href="<c:url value='/ve-chung-toi' />">Về chúng tôi</a></li>
+                    <li id="contact"><a href="<c:url value="/lien-he"/>">Liên hệ</a></li>
                 </ul>
             </div>
 

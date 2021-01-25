@@ -30,11 +30,12 @@ public class ProductController extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int from = 10;
         String view = "";
         String productCode = request.getParameter("productcode");
         String type = request.getParameter("type");
         String find = request.getParameter("find");
+        String fromStr = request.getParameter("from");
+        int from = 0;
         Category categories = new Category();
         Product product = new Product();
 
@@ -52,22 +53,23 @@ public class ProductController extends HttpServlet {
                     view = "/views/web/product.jsp";
                     break;
                 case SystemConstant.LIST:
-                    String fromStr = request.getParameter("from");
-                    String limitStr = request.getParameter("to");
-                    product.setListResult(productService.findAllLimit(Integer.parseInt(fromStr), 10));
+                    if (fromStr != null) {
+                        from = Integer.parseInt(fromStr);
+                    }
+                    product.setListResult(productService.findAllLimit(from, 20));
                     view = "/views/web/product.jsp";
                     break;
             }
         } else {
             categories.setListResult(categoryService.findAll());
-            product.setListResult(productService.findAllLimit(0, from));
+            product.setListResult(productService.findAllLimit(0, 20));
 
             request.setAttribute("categories", categories);
             view = "/views/web/product.jsp";
         }
 
         request.setAttribute(SystemConstant.MODEL, product);
-        request.setAttribute("from", from + 10);
+        request.setAttribute("from", from + 20);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher(view);
         requestDispatcher.forward(request, response);
     }

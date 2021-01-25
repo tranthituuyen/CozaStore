@@ -107,5 +107,15 @@
             </div>
         </div>
     </section>
+
+    <%-- script --%>
+    <script type="text/javascript">
+        window.onload = function () {
+            $('ul.main-menu li').each((_, element) => {
+                $(element).removeClass('active-menu')
+            })
+            $('li#aboutus').addClass('active-menu');
+        }
+    </script>
 </body>
 </html>
