@@ -5,6 +5,18 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Sản phẩm</title>
+
+    <style>
+        #mystyle {
+            max-height: 600px;
+            overflow: auto;
+            overflow-y: scroll;
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
 </head>
 
 <body class="animsition">
@@ -38,45 +50,22 @@
                 <div class="col-md-6 col-lg-7 p-b-30">
                     <div class="p-l-25 p-r-30 p-lr-0-lg">
                         <div class="wrap-slick3 flex-sb flex-w">
-                            <div class="wrap-slick3-dots"></div>
+                            <div class="wrap-slick3-dots" id="mystyle"></div>
                             <div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
                             <div class="slick3 gallery-lb">
-                                <%--                                    insert img of product --%>
-                                <div class="item-slick3"
-                                     data-thumb="<c:url value="/images/products/${model.categoryCode}/${model.cover}" />">
-                                    <div class="wrap-pic-w pos-relative">
-                                        <img src="<c:url value="/images/products/${model.categoryCode}/${model.cover}" />"
-                                             alt="IMG-PRODUCT">
-                                        <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04"
-                                           href="<c:url value="/images/products/${model.categoryCode}/${model.cover}" />">
-                                            <i class="fa fa-expand"></i>
-                                        </a>
+                                <%-- insert img of product --%>
+                                <c:forEach var="item" items="${model.images}">
+                                    <div class="item-slick3" data-thumb="<c:url value="/images/products/${model.categoryCode}/${item.img}" />">
+                                        <div class="wrap-pic-w pos-relative">
+                                            <img src="<c:url value="/images/products/${model.categoryCode}/${item.img}" />"
+                                                 alt="IMG-PRODUCT">
+                                            <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04"
+                                               href="<c:url value="/images/products/${model.categoryCode}/${item.img}" />">
+                                                <i class="fa fa-expand"></i>
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="item-slick3"
-                                     data-thumb="<c:url value="/images/products/${model.categoryCode}/${model.cover}" />">
-                                    <div class="wrap-pic-w pos-relative">
-                                        <img src="<c:url value="/images/products/${model.categoryCode}/${model.cover}" />"
-                                             alt="IMG-PRODUCT">
-                                        <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04"
-                                           href="<c:url value="/images/products/${model.categoryCode}/${model.cover}" />">
-                                            <i class="fa fa-expand"></i>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div class="item-slick3"
-                                     data-thumb="<c:url value="/images/products/${model.categoryCode}/${model.cover}" />">
-                                    <div class="wrap-pic-w pos-relative">
-                                        <img src="<c:url value="/images/products/${model.categoryCode}/${model.cover}" />"
-                                             alt="IMG-PRODUCT">
-                                        <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04"
-                                           href="<c:url value="/images/products/${model.categoryCode}/${model.cover}" />">
-                                            <i class="fa fa-expand"></i>
-                                        </a>
-                                    </div>
-                                </div>
+                                </c:forEach>
                             </div>
                         </div>
                     </div>
@@ -86,8 +75,8 @@
                     <div class="p-r-50 p-t-5 p-lr-0-lg">
                         <h4 class="mtext-105 cl2 js-name-detail p-b-14 text-capitalize">${model.name}</h4>
                         <span class="mtext-106 cl2">${model.price}</span>
-                        <p class="stext-102 cl3 p-t-23">Sơ mi tay ngắn luôn sang trọng, thoải mái.</p>
-                        <p class="stext-102 cl3 p-t-23">Chất vải thoáng mát và ít nhăn, thấm hút cực tốt.</p>
+                        <div class="stext-102 cl3 p-t-23">${model.description}</div>
+<%--                        <p class="stext-102 cl3 p-t-23">Chất vải thoáng mát và ít nhăn, thấm hút cực tốt.</p>--%>
                         <!--  -->
                         <div class="p-t-33">
                             <!-- bảng size -->
@@ -192,7 +181,7 @@
                         </li>
 
                         <li class="nav-item p-b-10">
-                            <a class="nav-link" data-toggle="tab" href="#reviews" role="tab">Đánh giá (1)</a>
+                            <a class="nav-link" data-toggle="tab" href="#reviews" role="tab">Hướng dẫn chọn size:</a>
                         </li>
                     </ul>
 
@@ -243,74 +232,7 @@
                         <div class="tab-pane fade" id="reviews" role="tabpanel">
                             <div class="row">
                                 <div class="col-sm-10 col-md-8 col-lg-6 m-lr-auto">
-                                    <div class="p-b-30 m-lr-15-sm">
-                                        <!-- Review -->
-                                        <div class="flex-w flex-t p-b-68">
-                                            <div class="wrap-pic-s size-109 bor0 of-hidden m-r-18 m-t-6">
-                                                <img src="<c:url value="/images/avt/avatar-01.jpg" />" alt="AVATAR">
-                                            </div>
-
-                                            <div class="size-207">
-                                                <div class="flex-w flex-sb-m p-b-17">
-                                                    <span class="mtext-107 cl2 p-r-20">Huyền Nacy</span>
-                                                    <span class="fs-18 cl11 user-select-none">
-                                                            <i class="zmdi zmdi-star"></i>
-                                                            <i class="zmdi zmdi-star"></i>
-                                                            <i class="zmdi zmdi-star"></i>
-                                                            <i class="zmdi zmdi-star"></i>
-                                                            <i class="zmdi zmdi-star-half"></i>
-													    </span>
-                                                </div>
-
-                                                <p class="stext-102 cl6">Chất liệu vải và kiểu dáng khá ổn</p>
-                                            </div>
-                                        </div>
-
-                                        <!-- Add review -->
-                                        <form class="w-full">
-                                            <h5 class="mtext-108 cl2 p-b-7">Đánh giá sản phẩm</h5>
-                                            <p class="stext-102 cl6">
-                                                Địa chỉ email của bạn sẽ không hiển thị công khai. Các trường bắt buộc
-                                                được đánh dấu *
-                                            </p>
-
-                                            <div class="flex-w flex-m p-t-50 p-b-23">
-                                                <span class="stext-102 cl3 m-r-16">Xếp hạng của bạn</span>
-                                                <span class="wrap-rating fs-18 cl11 pointer">
-                                                        <i class="item-rating pointer zmdi zmdi-star-outline"></i>
-                                                        <i class="item-rating pointer zmdi zmdi-star-outline"></i>
-                                                        <i class="item-rating pointer zmdi zmdi-star-outline"></i>
-                                                        <i class="item-rating pointer zmdi zmdi-star-outline"></i>
-                                                        <i class="item-rating pointer zmdi zmdi-star-outline"></i>
-                                                        <input class="dis-none" type="number" name="rating">
-                                                    </span>
-                                            </div>
-
-                                            <div class="row p-b-25">
-                                                <div class="col-12 p-b-5">
-                                                    <label class="stext-102 cl3" for="review">Đánh giá của bạn</label>
-                                                    <textarea class="size-110 bor8 stext-102 cl2 p-lr-20 p-tb-10"
-                                                              id="review" name="review"></textarea>
-                                                </div>
-
-                                                <div class="col-sm-6 p-b-5">
-                                                    <label class="stext-102 cl3" for="name">Tên</label>
-                                                    <input class="size-111 bor8 stext-102 cl2 p-lr-20" id="name"
-                                                           type="text" name="name">
-                                                </div>
-
-                                                <div class="col-sm-6 p-b-5">
-                                                    <label class="stext-102 cl3" for="email">Email</label>
-                                                    <input class="size-111 bor8 stext-102 cl2 p-lr-20" id="email"
-                                                           type="text" name="email">
-                                                </div>
-                                            </div>
-
-                                            <button class="flex-c-m stext-101 cl0 size-112 bg7 bor11 hov-btn3 p-lr-15 trans-04 m-b-10">
-                                                Gửi
-                                            </button>
-                                        </form>
-                                    </div>
+                                    <img src="<c:url value="/images/products/size.PNG" />" alt="hướng dẫn chọn size">
                                 </div>
                             </div>
                         </div>

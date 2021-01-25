@@ -31,7 +31,6 @@ public class ProductController extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String view = "";
-        String productCode = request.getParameter("productcode");
         String type = request.getParameter("type");
         String find = request.getParameter("find");
         String fromStr = request.getParameter("from");
@@ -42,8 +41,10 @@ public class ProductController extends HttpServlet {
         if (type != null) {
             switch (type) {
                 case SystemConstant.DETAIL:
+                    String productCode = request.getParameter("productcode");
                     product = productService.findOne(productCode);
                     List<Product> relatedProducts = productService.findByCategoryCode(product.getCategoryCode());
+                    product.setImages(productService.findAllImgOfProduct(productCode));
 
                     request.setAttribute("relatedProducts", relatedProducts);
                     view = "/views/web/product-detail.jsp";

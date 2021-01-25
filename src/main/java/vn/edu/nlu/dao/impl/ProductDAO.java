@@ -1,7 +1,9 @@
 package vn.edu.nlu.dao.impl;
 
 import vn.edu.nlu.dao.IProductDAO;
+import vn.edu.nlu.mapper.ImagesOfProductMapper;
 import vn.edu.nlu.mapper.ProductMapper;
+import vn.edu.nlu.model.ImagesOfProduct;
 import vn.edu.nlu.model.Product;
 import vn.edu.nlu.paging.Pageable;
 
@@ -78,6 +80,7 @@ public class ProductDAO extends AbstractDAO<Product> implements IProductDAO {
 
     @Override
     public Integer save(Product product) {
+        // )
         StringBuilder sql = new StringBuilder("INSERT INTO sanpham (masanpham, madanhmuc, tensanpham, gia, ");
         sql.append("anhbia, danhcho, mota, trangthai, createddate, createdby) ");
         sql.append("VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
@@ -92,10 +95,10 @@ public class ProductDAO extends AbstractDAO<Product> implements IProductDAO {
         sql.append("anhbia = ?, danhcho = ?, mota = ?, trangthai = ?, createddate = ?, createdby = ?, modifieddate = ?, modifiedby = ? ");
         sql.append("WHERE id  = ?");
 
-        update(sql.toString(), updateProduct.getCode(), updateProduct.getCategoryCode(), updateProduct.getName(),
-                updateProduct.getPrice(), updateProduct.getCover(), updateProduct.getDescription(),
-                updateProduct.isStatus(), updateProduct.getCreatedDate(), updateProduct.getCreatedBy(),
-                updateProduct.getModifiedDate(), updateProduct.getModifiedBy(), updateProduct.getId());
+        update(sql.toString(), updateProduct.getCode(), updateProduct.getCategoryCode(), updateProduct.getName(), updateProduct.getPrice(),
+                updateProduct.getCover(), updateProduct.getSex(), updateProduct.getDescription(), updateProduct.isStatus(),
+                updateProduct.getCreatedDate(), updateProduct.getCreatedBy(), updateProduct.getModifiedDate(), updateProduct.getModifiedBy(),
+                updateProduct.getId());
     }
 
     @Override
@@ -108,5 +111,11 @@ public class ProductDAO extends AbstractDAO<Product> implements IProductDAO {
     public int getTotalItem() {
         String sql = "SELECT COUNT(*) FROM sanpham";
         return count(sql);
+    }
+
+    @Override
+    public List<ImagesOfProduct> findAllImgOfProduct(String code) {
+        String sql = "SELECT * FROM `hinhanhsanpham` where masanpham = ?";
+        return query(sql, new ImagesOfProductMapper(), code);
     }
 }

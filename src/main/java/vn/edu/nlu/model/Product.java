@@ -1,6 +1,7 @@
 package vn.edu.nlu.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class Product extends AbstractModel<Product> implements Serializable {
     private String code;
@@ -12,6 +13,7 @@ public class Product extends AbstractModel<Product> implements Serializable {
     private String description;
     private boolean status;
     private String categoryName;
+    private List<ImagesOfProduct> images;
 
     // empty constructor
     public Product() {
@@ -87,5 +89,13 @@ public class Product extends AbstractModel<Product> implements Serializable {
 
     public void setCategoryName(String categoryName) {
         this.categoryName = categoryName;
+    }
+
+    public List<ImagesOfProduct> getImages() {
+        return images;
+    }
+
+    public void setImages(List<ImagesOfProduct> images) {
+        this.images = images;
     }
 }

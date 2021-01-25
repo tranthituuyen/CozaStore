@@ -77,6 +77,7 @@
             <form id="formSubmitProduct">
                 <div class="row mt-3">
                     <div class="col flex-grow-1">
+                        <%-- category --%>
                         <div class="form-inline mb-2">
                             <label for="categoryCode" class="d-block edit-product-label">Danh mục:</label>
                             <select class="form-control flex-grow-1" name="categoryCode" id="categoryCode">
@@ -99,36 +100,42 @@
                             </select>
                         </div>
 
+                        <%-- code --%>
                         <div class="form-inline mb-2">
                             <label for="code" class="d-block edit-product-label">Mã sản phẩm:</label>
                             <input type="text" id="code" name="code" value="${model.code}"
                                    class="form-control flex-grow-1"/>
                         </div>
 
+                        <%-- name --%>
                         <div class="form-inline mb-2">
                             <label for="name" class="d-block edit-product-label">Tên sản phẩm:</label>
                             <input type="text" id="name" name="name" value="${model.name}"
                                    class="form-control flex-grow-1"/>
                         </div>
 
+                        <%-- price --%>
                         <div class="form-inline mb-2">
                             <label for="price" class="d-block edit-product-label">Giá:</label>
                             <input type="text" id="price" name="price" value="${model.price}"
                                    class="form-control flex-grow-1"/>
                         </div>
 
+                        <%-- cover --%>
                         <div class="form-inline mb-2">
                             <label for="cover" class="d-block edit-product-label">Ảnh bìa:</label>
                             <input type="text" id="cover" name="cover" value="${model.cover}"
                                    class="form-control flex-grow-1"/>
                         </div>
 
+                        <%-- sex --%>
                         <div class="form-inline mb-2">
                             <label for="sex" class="d-block edit-product-label">Dành cho:</label>
                             <input type="text" id="sex" name="sex" value="${model.sex}"
                                    class="form-control flex-grow-1"/>
                         </div>
 
+                        <%-- status --%>
                         <div class="form-inline mb-2">
                             <label for="status" class="d-block edit-product-label">Trạng thái:</label>
                             <select name="status" id="status" class="form-control flex-grow-1">
@@ -151,6 +158,7 @@
                             </select>
                         </div>
 
+                        <%-- description --%>
                         <div class="d-flex justify-content-start">
                             <label class="d-block edit-product-label">Mô tả:</label>
                             <div class="flex-grow-1 mb-2">
@@ -194,7 +202,6 @@
     <%-- using ajax add, edit product --%>
     <script type="text/javascript">
         $('#btnAddOrUpdateProduct').click(function (e) {
-            // console.log($('#btnAddOrUpdateProduct'))
             e.preventDefault();
 
             // get all gias trij treen fields minfh nhajpa vao deer submit
@@ -204,6 +211,7 @@
             $.each(formData, function (i, v) {
                 data["" + v.name + ""] = v.value;
             });
+            data["description"] = editor.getData();
 
             var id = $('#id').val();
             if (id === "") {
@@ -237,6 +245,7 @@
                 data: JSON.stringify(data),
                 dataType: 'json',
                 success: function (result) {
+                    console.log(JSON.stringify(data))
                     window.location.href = '${ProductURL}?type=edit&id=' + result.id + '&message=update_success';
                 },
                 error: function (error) {

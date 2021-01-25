@@ -1,5 +1,6 @@
 package vn.edu.nlu.dao;
 
+import vn.edu.nlu.model.ImagesOfProduct;
 import vn.edu.nlu.model.Product;
 import vn.edu.nlu.paging.Pageable;
 
@@ -30,4 +31,6 @@ public interface IProductDAO extends GenericDAO<Product> {
     void delete(int id);
 
     int getTotalItem();
+
+    List<ImagesOfProduct> findAllImgOfProduct(String code);
 }

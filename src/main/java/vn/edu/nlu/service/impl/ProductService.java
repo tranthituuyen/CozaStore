@@ -3,6 +3,7 @@ package vn.edu.nlu.service.impl;
 import vn.edu.nlu.dao.ICategoryDAO;
 import vn.edu.nlu.dao.IProductDAO;
 import vn.edu.nlu.model.Category;
+import vn.edu.nlu.model.ImagesOfProduct;
 import vn.edu.nlu.model.Product;
 import vn.edu.nlu.paging.Pageable;
 import vn.edu.nlu.service.IProductService;
@@ -101,6 +102,11 @@ public class ProductService implements IProductService {
         Category category = categoryDAO.findOne(product.getCategoryCode());
         product.setCategoryName(category.getName());
         return product;
+    }
+
+    @Override
+    public List<ImagesOfProduct> findAllImgOfProduct(String code) {
+        return productDAO.findAllImgOfProduct(code);
     }
 
 }
