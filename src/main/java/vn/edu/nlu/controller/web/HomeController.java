@@ -78,7 +78,7 @@ public class HomeController extends HttpServlet {
             Product product = new Product();
 
             categories.setListResult(categoryService.findAll());
-            product.setListResult(productService.findAll());
+            product.setListResult(productService.findAllLimit(0, 8));
 
             request.setAttribute("categories", categories);
             request.setAttribute("products", product);
