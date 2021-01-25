@@ -16,4 +16,6 @@ public interface ICategoryDAO extends GenericDAO<Category> {
     void update(Category updateCategory);
 
     void delete(int id);
+
+    int countProduct(String code);
 }

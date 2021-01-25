@@ -14,4 +14,6 @@ public interface ICategoryService {
     void delete(int[] ids);
 
     Category findOne(Integer id);
+
+    int count(String code);
 }

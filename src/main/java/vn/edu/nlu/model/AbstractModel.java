@@ -13,7 +13,7 @@ public class AbstractModel<T> {
     private int[] ids;
     private List<T> listResult = new ArrayList<>();
     private Integer page = 1;
-    private Integer maxPageItem = 20;
+    private Integer maxPageItem = 10;
     private Integer totalPage;
     private Integer totalItem;
     private String sortName;

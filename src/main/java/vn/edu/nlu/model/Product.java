@@ -71,4 +71,11 @@ public class Product extends AbstractModel<Product> implements Serializable {
         this.status = status;
     }
 
+    public String getCategoryName() {
+        return categoryName;
+    }
+
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
+    }
 }

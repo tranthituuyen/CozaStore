@@ -31,7 +31,11 @@ public class ProductService implements IProductService {
 
     @Override
     public List<Product> findBestSelling() {
-        return productDAO.findBestSelling();
+        List<Product> bestSelling = productDAO.findBestSelling();
+        for (Product p : bestSelling) {
+            p.setCategoryName(categoryDAO.findOne(p.getCategoryCode()).getName());
+        }
+        return bestSelling;
     }
 
     @Override
@@ -66,7 +70,11 @@ public class ProductService implements IProductService {
 
     @Override
     public List<Product> findAll(Pageable pageable) {
-        return productDAO.findAll(pageable);
+        List<Product> products = productDAO.findAll(pageable);
+        for (Product p : products) {
+            p.setCategoryName(categoryDAO.findOne(p.getCategoryCode()).getName());
+        }
+        return products;
     }
 
     @Override

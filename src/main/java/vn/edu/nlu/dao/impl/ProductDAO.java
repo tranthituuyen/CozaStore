@@ -32,7 +32,7 @@ public class ProductDAO extends AbstractDAO<Product> implements IProductDAO {
     public List<Product> findBestSelling() {
         // nhưng tạm thời chưa có hóa đơn nào nên tạm thời lọc ra trước 20 sản phẩm thôi, phải sửa lại sau
         String sql = "SELECT * FROM sanpham LIMIT ?, ?";
-        return query(sql, new ProductMapper(), 0, 20);
+        return query(sql, new ProductMapper(), 0, 10);
     }
 
     @Override

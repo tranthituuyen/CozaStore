@@ -40,7 +40,7 @@ public class ProductAPI extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
         Product updateProduct = HttpUtil.of(request.getReader()).toModel(Product.class);
-        updateProduct.setModifiedBy(((User) SessionUtil.getInstance().getValue(request, "USER")).getUsername());
+        updateProduct.setModifiedBy(((User) SessionUtil.getInstance().getValue(request, "USER")).getFullname());
         updateProduct = productService.update(updateProduct);
         mapper.writeValue(response.getOutputStream(), updateProduct);
     }

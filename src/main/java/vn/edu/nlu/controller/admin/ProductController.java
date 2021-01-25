@@ -19,7 +19,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
 @WebServlet(urlPatterns = {"/admin-quan-ly-san-pham"}, name = "admin/product-management")
 public class ProductController extends HttpServlet {
@@ -38,30 +37,35 @@ public class ProductController extends HttpServlet {
         Category category = new Category();
         category.setListResult(categoryService.findAll());
         Product product = FormUtil.toModel(Product.class, request);
-        List<Product> bestSelling = productService.findBestSelling();
         String view = "";
 
-        if (product.getType().equals(SystemConstant.LIST)) {
-            Pageable pageable = new PageRequest(product.getPage(), product.getMaxPageItem(),
-                    new Sorter(product.getSortName(), product.getSortBy()));
+        switch (product.getType()) {
+            case SystemConstant.LIST:
+                Pageable pageable = new PageRequest(product.getPage(), product.getMaxPageItem(),
+                        new Sorter(product.getSortName(), product.getSortBy()));
 
-            product.setListResult(productService.findAll(pageable));
-            product.setTotalItem(productService.getTotalItems());
-            product.setTotalPage((int) Math.ceil((double) product.getTotalItem() / product.getMaxPageItem()));
-
-            request.setAttribute("bestSelling", bestSelling);
-
-            view = "/views/admin/product-management.jsp";
-        } else if (product.getType().equals(SystemConstant.EDIT)) {
-            if (product.getId() != null) {
-                product = productService.findOne(product.getId());
-            }
-            view = "/views/admin/edit-product.jsp";
+                product.setListResult(productService.findAll(pageable));
+                product.setTotalItem(productService.getTotalItems());
+                product.setTotalPage((int) Math.ceil((double) product.getTotalItem() / product.getMaxPageItem()));
+                request.setAttribute(SystemConstant.MODEL, product);
+                view = "/views/admin/product-management.jsp";
+                break;
+            case SystemConstant.EDIT:
+                if (product.getId() != null) {
+                    product = productService.findOne(product.getId());
+                    request.setAttribute(SystemConstant.MODEL, product);
+                }
+                view = "/views/admin/edit-product.jsp";
+                break;
+            case SystemConstant.BEST:
+                product.setListResult(productService.findBestSelling());
+                request.setAttribute(SystemConstant.MODEL, product);
+                view = "/views/admin/product-management.jsp";
+                break;
         }
 
         MessageUtil.showMessage(request);
         request.setAttribute("categories", category);
-        request.setAttribute(SystemConstant.MODEL, product);
         RequestDispatcher rd = request.getRequestDispatcher(view);
         rd.forward(request, response);
     }

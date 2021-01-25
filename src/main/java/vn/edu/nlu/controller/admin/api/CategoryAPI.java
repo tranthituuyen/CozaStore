@@ -2,8 +2,10 @@ package vn.edu.nlu.controller.admin.api;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import vn.edu.nlu.model.Category;
+import vn.edu.nlu.model.User;
 import vn.edu.nlu.service.ICategoryService;
 import vn.edu.nlu.utils.HttpUtil;
+import vn.edu.nlu.utils.SessionUtil;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -23,8 +25,8 @@ public class CategoryAPI extends HttpServlet {
         ObjectMapper mapper = new ObjectMapper();
         request.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
-        response.setCharacterEncoding("UTF-8");
         Category category = HttpUtil.of(request.getReader()).toModel(Category.class);
+        category.setCreatedBy(((User) SessionUtil.getInstance().getValue(request, "USER")).getFullname());
         category = categoryService.save(category);
         mapper.writeValue(response.getOutputStream(), category);
     }
@@ -34,8 +36,8 @@ public class CategoryAPI extends HttpServlet {
         ObjectMapper mapper = new ObjectMapper();
         request.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
-        response.setCharacterEncoding("UTF-8");
         Category updateCategory = HttpUtil.of(request.getReader()).toModel(Category.class);
+        updateCategory.setModifiedBy(((User) SessionUtil.getInstance().getValue(request, "USER")).getFullname());
         updateCategory = categoryService.update(updateCategory);
         mapper.writeValue(response.getOutputStream(), updateCategory);
     }
@@ -45,7 +47,6 @@ public class CategoryAPI extends HttpServlet {
         ObjectMapper mapper = new ObjectMapper();
         request.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
-        response.setCharacterEncoding("UTF-8");
         Category category = HttpUtil.of(request.getReader()).toModel(Category.class);
         categoryService.delete(category.getIds());
         mapper.writeValue(response.getOutputStream(), "{}");

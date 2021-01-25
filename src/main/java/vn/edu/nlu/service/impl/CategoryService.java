@@ -15,7 +15,11 @@ public class CategoryService implements ICategoryService {
 
     @Override
     public List<Category> findAll() {
-        return categoryDao.findAll();
+        List<Category> list = categoryDao.findAll();
+        for (Category c : list) {
+            c.setNumberOfProduct(categoryDao.countProduct(c.getCode()));
+        }
+        return list;
     }
 
     @Override
@@ -47,5 +51,10 @@ public class CategoryService implements ICategoryService {
     @Override
     public Category findOne(Integer id) {
         return categoryDao.findOne(id);
+    }
+
+    @Override
+    public int count(String code) {
+        return categoryDao.countProduct(code);
     }
 }

@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class Category extends AbstractModel<Category> implements Serializable {
     private String code;
     private String name;
-    private String image;
+    private int numberOfProduct;
 
     public Category() {}
 
@@ -25,11 +25,11 @@ public class Category extends AbstractModel<Category> implements Serializable {
         this.name = name;
     }
 
-    public String getImage() {
-        return image;
+    public int getNumberOfProduct() {
+        return numberOfProduct;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setNumberOfProduct(int numberOfProduct) {
+        this.numberOfProduct = numberOfProduct;
     }
 }
