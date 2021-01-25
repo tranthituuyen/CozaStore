@@ -59,11 +59,10 @@
 
                 <div class="col-md-6 col-lg-5 p-b-30">
                     <div class="p-r-50 p-t-5 p-lr-0-lg">
-                        <h4 class="mtext-105 cl2 js-name-detail p-b-14">Áo sơ mi tay ngắn</h4>
-                        <span class="mtext-106 cl2">220.000</span>
-                        <p class="stext-102 cl3 p-t-23">Sơ mi tay ngắn luôn sang trọng, thoải mái.</p>
-                        <p class="stext-102 cl3 p-t-23">Chất vải thoáng mát và ít nhăn, thấm hút cực tốt.</p>
-
+<%--                        <h4 class="mtext-105 cl2 js-name-detail p-b-14">${relatedProducts.name}</h4>--%>
+                        <%--                        <span class="mtext-106 cl2">${relatedProducts.price}</span>--%>
+                        <%--                        <p class="stext-102 cl3 p-t-23">Sơ mi tay ngắn luôn sang trọng, thoải mái.</p>--%>
+                        <%--                        <p class="stext-102 cl3 p-t-23">Chất vải thoáng mát và ít nhăn, thấm hút cực tốt.</p>--%>
                         <!--  -->
                         <div class="p-t-33">
                             <div class="flex-w flex-r-m p-b-10">

@@ -13,7 +13,11 @@ public interface IProductDAO extends GenericDAO<Product> {
 
     List<Product> findBestSelling();
 
+    List<Product> findBySex();
+
     Product findOne(Integer id);
+
+    Product findOne(String code);
 
     List<Product> findByCategoryCode(String categoryId);
 

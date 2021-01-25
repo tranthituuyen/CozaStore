@@ -24,4 +24,6 @@ public interface IProductService {
     List<Product> findAll(Pageable pageable);
 
     Product findOne(Integer id);
+
+    Product findOne(String code);
 }

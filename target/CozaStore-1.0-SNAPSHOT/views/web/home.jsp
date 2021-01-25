@@ -342,7 +342,7 @@
 
                                 <div class="block2-txt flex-w flex-t p-t-14">
                                     <div class="block2-txt-child1 flex-col-l ">
-                                        <a href="<c:url value='/views/web/product-detail.jsp' />"
+                                        <a href="<c:url value='/san-pham?type=detail&productcode=${item.code}' />"
                                            class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6 text-uppercase">${item.name}
                                         </a>
                                         <span class="stext-105 cl3">${item.price}</span>

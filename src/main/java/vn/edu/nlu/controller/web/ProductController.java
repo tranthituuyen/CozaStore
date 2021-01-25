@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(urlPatterns = {"/san-pham"}, name = "product-controller")
 public class ProductController extends HttpServlet {
@@ -29,15 +30,34 @@ public class ProductController extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Product product = new Product();
-        product.setListResult(productService.findAll());
-        request.setAttribute("products", product);
-
+        String view = "";
+        String productCode = request.getParameter("productcode");
         Category categories = new Category();
-        categories.setListResult(categoryService.findAll());
-        request.setAttribute("categories", categories);
+        Product product = new Product();
 
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/web/product.jsp");
+        String detail = request.getParameter("type");
+        if (detail != null && detail.equals(SystemConstant.DETAIL)) {
+            product = productService.findOne(productCode);
+            List<Product> relatedProducts = productService.findByCategoryCode(product.getCategoryCode());
+
+            System.out.println(product.getDescription());
+            request.setAttribute("relatedProducts", relatedProducts);
+            view = "/views/web/product-detail.jsp";
+        } else if (detail == null || detail.equals("")) {
+            categories.setListResult(categoryService.findAll());
+            product.setListResult(productService.findAll());
+
+            request.setAttribute("categories", categories);
+            view = "/views/web/product.jsp";
+        }
+
+
+        //=============================================================================================
+
+
+
+        request.setAttribute(SystemConstant.MODEL, product);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher(view);
         requestDispatcher.forward(request, response);
     }
 }

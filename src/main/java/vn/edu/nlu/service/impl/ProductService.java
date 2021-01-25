@@ -85,4 +85,12 @@ public class ProductService implements IProductService {
         return product;
     }
 
+    @Override
+    public Product findOne(String code) {
+        Product product = productDAO.findOne(code);
+        Category category = categoryDAO.findOne(product.getCategoryCode());
+        product.setCategoryName(category.getName());
+        return product;
+    }
+
 }

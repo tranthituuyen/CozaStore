@@ -156,7 +156,7 @@
                                     <td class="align-middle">${item.categoryName}</td>
                                     <td class="align-middle">${item.code}</td>
                                     <td class="align-middle">
-                                        <a href="<c:url value='/views/web/product-detail.jsp' />">${item.name}</a>
+                                        <a href="<c:url value='/san-pham?type=detail&productcode=${item.code}' />">${item.name}</a>
                                     </td>
                                     <td>
                                         <div class="bg-img" style="background-image: url('<c:url
