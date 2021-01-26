@@ -12,20 +12,11 @@ public class DetailProductMapper implements RowMapper<DetailProduct> {
         DetailProduct product = new DetailProduct();
         try {
             product.setId(resultSet.getInt("id"));
-            product.setMaSanPham(resultSet.getString("masanpham"));
-            product.setThuongHieu(resultSet.getString("thuonghieu"));
-            product.setLoaiTrangPhuc(resultSet.getString("loaitrangphuc"));
-            product.setPhongCach(resultSet.getString("phongcach"));
+            product.setCode(resultSet.getString("masanpham"));
             product.setSize(resultSet.getString("size"));
             product.setMau(resultSet.getString("mau"));
-            product.setChatLieu(resultSet.getString("chatlieu"));
-            product.setHoaTiet(resultSet.getString("hoatiet"));
-            product.setKieuDang(resultSet.getString("kieudang"));
-            product.setCoAo(resultSet.getString("coao"));
-            product.setTuiAo(resultSet.getString("tuiao"));
-            product.setTayAo(resultSet.getString("tayao"));
-            product.setCachGiat(resultSet.getString("cachgiat"));
-            product.setTrangThai(resultSet.getBoolean("trangthai"));
+            product.setTrangthai(resultSet.getBoolean("trangthai"));
+            product.setThongtinchitiet(resultSet.getString("thongtinchitiet"));
 
             product.setCreatedDate(resultSet.getTimestamp("createddate"));
             product.setCreatedBy(resultSet.getString("createdby"));

@@ -1,10 +1,13 @@
 package vn.edu.nlu.dao.impl;
 
 import vn.edu.nlu.dao.IProductDAO;
+import vn.edu.nlu.mapper.DetailProductMapper;
 import vn.edu.nlu.mapper.ImagesOfProductMapper;
 import vn.edu.nlu.mapper.ProductMapper;
+import vn.edu.nlu.model.DetailProduct;
 import vn.edu.nlu.model.ImagesOfProduct;
 import vn.edu.nlu.model.Product;
+import vn.edu.nlu.model.Size;
 import vn.edu.nlu.paging.Pageable;
 
 import java.util.List;
@@ -117,5 +120,17 @@ public class ProductDAO extends AbstractDAO<Product> implements IProductDAO {
     public List<ImagesOfProduct> findAllImgOfProduct(String code) {
         String sql = "SELECT * FROM `hinhanhsanpham` where masanpham = ?";
         return query(sql, new ImagesOfProductMapper(), code);
+    }
+
+    @Override
+    public List<Size> findAllSizeOfProduct(String code) {
+        String sql = "";
+        return null;
+    }
+
+    @Override
+    public List<DetailProduct> findAllDetailOfProduct(String masanpham) {
+        String sql = "SELECT * FROM chitietsanpham WHERE masanpham = ?";
+        return query(sql, new DetailProductMapper(), masanpham);
     }
 }

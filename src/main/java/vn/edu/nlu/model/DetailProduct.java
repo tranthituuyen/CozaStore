@@ -1,35 +1,14 @@
 package vn.edu.nlu.model;
 
 public class DetailProduct extends AbstractModel<DetailProduct> {
-    private String maSanPham;
-    private String thuongHieu;
-    private String loaiTrangPhuc;
-    private String phongCach;
+    private String code;
     private String size;
     private String mau;
-    private String chatLieu;
-    private String hoaTiet;
-    private String kieuDang;
-    private String coAo;
-    private String tuiAo;
-    private String tayAo;
-    private String cachGiat;
-    private boolean trangThai;
+    private boolean trangthai;
+    private String thongtinchitiet;
 
-    public String getMaSanPham() {
-        return maSanPham;
-    }
-
-    public String getThuongHieu() {
-        return thuongHieu;
-    }
-
-    public String getLoaiTrangPhuc() {
-        return loaiTrangPhuc;
-    }
-
-    public String getPhongCach() {
-        return phongCach;
+    public String getCode() {
+        return code;
     }
 
     public String getSize() {
@@ -40,52 +19,12 @@ public class DetailProduct extends AbstractModel<DetailProduct> {
         return mau;
     }
 
-    public String getChatLieu() {
-        return chatLieu;
+    public boolean isTrangthai() {
+        return trangthai;
     }
 
-    public String getHoaTiet() {
-        return hoaTiet;
-    }
-
-    public String getKieuDang() {
-        return kieuDang;
-    }
-
-    public String getCoAo() {
-        return coAo;
-    }
-
-    public String getTuiAo() {
-        return tuiAo;
-    }
-
-    public String getTayAo() {
-        return tayAo;
-    }
-
-    public String getCachGiat() {
-        return cachGiat;
-    }
-
-    public boolean isTrangThai() {
-        return trangThai;
-    }
-
-    public void setMaSanPham(String maSanPham) {
-        this.maSanPham = maSanPham;
-    }
-
-    public void setThuongHieu(String thuongHieu) {
-        this.thuongHieu = thuongHieu;
-    }
-
-    public void setLoaiTrangPhuc(String loaiTrangPhuc) {
-        this.loaiTrangPhuc = loaiTrangPhuc;
-    }
-
-    public void setPhongCach(String phongCach) {
-        this.phongCach = phongCach;
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public void setSize(String size) {
@@ -96,35 +35,15 @@ public class DetailProduct extends AbstractModel<DetailProduct> {
         this.mau = mau;
     }
 
-    public void setChatLieu(String chatLieu) {
-        this.chatLieu = chatLieu;
+    public void setTrangthai(boolean trangthai) {
+        this.trangthai = trangthai;
     }
 
-    public void setHoaTiet(String hoaTiet) {
-        this.hoaTiet = hoaTiet;
+    public String getThongtinchitiet() {
+        return thongtinchitiet;
     }
 
-    public void setKieuDang(String kieuDang) {
-        this.kieuDang = kieuDang;
-    }
-
-    public void setCoAo(String coAo) {
-        this.coAo = coAo;
-    }
-
-    public void setTuiAo(String tuiAo) {
-        this.tuiAo = tuiAo;
-    }
-
-    public void setTayAo(String tayAo) {
-        this.tayAo = tayAo;
-    }
-
-    public void setCachGiat(String cachGiat) {
-        this.cachGiat = cachGiat;
-    }
-
-    public void setTrangThai(boolean trangThai) {
-        this.trangThai = trangThai;
+    public void setThongtinchitiet(String thongtinchitiet) {
+        this.thongtinchitiet = thongtinchitiet;
     }
 }

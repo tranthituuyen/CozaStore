@@ -5,18 +5,6 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Sản phẩm</title>
-
-    <style>
-        #mystyle {
-            max-height: 600px;
-            overflow: auto;
-            overflow-y: scroll;
-        }
-
-        ::-webkit-scrollbar {
-            display: none;
-        }
-    </style>
 </head>
 
 <body class="animsition">
@@ -50,12 +38,13 @@
                 <div class="col-md-6 col-lg-7 p-b-30">
                     <div class="p-l-25 p-r-30 p-lr-0-lg">
                         <div class="wrap-slick3 flex-sb flex-w">
-                            <div class="wrap-slick3-dots" id="mystyle"></div>
+                            <div class="wrap-slick3-dots"></div>
                             <div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
                             <div class="slick3 gallery-lb">
                                 <%-- insert img of product --%>
                                 <c:forEach var="item" items="${model.images}">
-                                    <div class="item-slick3" data-thumb="<c:url value="/images/products/${model.categoryCode}/${item.img}" />">
+                                    <div class="item-slick3"
+                                         data-thumb="<c:url value="/images/products/${model.categoryCode}/${item.img}" />">
                                         <div class="wrap-pic-w pos-relative">
                                             <img src="<c:url value="/images/products/${model.categoryCode}/${item.img}" />"
                                                  alt="IMG-PRODUCT">
@@ -76,7 +65,7 @@
                         <h4 class="mtext-105 cl2 js-name-detail p-b-14 text-capitalize">${model.name}</h4>
                         <span class="mtext-106 cl2">${model.price}</span>
                         <div class="stext-102 cl3 p-t-23">${model.description}</div>
-<%--                        <p class="stext-102 cl3 p-t-23">Chất vải thoáng mát và ít nhăn, thấm hút cực tốt.</p>--%>
+                        <%--                        <p class="stext-102 cl3 p-t-23">Chất vải thoáng mát và ít nhăn, thấm hút cực tốt.</p>--%>
                         <!--  -->
                         <div class="p-t-33">
                             <!-- bảng size -->

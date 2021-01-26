@@ -14,6 +14,8 @@ public class Product extends AbstractModel<Product> implements Serializable {
     private boolean status;
     private String categoryName;
     private List<ImagesOfProduct> images;
+    private List<DetailProduct> details;
+    private List<Size> sizes;
 
     // empty constructor
     public Product() {
@@ -97,5 +99,21 @@ public class Product extends AbstractModel<Product> implements Serializable {
 
     public void setImages(List<ImagesOfProduct> images) {
         this.images = images;
+    }
+
+    public List<DetailProduct> getDetails() {
+        return details;
+    }
+
+    public void setDetails(List<DetailProduct> details) {
+        this.details = details;
+    }
+
+    public List<Size> getSizes() {
+        return sizes;
+    }
+
+    public void setSizes(List<Size> sizes) {
+        this.sizes = sizes;
     }
 }

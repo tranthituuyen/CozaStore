@@ -1,5 +1,6 @@
 package vn.edu.nlu.service;
 
+import vn.edu.nlu.model.DetailProduct;
 import vn.edu.nlu.model.ImagesOfProduct;
 import vn.edu.nlu.model.Product;
 import vn.edu.nlu.paging.Pageable;
@@ -33,4 +34,6 @@ public interface IProductService {
     Product findOne(String code);
 
     List<ImagesOfProduct> findAllImgOfProduct(String code);
+
+    List<DetailProduct> findAllDetailOfProduct(String masanpham);
 }

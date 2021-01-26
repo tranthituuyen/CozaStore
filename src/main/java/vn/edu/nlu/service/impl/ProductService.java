@@ -1,8 +1,10 @@
 package vn.edu.nlu.service.impl;
 
 import vn.edu.nlu.dao.ICategoryDAO;
+import vn.edu.nlu.dao.IDetailProductDAO;
 import vn.edu.nlu.dao.IProductDAO;
 import vn.edu.nlu.model.Category;
+import vn.edu.nlu.model.DetailProduct;
 import vn.edu.nlu.model.ImagesOfProduct;
 import vn.edu.nlu.model.Product;
 import vn.edu.nlu.paging.Pageable;
@@ -19,6 +21,9 @@ public class ProductService implements IProductService {
 
     @Inject
     private ICategoryDAO categoryDAO;
+
+    @Inject
+    private IDetailProductDAO detailProductDAO;
 
     @Override
     public List<Product> findAll() {
@@ -109,4 +114,9 @@ public class ProductService implements IProductService {
         return productDAO.findAllImgOfProduct(code);
     }
 
+
+    @Override
+    public List<DetailProduct> findAllDetailOfProduct(String masanpham) {
+        return productDAO.findAllDetailOfProduct(masanpham);
+    }
 }
