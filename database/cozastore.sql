@@ -11,7 +11,7 @@
  Target Server Version : 100417
  File Encoding         : 65001
 
- Date: 25/01/2021 22:00:38
+ Date: 26/01/2021 10:38:46
 */
 
 SET NAMES utf8mb4;
@@ -24,27 +24,27 @@ DROP TABLE IF EXISTS `chitietsanpham`;
 CREATE TABLE `chitietsanpham`  (
   `id` int NOT NULL AUTO_INCREMENT,
   `masanpham` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `thuonghieu` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `loaitrangphuc` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `phongcach` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `size` varchar(8) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `mau` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `chatlieu` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `hoatiet` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `kieudang` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `coao` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `tuiao` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `tayao` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `cachgiat` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `size` varchar(8) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `mau` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `thongtinchitiet` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `trangthai` bit(1) NULL DEFAULT b'1',
+  `createddate` timestamp NULL DEFAULT NULL,
+  `createdby` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `modifieddate` timestamp NULL DEFAULT NULL,
+  `modifiedby` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `ctsp_fk_msp`(`masanpham`) USING BTREE,
   CONSTRAINT `ctsp_fk_msp` FOREIGN KEY (`masanpham`) REFERENCES `sanpham` (`masanpham`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of chitietsanpham
 -- ----------------------------
+INSERT INTO `chitietsanpham` VALUES (3, 'joy-short', 'm', 'xanh lá', '<p>:)</p>\n', b'1', '2021-01-26 03:55:15', 'Tú Uyên', NULL, NULL);
+INSERT INTO `chitietsanpham` VALUES (4, 'joy-short', 'xl', 'đỏ', '<p>mở b&aacute;n lại c&aacute;i quừng m&agrave;o đỏ ời nha</p>\n', b'1', '2021-01-26 05:08:32', 'Tú Uyên', '2021-01-26 10:23:51', 'Tú Uyên');
+INSERT INTO `chitietsanpham` VALUES (5, 'joy-short', 'm', 'tím', '<p>m&agrave;u t&iacute;m &oacute;</p>\n', b'1', '2021-01-26 10:09:02', 'Tú Uyên', '2021-01-26 10:31:42', 'Tú Uyên');
+INSERT INTO `chitietsanpham` VALUES (6, 'joy-short', 'm', 'khỉ', '<p>hahaha</p>\n', b'1', '2021-01-26 10:32:18', 'Tú Uyên', NULL, NULL);
+INSERT INTO `chitietsanpham` VALUES (7, 'sheer-blouse', 'm', 'tism limj simf sim', '<p>qu&aacute; chời &aacute;o đẹp</p>\n', b'1', '2021-01-26 10:33:01', 'Tú Uyên', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for danhmuc
@@ -74,9 +74,6 @@ INSERT INTO `danhmuc` VALUES (5, 'quan-short', 'Quần short', '', '2021-01-08 0
 INSERT INTO `danhmuc` VALUES (6, 'giay-dep', 'Giày dép', '', '2021-01-08 04:21:34', 'Tú Uyên', NULL, NULL);
 INSERT INTO `danhmuc` VALUES (7, 'dong-ho', 'Đồng hồ', '', '2021-01-08 04:21:48', 'Tú Uyên', NULL, NULL);
 INSERT INTO `danhmuc` VALUES (8, 'balo-tui-xach', 'Balo - Túi xách', '', '2021-01-08 04:22:08', 'Tú Uyên', '2021-01-08 14:04:16', 'Tú Uyên');
-INSERT INTO `danhmuc` VALUES (10, 'test', 'Test Category', NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `danhmuc` VALUES (11, 'test1', 'test teets', NULL, '2021-01-25 14:53:00', 'Tú Uyên', '2021-01-25 17:50:35', '');
-INSERT INTO `danhmuc` VALUES (12, 'test10', 'danh mục mới', NULL, '2021-01-25 16:33:29', 'Tú Uyên', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for hinhanhsanpham
@@ -178,21 +175,21 @@ CREATE TABLE `sanpham`  (
   INDEX `fk_sp_mdm`(`madanhmuc`) USING BTREE,
   INDEX `masanpham`(`masanpham`) USING BTREE,
   CONSTRAINT `fk_sp_mdm` FOREIGN KEY (`madanhmuc`) REFERENCES `danhmuc` (`madanhmuc`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 31 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 34 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sanpham
 -- ----------------------------
 INSERT INTO `sanpham` VALUES (1, 'papa-jacket', 'ao-khoac', 'papa jacket', 899000, 'papajacket-nau-pt-1.jpg', 'nam', '', b'1', '2021-01-08 13:09:46', 'Tú Uyên', '2021-01-08 14:15:15', 'Tú Uyên');
 INSERT INTO `sanpham` VALUES (2, 'collar-shirt', 'so-mi', 'Áo Sơ Mi Nam SSSTUTTER Collar Shirt', 419000, 'CollarShirt_Trang_LB_1.jpg', 'nam', '<p>Chất liệu: Vải Bamboo kh&ocirc;ng g&acirc;y hại đến m&ocirc;i trường. Chống nhăn, thấm h&uacute;t vượt trội hơn chất liệu cotton th&ocirc;ng thường đến 60%.</p>\n\n<p>Kiểu d&aacute;ng: Loại sơ mi cổ đức đơn giản nhưng kh&ocirc;ng bao giờ sợ bị lỗi mốt.</p>\n\n<p>M&agrave;u sắc: Hai m&agrave;u Đen/Trắng - tone m&agrave;u ph&ugrave; hợp với mọi tone da. Ứng dụng đa dạng cho mọi phong c&aacute;ch, mọi ho&agrave;n cảnh.</p>\n', b'1', '2021-01-08 13:33:28', 'Tú Uyên', '2021-01-25 19:34:00', 'Tú Uyên');
-INSERT INTO `sanpham` VALUES (3, 'bus-long-tee', 'ao-thun', 'bus long tee', 299000, 'buslongtee-xanh-pt-2.jpg', 'nam', '<p>Chất liệu: Jean Cotton</p>\n\n<p>Th&agrave;nh phần: 99% cotton 1% spandex</p>\n\n<p>In logo Vạn Xu&acirc;n Kiến Quốc</p>\n', b'1', '2021-01-08 14:23:03', 'Tú Uyên', '2021-01-25 18:03:44', 'Tú Uyên');
+INSERT INTO `sanpham` VALUES (3, 'bus-long-tee', 'ao-thun', 'bus long tee', 299000, 'buslongtee-xanh-pt-2.jpg', 'nam', '<p>Chất liệu: Jean Cotton</p>\n\n<p>Th&agrave;nh phần: 99% cotton 1% spandex</p>\n\n<p>In logo Vạn Xu&acirc;n Kiến Quốc</p>\n', b'0', '2021-01-08 14:23:03', 'Tú Uyên', '2021-01-26 05:52:46', 'Tú Uyên');
 INSERT INTO `sanpham` VALUES (4, 'fall-shirt', 'so-mi', 'fall shirt', 449000, 'fallshirt-be-pt-1.jpg', 'nam', '', b'1', '2021-01-08 14:24:43', 'Tú Uyên', NULL, NULL);
 INSERT INTO `sanpham` VALUES (5, 'great-life-shirt', 'so-mi', 'great life shirt', 299000, 'great-life-shirt.jpg', 'nam', '', b'1', '2021-01-08 14:25:36', 'Tú Uyên', NULL, NULL);
 INSERT INTO `sanpham` VALUES (6, 'sheer-blouse', 'so-mi', 'Áo Sheer Nữ SSSTUTTER Sheer Blouse', 399000, 'sheerblouse-cam-pt-1.jpg', 'nữ', '<p>Chất liệu Linen mềm mại đem lại cảm gi&aacute;c thoải m&aacute;i kh&ocirc;ng lo cộm ngứa d&ugrave; mặc nhiều lớp &aacute;o.</p>\n\n<p>Đặc biệt thiết kế cổ &aacute;o c&aacute;ch điệu, tinh tế gi&uacute;p diện mạo của c&aacute;c c&ocirc; g&aacute;i trở n&ecirc;n v&ocirc; c&ugrave;ng Duy&ecirc;n d&aacute;ng, Thanh lịch.</p>\n', b'1', '2021-01-08 14:26:39', 'Tú Uyên', '2021-01-25 21:33:16', 'Tú Uyên');
 INSERT INTO `sanpham` VALUES (7, 'match-shirt', 'so-mi', 'match shirt', 499000, 'MatchShirt_Den_LB_1.jpg', 'nam', '', b'1', '2021-01-08 14:44:12', 'Tú Uyên', NULL, NULL);
 INSERT INTO `sanpham` VALUES (8, 'city-sweatshirt', 'ao-thun', 'city sweatshirt', 399000, 'CitySS_Be_PT_1.jpg', 'unisex', '', b'1', '2021-01-08 14:28:57', 'Tú Uyên', NULL, NULL);
 INSERT INTO `sanpham` VALUES (9, 'seize-shirt', 'so-mi', 'Áo Sơ Mi Nam SSSTUTTER Seize Shirt', 449000, 'seizeshirt-xanh-pt-3.jpg', 'nam', '<p>Một chiếc &aacute;o đa năng với thiết kế t&uacute;i hộp cực kỳ tiện dụng, hỗ trợ tối đa c&aacute;c ch&agrave;ng trai trong việc cất giấu những vật dụng c&aacute; nh&acirc;n quan trọng của m&igrave;nh.</p>\n\n<p>Seize Shirt được cẩn thận lựa chọn chất vải H&agrave;n Cao cấp cực kỳ Mềm mại, đem đến cảm gi&aacute;c Thoải M&aacute;i tuyệt đối cho người mặc.</p>\n', b'1', '2021-01-08 14:46:10', 'Tú Uyên', '2021-01-25 21:42:57', 'Tú Uyên');
-INSERT INTO `sanpham` VALUES (10, 'joy-short', 'quan-short', 'Quần Shorts Nữ SSSTUTTER Joy Shorts', 349000, 'JoyShorts_Nau_PT_2.jpg', 'nữ', '<p>Quần Shorts l&agrave; một item m&agrave; kh&ocirc;ng c&ocirc; g&aacute;i n&agrave;o c&oacute; thể thiếu trong tủ đồ của m&igrave;nh.</p>\n\n<p>Việc chọn cho m&igrave;nh một chiếc quần Shorts c&oacute; độ d&agrave;i ph&ugrave; hợp để đồng h&agrave;nh m&ugrave;a tựu trường m&agrave; vẫn giữ được n&eacute;t năng động, đ&aacute;ng y&ecirc;u quả thực rất kh&oacute;.</p>\n\n<p>Vậy n&ecirc;n Joy Shorts đ&atilde; ra đời để gi&uacute;p cho c&aacute;c c&ocirc; g&aacute;i của SSS. kh&ocirc;ng c&ograve;n phải đắn đo mỗi khi chọn quần Shorts ph&ugrave; hợp.</p>\n\n<p>Với thiết kế phần ống quần d&aacute;ng chữ A l&agrave;m tone l&ecirc;n đ&ocirc;i ch&acirc;n thon gọn m&agrave; vẫn giữ được sự lịch sự bởi độ d&agrave;i ph&ugrave; hợp c&ugrave;ng với nh&oacute;m m&agrave;u dễ phối sẽ đ&acirc;y chắc chắn l&agrave; item gi&uacute;p c&aacute;c c&ocirc; n&agrave;ng tiết kiệm được thời gian mỗi khi chọn đồ đấy!</p>\n', b'1', '2021-01-08 14:29:48', 'Tú Uyên', '2021-01-25 21:49:00', 'Tú Uyên');
+INSERT INTO `sanpham` VALUES (10, 'joy-short', 'quan-short', 'Quần Shorts Nữ SSSTUTTER Joy Shorts', 349000, 'JoyShorts_Nau_PT_2.jpg', 'nữ', '<p>Quần Shorts l&agrave; một item m&agrave; kh&ocirc;ng c&ocirc; g&aacute;i n&agrave;o c&oacute; thể thiếu trong tủ đồ của m&igrave;nh.</p>\n\n<p>Việc chọn cho m&igrave;nh một chiếc quần Shorts c&oacute; độ d&agrave;i ph&ugrave; hợp để đồng h&agrave;nh m&ugrave;a tựu trường m&agrave; vẫn giữ được n&eacute;t năng động, đ&aacute;ng y&ecirc;u quả thực rất kh&oacute;.</p>\n\n<p>Vậy n&ecirc;n Joy Shorts đ&atilde; ra đời để gi&uacute;p cho c&aacute;c c&ocirc; g&aacute;i của SSS. kh&ocirc;ng c&ograve;n phải đắn đo mỗi khi chọn quần Shorts ph&ugrave; hợp.</p>\n\n<p>Với thiết kế phần ống quần d&aacute;ng chữ A l&agrave;m tone l&ecirc;n đ&ocirc;i ch&acirc;n thon gọn m&agrave; vẫn giữ được sự lịch sự bởi độ d&agrave;i ph&ugrave; hợp c&ugrave;ng với nh&oacute;m m&agrave;u dễ phối sẽ đ&acirc;y chắc chắn l&agrave; item gi&uacute;p c&aacute;c c&ocirc; n&agrave;ng tiết kiệm được thời gian mỗi khi chọn đồ đấy!</p>\n', b'0', '2021-01-08 14:29:48', 'Tú Uyên', '2021-01-26 10:29:50', 'Tú Uyên');
 INSERT INTO `sanpham` VALUES (11, 'dos-shirt', 'so-mi', 'Áo Sơ Mi Nữ SSSTUTTER Dos Shirt', 399000, 'dosshirt-den-pt-1.jpg', 'nữ', '<p>Chiếc &aacute;o của những ng&agrave;y bận rộn. Dos Shirt sử dụng loại vải cao cấp v&ocirc; c&ugrave;ng mềm mại nhưng được tối ưu khả năng chống nhăn.</p>\n\n<p>Kết hợp c&ugrave;ng thiết kế lạ mắt 2 h&agrave;ng khuy tạo n&ecirc;n điểm nhấn thu h&uacute;t cho mọi c&ocirc; g&aacute;i.</p>\n\n<p>Đặc biệt tone m&agrave;u xanh cổ vịt, m&agrave;u của năm 2020 tạo n&ecirc;n n&eacute;t độc đ&aacute;o, kh&ocirc;ng hề k&eacute;n người mặc.</p>\n', b'1', '2021-01-08 14:31:12', 'Tú Uyên', '2021-01-25 21:50:33', 'Tú Uyên');
 INSERT INTO `sanpham` VALUES (12, 'morning-sweatshirt', 'ao-thun', 'Áo Nỉ Dài Tay Nam SSSTUTTER Morning Sweatshirt', 349000, 'MorningSS_Trang_PT_2.jpg', 'nam', '<p>&nbsp;</p>\n\n<p>Lại l&agrave; một thiết kế Sweatshirt kh&aacute;c đến từ SSS, nhưng với Morning Sweatshirt bạn sẽ c&oacute; một vẻ ngo&agrave;i Trẻ Trung v&agrave; c&oacute; phần Nổi Bật hơn nhiều.</p>\n\n<p>Thiết kế cổ t&agrave;u lạ mắt, phần cổ phối m&agrave;u tinh tế sẽ gi&uacute;p bạn lu&ocirc;n Cuốn H&uacute;t, Bảnh bao ghi trọn điểm trong mắt người đối diện đ&oacute;.</p>\n', b'1', '2021-01-08 14:45:05', 'Tú Uyên', '2021-01-25 21:51:51', 'Tú Uyên');
 INSERT INTO `sanpham` VALUES (13, 'fluffy-blouse', 'so-mi', 'Áo Dài Tay Nữ SSSTUTTER Fluffy Blouse', 399000, 'FluffyBlouse_Nau_PT_1.jpg', 'nữ', '<p>Đ&uacute;ng với t&ecirc;n gọi của m&igrave;nh, Fluffy Blouse sở hữu chất vải nhung tăm cao cấp.</p>\n\n<p>Tạo cảm gi&aacute;c v&ocirc; c&ugrave;ng mềm mại, thoải m&aacute;i kết hợp c&ugrave;ng thiết kế cổ c&aacute;ch điệu mang lại n&eacute;t nữ t&iacute;nh, thanh lịch cho mọi c&ocirc; n&agrave;ng xinh đẹp.</p>\n', b'1', '2021-01-08 14:38:55', 'Tú Uyên', '2021-01-25 21:52:29', 'Tú Uyên');
@@ -213,6 +210,7 @@ INSERT INTO `sanpham` VALUES (27, 'win-coat', 'ao-khoac', 'Áo Khoác Dài Măng
 INSERT INTO `sanpham` VALUES (28, 'quan-jean-slimfit-van-xuan-kien-quoc', 'quan-dai', 'Quần Jean Slimfit Vạn Xuân Kiến Quốc', 425000, 'quan-jean-slimfit-van-xuan-kien-quoc.jpg', 'nam', '<p>Chất liệu: Jean Cotton</p>\n\n<p>Th&agrave;nh phần: 99% cotton 1% spandex</p>\n\n<p>In logo Vạn Xu&acirc;n Kiến Quốc</p>\n', b'1', '2021-01-25 16:48:08', 'Tú Uyên', '2021-01-25 17:53:31', 'Tú Uyên');
 INSERT INTO `sanpham` VALUES (29, 'thomas-jacket', 'ao-khoac', 'Áo Khoác Nam SSSTUTTER SSS. Thomas Jacket', 719000, 'thomas-jacket-1.jpg', 'nam', '<p>Trở lại v&agrave;o 2020, Thomas Jacket sẽ đem đến những trải nghiệm tuyệt vời cho người mặc: Nhẹ hơn, Chất liệu vải Cao Cấp hơn v&agrave; kiểu d&aacute;ng Vừa Vặn hơn.</p>\n', b'1', '2021-01-25 18:59:55', 'Tú Uyên', NULL, NULL);
 INSERT INTO `sanpham` VALUES (30, 'match-shirt-her', 'so-mi', 'Áo Sơ Mi Nữ SSSTUTTER Match Shirt', 349000, 'MatchShirt_Her_Nau_LB_1.jpg', 'nữ', '<p>&nbsp;</p>\n\n<p>Đ&acirc;y ch&iacute;nh x&aacute;c l&agrave; bạn cặp ho&agrave;n hảo với chiếc &aacute;o Match Shirt phi&ecirc;n bản nam.</p>\n\n<p>Với phi&ecirc;n bản nữ, chiếc &aacute;o vẫn giữ thiết kế cổ cuban quen thuộc v&agrave; chất liệu vải đũi mềm gi&uacute;p c&aacute;c c&ocirc; g&aacute;i của SSS. thoải m&aacute;i hoạt động cả ng&agrave;y d&agrave;i.</p>\n\n<p>Điểm đặc biệt đến từ chiếc &aacute;o l&agrave; thiết kế ngắn tay vừa tạo n&ecirc;n điểm kh&aacute;c biệt với phi&ecirc;n bản nam vừa tạo ra được sự trẻ trung, thanh lịch cho c&aacute;c c&ocirc; g&aacute;i xinh đẹp.</p>\n', b'1', '2021-01-25 21:37:26', 'Tú Uyên', NULL, NULL);
+INSERT INTO `sanpham` VALUES (31, 'quan-jogger-thun-drama', 'quan-dai', 'Quần Jogger Thun Drama ', 350000, 'jogger-drama.jpg', 'nam', '<p>Chất liệu: MINI ZURRY</p>\n\n<p>Th&agrave;nh Phần: 95% COTTON,&nbsp;5% SPANDEX</p>\n\n<p>Th&acirc;n thiện với m&ocirc;i trường</p>\n\n<p>Tho&aacute;ng m&aacute;t</p>\n\n<p>Gi&uacute;p quần co gi&atilde;n tối ưu</p>\n', b'1', '2021-01-25 22:47:22', 'Tú Uyên', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for user
