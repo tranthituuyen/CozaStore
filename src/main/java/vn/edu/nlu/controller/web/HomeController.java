@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ResourceBundle;
 
-@WebServlet(urlPatterns = {"/trang-chu", "/dang-nhap", "/thoat"}, name = "home-controller")
+@WebServlet(urlPatterns = {"/trang-chu", "/dang-nhap", "/thoat", "/dang-ky"}, name = "home-controller")
 public class HomeController extends HttpServlet {
 
     ResourceBundle bundle = ResourceBundle.getBundle("message");
@@ -69,9 +69,22 @@ public class HomeController extends HttpServlet {
 
                 RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/web/login.jsp");
                 requestDispatcher.forward(request, response);
+
             } else if (action.equals("logout")) {
                 SessionUtil.getInstance().removeValue(request, "USER");
                 response.sendRedirect(request.getContextPath() + "/trang-chu");
+
+            } else if (action.equals("register")) {
+                String message = request.getParameter("message");
+                String alert = request.getParameter("alert");
+
+                if (message != null && alert != null) {
+                    request.setAttribute("message", bundle.getString(message));
+                    request.setAttribute("alert", alert);
+                }
+
+                RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/web/register.jsp");
+                requestDispatcher.forward(request, response);
             }
         } else {
             Category categories = new Category();

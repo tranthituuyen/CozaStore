@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import java.sql.Timestamp;
 import java.util.List;
 
+
 public class DetailProductService implements IDetailProductService {
 
     @Inject
@@ -26,6 +27,21 @@ public class DetailProductService implements IDetailProductService {
     @Override
     public DetailProduct findOne(String masanpham, Integer id) {
         return detailProductDAO.findOne(masanpham, id);
+    }
+
+    @Override
+    public List<String> findAllColor(String code) {
+        return detailProductDAO.findAllColor(code);
+    }
+
+    @Override
+    public List<String> findAllSize(String code) {
+        return detailProductDAO.findAllSize(code);
+    }
+
+    @Override
+    public List<String> getInfo(String code) {
+        return detailProductDAO.getInfo(code);
     }
 
     @Override

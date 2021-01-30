@@ -13,4 +13,6 @@ public interface IUserService {
 
     User update(User updateUser);
 
+    void delete(int[] ids);
+
 }

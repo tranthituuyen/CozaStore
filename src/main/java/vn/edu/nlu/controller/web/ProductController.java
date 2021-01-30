@@ -2,8 +2,10 @@ package vn.edu.nlu.controller.web;
 
 import vn.edu.nlu.constant.SystemConstant;
 import vn.edu.nlu.model.Category;
+import vn.edu.nlu.model.DetailProduct;
 import vn.edu.nlu.model.Product;
 import vn.edu.nlu.service.ICategoryService;
+import vn.edu.nlu.service.IDetailProductService;
 import vn.edu.nlu.service.IProductService;
 
 import javax.inject.Inject;
@@ -25,6 +27,9 @@ public class ProductController extends HttpServlet {
     @Inject
     private ICategoryService categoryService;
 
+    @Inject
+    private IDetailProductService detailProductService;
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
     }
@@ -32,10 +37,9 @@ public class ProductController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String view = "";
         String type = request.getParameter("type");
-        String find = request.getParameter("find");
         String fromStr = request.getParameter("from");
+        String search = request.getParameter("search");
         int from = 0;
-        Category categories = new Category();
         Product product = new Product();
 
         if (type != null) {
@@ -45,11 +49,15 @@ public class ProductController extends HttpServlet {
                     product = productService.findOne(productCode);
                     List<Product> relatedProducts = productService.findByCategoryCode(product.getCategoryCode());
                     product.setImages(productService.findAllImgOfProduct(productCode));
+                    product.setColors(detailProductService.findAllColor(productCode));
+                    product.setSizes(detailProductService.findAllSize(productCode));
+                    product.setShortDescription(detailProductService.getInfo(productCode));
 
                     request.setAttribute("relatedProducts", relatedProducts);
                     view = "/views/web/product-detail.jsp";
                     break;
                 case SystemConstant.FILTER:
+                    String find = request.getParameter("find");
                     product.setListResult(productService.findByFilter(find));
                     view = "/views/web/product.jsp";
                     break;
@@ -61,16 +69,19 @@ public class ProductController extends HttpServlet {
                     view = "/views/web/product.jsp";
                     break;
             }
+        } else if (search != null) {
+            product.setListResult(productService.findByKeyword(search));
+            view = "/views/web/product.jsp";
         } else {
-            categories.setListResult(categoryService.findAll());
             product.setListResult(productService.findAllLimit(0, 20));
-
-            request.setAttribute("categories", categories);
             view = "/views/web/product.jsp";
         }
-
+        Category categories = new Category();
+        categories.setListResult(categoryService.findAll());
+        request.setAttribute("categories", categories);
         request.setAttribute(SystemConstant.MODEL, product);
         request.setAttribute("from", from + 20);
+
         RequestDispatcher requestDispatcher = request.getRequestDispatcher(view);
         requestDispatcher.forward(request, response);
     }

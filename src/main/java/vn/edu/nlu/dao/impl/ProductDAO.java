@@ -7,7 +7,6 @@ import vn.edu.nlu.mapper.ProductMapper;
 import vn.edu.nlu.model.DetailProduct;
 import vn.edu.nlu.model.ImagesOfProduct;
 import vn.edu.nlu.model.Product;
-import vn.edu.nlu.model.Size;
 import vn.edu.nlu.paging.Pageable;
 
 import java.util.List;
@@ -50,12 +49,18 @@ public class ProductDAO extends AbstractDAO<Product> implements IProductDAO {
     public List<Product> findByFilter(String param) {
         StringBuilder sql = new StringBuilder("SELECT * FROM sanpham");
         if (param != null) {
-            if (param.equals("thoitrangnam")) {
-                sql.append(" WHERE danhcho = 'nam' OR danhcho = 'unisex'");
-            } else if (param.equals("thoitrangnu")) {
-                sql.append(" WHERE danhcho = 'nu' OR danhcho = 'unisex'");
-            } else if (param.equals("phukien")) {
-                sql.append(" WHERE madanhmuc = 'giay-dep' OR madanhmuc = 'dong-ho' OR madanhmuc = 'balo-tui-xach'");
+            switch (param) {
+                case "thoitrangnam":
+                    sql.append(" WHERE danhcho = 'nam' OR danhcho = 'unisex'");
+                    break;
+                case "thoitrangnu":
+                    sql.append(" WHERE danhcho = 'nu' OR danhcho = 'unisex'");
+                    break;
+                case "phukien":
+                    sql.append(" WHERE madanhmuc = 'giay-dep' OR madanhmuc = 'dong-ho' OR madanhmuc = 'balo-tui-xach'");
+                    break;
+                default:
+                    return findByCategoryCode(param);
             }
         }
         return query(sql.toString(), new ProductMapper(), param);
@@ -83,7 +88,6 @@ public class ProductDAO extends AbstractDAO<Product> implements IProductDAO {
 
     @Override
     public Integer save(Product product) {
-        // )
         StringBuilder sql = new StringBuilder("INSERT INTO sanpham (masanpham, madanhmuc, tensanpham, gia, ");
         sql.append("anhbia, danhcho, mota, trangthai, createddate, createdby) ");
         sql.append("VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
@@ -132,5 +136,17 @@ public class ProductDAO extends AbstractDAO<Product> implements IProductDAO {
     public List<DetailProduct> findAllDetailOfProduct(String masanpham) {
         String sql = "SELECT * FROM chitietsanpham WHERE masanpham = ?";
         return query(sql, new DetailProductMapper(), masanpham);
+    }
+
+    @Override
+    public int countProduct(String code) {
+        String sql = "SELECT COUNT(*) FROM chitietsanpham WHERE masanpham = ?";
+        return count(sql, code);
+    }
+
+    @Override
+    public List<Product> findByKeyword(String keyword) {
+        String sql = "SELECT * FROM sanpham WHERE tensanpham LIKE '%" + keyword + "%'";
+        return query(sql, new ProductMapper(), keyword);
     }
 }

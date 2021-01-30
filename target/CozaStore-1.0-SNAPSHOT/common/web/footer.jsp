@@ -81,7 +81,7 @@
                 </p>
 
                 <p class="stext-107 cl7 size-201">
-                    Gmail: cozastore@gmail.com
+                    Gmail: st.giangiang2016@gmail.com
                 </p>
 
                 <div class="p-t-27">

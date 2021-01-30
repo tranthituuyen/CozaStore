@@ -15,6 +15,7 @@ public class DetailProductMapper implements RowMapper<DetailProduct> {
             product.setCode(resultSet.getString("masanpham"));
             product.setSize(resultSet.getString("size"));
             product.setMau(resultSet.getString("mau"));
+            product.setSoluong(resultSet.getInt("soluong"));
             product.setTrangthai(resultSet.getBoolean("trangthai"));
             product.setThongtinchitiet(resultSet.getString("thongtinchitiet"));
 

@@ -1,5 +1,6 @@
 package vn.edu.nlu.dao;
 
+import vn.edu.nlu.model.Product;
 import vn.edu.nlu.model.User;
 
 import java.util.List;
@@ -13,4 +14,8 @@ public interface IUserDAO extends GenericDAO<User> {
     Integer save(User user);
 
     void update(User updateUser);
+
+    User findOne(Integer id);
+
+    void delete(int id);
 }

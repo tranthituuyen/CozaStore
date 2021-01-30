@@ -191,13 +191,15 @@
 
             <div class="flex-w flex-sb-m p-b-52">
                 <div class="flex-w flex-l-m filter-tope-group m-tb-10">
-                    <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1" data-filter="*">Tất
-                        cả
-                    </button>
+                    <a href="<c:url value="/san-pham"/>"
+                       class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1" data-filter="*">
+                        Tất cả
+                    </a>
                     <c:forEach var="item" items="${categories.listResult}">
-                        <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".${item.code}">
+                        <a href="<c:url value="/san-pham?type=filter&find=${item.code}"/>"
+                           class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".${item.code}">
                                 ${item.name}
-                        </button>
+                        </a>
                     </c:forEach>
                 </div>
 
@@ -334,7 +336,7 @@
                                 <img src="<c:url value='/images/products/${item.categoryCode}/${item.cover}' />"
                                      alt="hình ảnh sản phẩm ${item.name}">
                                 <a class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1"
-                                   href="#">Xem nhanh
+                                   href="<c:url value="/san-pham?type=detail&productcode=${item.code}" />">Xem chi tiết
                                 </a>
                             </div>
 
@@ -372,9 +374,6 @@
             </div>
         </div>
     </section>
-
-    <!-- xem nhanh modal -->
-    <%@ include file="/common/web/quick-view.jsp" %>
 
     <%-- script --%>
     <script type="text/javascript">

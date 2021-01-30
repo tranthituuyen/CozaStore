@@ -13,9 +13,12 @@ public class Product extends AbstractModel<Product> implements Serializable {
     private String description;
     private boolean status;
     private String categoryName;
+    private List<String> shortDescription;
     private List<ImagesOfProduct> images;
     private List<DetailProduct> details;
-    private List<Size> sizes;
+    private List<String> colors;
+    private List<String> sizes;
+    private int numberOfProduct;
 
     // empty constructor
     public Product() {
@@ -105,15 +108,39 @@ public class Product extends AbstractModel<Product> implements Serializable {
         return details;
     }
 
+    public List<String> getColors() {
+        return colors;
+    }
+
+    public void setColors(List<String> colors) {
+        this.colors = colors;
+    }
+
     public void setDetails(List<DetailProduct> details) {
         this.details = details;
     }
 
-    public List<Size> getSizes() {
+    public List<String> getSizes() {
         return sizes;
     }
 
-    public void setSizes(List<Size> sizes) {
+    public void setSizes(List<String> sizes) {
         this.sizes = sizes;
+    }
+
+    public List<String> getShortDescription() {
+        return shortDescription;
+    }
+
+    public void setShortDescription(List<String> shortDescription) {
+        this.shortDescription = shortDescription;
+    }
+
+    public int getNumberOfProduct() {
+        return numberOfProduct;
+    }
+
+    public void setNumberOfProduct(int numberOfProduct) {
+        this.numberOfProduct = numberOfProduct;
     }
 }

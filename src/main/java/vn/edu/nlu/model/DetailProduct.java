@@ -4,6 +4,7 @@ public class DetailProduct extends AbstractModel<DetailProduct> {
     private String code;
     private String size;
     private String mau;
+    private int soluong;
     private boolean trangthai;
     private String thongtinchitiet;
 
@@ -17,6 +18,14 @@ public class DetailProduct extends AbstractModel<DetailProduct> {
 
     public String getMau() {
         return mau;
+    }
+
+    public int getSoluong() {
+        return soluong;
+    }
+
+    public void setSoluong(int soluong) {
+        this.soluong = soluong;
     }
 
     public boolean isTrangthai() {

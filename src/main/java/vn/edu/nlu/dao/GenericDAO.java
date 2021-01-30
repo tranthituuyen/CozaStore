@@ -12,4 +12,6 @@ public interface GenericDAO<T> {
     Integer insert(String sql, Object... parameters);
 
     int count(String sql, Object... parameters);
+
+    List<String> getListString(String sql, Object... parameters);
 }

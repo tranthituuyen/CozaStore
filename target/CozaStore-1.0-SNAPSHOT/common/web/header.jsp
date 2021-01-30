@@ -33,7 +33,8 @@
                 <ul class="main-menu">
                     <li id="home"><a href="<c:url value='/trang-chu' />">Trang chủ</a></li>
                     <li id="store"><a href="<c:url value='/san-pham' />">Cửa hàng</a></li>
-                    <li id="hot" class="label1" data-label1="hot"><a href="<c:url value='/san-pham' />">Xu hướng</a></li>
+                    <li id="hot" class="label1" data-label1="hot"><a href="<c:url value='/san-pham' />">Xu hướng</a>
+                    </li>
                     <li id="blog"><a href="<c:url value='/bai-viet' />">Blog</a></li>
                     <li id="aboutus"><a href="<c:url value='/ve-chung-toi' />">Về chúng tôi</a></li>
                     <li id="contact"><a href="<c:url value="/lien-he"/>">Liên hệ</a></li>
@@ -46,7 +47,7 @@
                     <i class="zmdi zmdi-search"></i>
                 </div>
                 <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
-                     data-notify="2">
+                     data-notify="${item.quantity}">
                     <i class="zmdi zmdi-shopping-cart"></i>
                 </div>
                 <a class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti"
@@ -121,9 +122,17 @@
             </a>
         </button>
         <!-- form tìm kiếm -->
-        <form class="wrap-search-header flex-w p-l-15">
-            <button class="flex-c-m trans-04"><i class="zmdi zmdi-search"></i></button>
-            <input class="plh3" type="text" name="search" placeholder="Tìm kiếm...">
+        <form action="<c:url value="/san-pham" />" id="formSearch" class="wrap-search-header flex-w p-l-15">
+            <button id="btnSearch" class="flex-c-m trans-04"><i class="zmdi zmdi-search"></i></button>
+            <input id="search" class="plh3" type="text" name="search" placeholder="Tìm kiếm...">
         </form>
     </div>
 </div>
+
+<script type="text/javascript">
+    <%--$('#btnSearch').click(function (e) {--%>
+    <%--    e.preventDefault();--%>
+    <%--    var search = $('#search').val();--%>
+    <%--    window.location.href = '<c:url value="/san-pham?search=" />' + search;--%>
+    <%--});--%>
+</script>

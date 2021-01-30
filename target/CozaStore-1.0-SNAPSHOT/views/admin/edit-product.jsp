@@ -198,79 +198,56 @@
 
     <c:if test="${listDetailSize > 0}">
         <!-- table of all detail of product -->
-        <h3 class="m-0 font-weight-bold text-primary d-flex justify-content-between align-items-center">
+        <h3 class="mb-4 m-0 font-weight-bold text-primary d-flex justify-content-between align-items-center">
             Các mẫu sản phẩm ${model.name}
         </h3>
-<%--        <h1 class="h3 mb-2 text-gray-800">Danh mục người dùng</h1>--%>
         <div class="card shadow mb-4">
             <div class="card-body">
-                <c:forEach var="item" items="${model.details}">
-                    <div class="card mb-4">
-                        <div class="card-header py-3">
-                            <a href="<c:url value="/admin-quan-ly-san-pham?type=detail&productcode=${item.code}&id=${item.id}" />">
-                                <h5 class="m-0 font-weight-bold text-primary d-flex justify-content-between align-items-center tex">
-                                    <em>#${item.id}</em>
-                                </h5>
-                            </a>
-                        </div>
-                        <div class="card-body">
-                            <div class="row mt-3">
-                                <div class="col flex-grow-1">
-                                        <%-- product code (chua viet) --%>
-                                    <div class="form-inline mb-2">
-                                        <label for="masanpham" class="d-block edit-product-label">
-                                            Mã sản phẩm:
-                                        </label>
-                                        <input type="text" id="masanpham" name="masanpham" value="${item.code}"
-                                               class="form-control flex-grow-1"/>
-                                    </div>
-
-                                        <%-- size --%>
-                                    <div class="form-inline mb-2">
-                                        <label for="size" class="d-block edit-product-label">Size:</label>
-                                        <input type="text" id="size" name="size" value="${item.size}"
-                                               class="form-control flex-grow-1"/>
-                                    </div>
-
-                                        <%-- mau --%>
-                                    <div class="form-inline mb-2">
-                                        <label for="mau" class="d-block edit-product-label">Màu:</label>
-                                        <input type="text" id="mau" name="mau" value="${item.mau}"
-                                               class="form-control flex-grow-1"/>
-                                    </div>
-
-                                        <%-- trang thai (chua sua) --%>
-                                    <div class="form-inline mb-2">
-                                        <label for="trangthai" class="d-block edit-product-label">Trạng
-                                            thái:</label>
-                                        <select name="trangthai" id="trangthai" class="form-control flex-grow-1">
-                                            <c:choose>
-                                                <c:when test="${item.trangthai == false}">
-                                                    <option value="false">Tạm hết hàng</option>
-                                                    <option value="true">Mở bán</option>
-                                                </c:when>
-                                                <c:otherwise>
-                                                    <option value="true">Mở bán</option>
-                                                    <option value="false">Tạm hết hàng</option>
-                                                </c:otherwise>
-                                            </c:choose>
-                                        </select>
-                                    </div>
-
-                                        <%-- thong tin chi tiet --%>
-                                    <div class="d-flex justify-content-start">
-                                        <label class="d-block edit-product-label">Chi tiết:</label>
-                                        <div class="flex-grow-1 mb-2">
-                                                <textarea class="form-control flex-grow-1" rows="7" id="thongtinchitiet"
-                                                          name="thongtinchitiet"
-                                                          type="text">${item.thongtinchitiet}</textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="card mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">
+                            Mã sản phẩm: ${model.code}
+                        </h6>
                     </div>
-                </c:forEach>
+
+                    <div class="table-responsive">
+                        <table class="table" id="dataListProduct" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th class="align-middle">STT</th>
+                                    <th class="align-middle">Màu</th>
+                                    <th class="align-middle">Size</th>
+                                    <th class="align-middle">Số lượng</th>
+                                    <th class="align-middle">Trạng thái</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <c:forEach var="item" items="${model.details}">
+                                    <tr>
+                                        <td class="align-middle">
+                                            <a href="<c:url value="/admin-quan-ly-san-pham?type=detail&productcode=${item.code}&id=${item.id}" />">
+                                                <h6 class="m-0 font-weight-bold text-primary">
+                                                    <em>#${item.id}</em>
+                                                </h6>
+                                            </a>
+                                        </td>
+                                        <td class="align-middle text-capitalize">${item.mau}</td>
+                                        <td class="align-middle text-capitalize">${item.size}</td>
+                                        <td class="align-middle text-capitalize">${item.soluong}</td>
+                                        <td class="align-middle text-capitalize">
+                                            <c:if test="${item.trangthai == true}">
+                                                Có sẵn
+                                            </c:if>
+                                            <c:if test="${item.trangthai == false}">
+                                                Tạm hết hàng
+                                            </c:if>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </c:if>

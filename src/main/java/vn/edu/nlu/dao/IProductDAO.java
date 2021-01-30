@@ -3,7 +3,6 @@ package vn.edu.nlu.dao;
 import vn.edu.nlu.model.DetailProduct;
 import vn.edu.nlu.model.ImagesOfProduct;
 import vn.edu.nlu.model.Product;
-import vn.edu.nlu.model.Size;
 import vn.edu.nlu.paging.Pageable;
 
 import java.util.List;
@@ -39,4 +38,8 @@ public interface IProductDAO extends GenericDAO<Product> {
     List<Size> findAllSizeOfProduct(String code);
 
     List<DetailProduct> findAllDetailOfProduct(String masanpham);
+
+    int countProduct(String code);
+
+    List<Product> findByKeyword(String keyword);
 }

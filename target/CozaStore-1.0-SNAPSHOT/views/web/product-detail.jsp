@@ -20,10 +20,10 @@
     <!-- breadcrumb -->
     <div class="container">
         <div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
-            <a href="<c:url value='/views/web/home.jsp' />" class="stext-109 cl8 hov-cl1 trans-04">Trang chủ
+            <a href="<c:url value='/trang-chu' />" class="stext-109 cl8 hov-cl1 trans-04">Trang chủ
                 <i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
             </a>
-            <a href="<c:url value='/views/web/product.jsp' />"
+            <a href="<c:url value='/san-pham?type=filter&find=${model.categoryCode}' />"
                class="stext-109 cl8 hov-cl1 trans-04 text-capitalize">${model.categoryName}
                 <i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
             </a>
@@ -65,7 +65,6 @@
                         <h4 class="mtext-105 cl2 js-name-detail p-b-14 text-capitalize">${model.name}</h4>
                         <span class="mtext-106 cl2">${model.price}</span>
                         <div class="stext-102 cl3 p-t-23">${model.description}</div>
-                        <%--                        <p class="stext-102 cl3 p-t-23">Chất vải thoáng mát và ít nhăn, thấm hút cực tốt.</p>--%>
                         <!--  -->
                         <div class="p-t-33">
                             <!-- bảng size -->
@@ -73,13 +72,11 @@
                                 <div class="size-203 flex-c-m respon6">Size</div>
                                 <div class="size-204 respon6-next">
                                     <div class="rs1-select2 bor8 bg0">
-                                        <select class="js-select2" name="time">
+                                        <select class="js-select2 text-capitalize" name="time">
                                             <option>Bảng size</option>
-                                            <option>Size S</option>
-                                            <option>Size M</option>
-                                            <option>Size L</option>
-                                            <option>Size XL</option>
-                                            <option>Freesize</option>
+                                            <c:forEach var="item" items="${model.sizes}">
+                                                <option class="text-capitalize" value="${item}">${item}</option>
+                                            </c:forEach>
                                         </select>
                                         <div class="dropDownSelect2"></div>
                                     </div>
@@ -91,12 +88,11 @@
                                 <div class="size-203 flex-c-m respon6">Màu</div>
                                 <div class="size-204 respon6-next">
                                     <div class="rs1-select2 bor8 bg0">
-                                        <select class="js-select2" name="time">
-                                            <option>Bảng màu</option>
-                                            <option>Đỏ</option>
-                                            <option>Xanh</option>
-                                            <option>Trắng</option>
-                                            <option>Xám</option>
+                                        <select class="js-select2 text-capitalize" name="time">
+                                            <option>Chọn màu</option>
+                                            <c:forEach var="item" items="${model.colors}">
+                                                <option class="text-capitalize" value="${item}">${item}</option>
+                                            </c:forEach>
                                         </select>
                                         <div class="dropDownSelect2"></div>
                                     </div>
@@ -118,9 +114,10 @@
                                         </div>
                                     </div>
 
-                                    <button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
+                                    <a class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail"
+                                       href="${pageContext.request.contextPath}/cart?action=buy&id=${model.code}">
                                         Thêm vào giỏ
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -160,13 +157,8 @@
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
                         <li class="nav-item p-b-10">
-                            <a class="nav-link active" data-toggle="tab" href="#description" role="tab">
-                                Thông tin sản phẩm
-                            </a>
-                        </li>
-
-                        <li class="nav-item p-b-10">
-                            <a class="nav-link" data-toggle="tab" href="#information" role="tab">Thông tin chi tiết</a>
+                            <a class="nav-link active" data-toggle="tab" href="#information" role="tab">Thông tin chi
+                                tiết</a>
                         </li>
 
                         <li class="nav-item p-b-10">
@@ -177,42 +169,12 @@
                     <!-- Tab panes -->
                     <div class="tab-content p-t-43">
                         <!-- - -->
-                        <div class="tab-pane fade show active" id="description" role="tabpanel">
-                            <div class="how-pos2 p-lr-15-md">
-                                ${model.description}
-                            </div>
-                        </div>
-
-                        <!-- - -->
-                        <div class="tab-pane fade" id="information" role="tabpanel">
+                        <div class="tab-pane fade show active" id="information" role="tabpanel">
                             <div class="row">
-                                <div class="col-sm-10 col-md-8 col-lg-6 m-lr-auto">
-                                    <ul class="p-lr-28 p-lr-15-sm">
-                                        <li class="flex-w flex-t p-b-7">
-                                            <span class="stext-102 cl3 size-205">Trọng lượng</span>
-                                            <span class="stext-102 cl6 size-206">0.79 kg</span>
-                                        </li>
-
-                                        <li class="flex-w flex-t p-b-7">
-                                            <span class="stext-102 cl3 size-205">Kích thước</span>
-                                            <span class="stext-102 cl6 size-206">110 x 33 x 100 cm</span>
-                                        </li>
-
-                                        <li class="flex-w flex-t p-b-7">
-                                            <span class="stext-102 cl3 size-205">Chất liệu</span>
-                                            <span class="stext-102 cl6 size-206">60% cotton</span>
-                                        </li>
-
-                                        <li class="flex-w flex-t p-b-7">
-                                            <span class="stext-102 cl3 size-205">Màu sắc</span>
-                                            <span class="stext-102 cl6 size-206">Đen, Xanh dương, Xám, Xanh lá, Đỏ, Trắng</span>
-                                        </li>
-
-                                        <li class="flex-w flex-t p-b-7">
-                                            <span class="stext-102 cl3 size-205">Size</span>
-                                            <span class="stext-102 cl6 size-206">XL, L, M, S</span>
-                                        </li>
-                                    </ul>
+                                <div class="m-lr-auto">
+                                    <c:forEach var="item" items="${model.shortDescription}">
+                                        ${item}
+                                    </c:forEach>
                                 </div>
                             </div>
                         </div>
@@ -220,8 +182,9 @@
                         <!-- - -->
                         <div class="tab-pane fade" id="reviews" role="tabpanel">
                             <div class="row">
-                                <div class="col-sm-10 col-md-8 col-lg-6 m-lr-auto">
-                                    <img src="<c:url value="/images/products/size.PNG" />" alt="hướng dẫn chọn size">
+                                <div class="m-lr-auto">
+                                    <img src="<c:url value="/images/hdcs/huong_dan_chon_size_quan_ao_sss.jpg" />"
+                                         alt="hướng dẫn chọn size">
                                 </div>
                             </div>
                         </div>
@@ -231,8 +194,8 @@
         </div>
 
         <div class="bg6 flex-c-m flex-w size-302 m-t-73 p-tb-15">
-            <span class="stext-107 cl6 p-lr-25">Sản phẩm: ${model.name}</span>
-            <span class="stext-107 cl6 p-lr-25">Danh mục: ${model.categoryName}</span>
+            <span class="stext-107 cl6 p-lr-25 text-capitalize">Sản phẩm: ${model.name}</span>
+            <span class="stext-107 cl6 p-lr-25 text-capitalize">Danh mục: ${model.categoryName}</span>
         </div>
     </section>
 
@@ -253,8 +216,9 @@
                                 <div class="block2-pic hov-img0">
                                     <img src="<c:url value="/images/products/${item.categoryCode}/${item.cover}" />"
                                          alt="IMG-PRODUCT">
-                                    <a class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-                                        Xem nhanh
+                                    <a class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1"
+                                       href="<c:url value="/san-pham?type=detail&productcode=${item.code}" />">Xem chi
+                                        tiết
                                     </a>
                                 </div>
 
@@ -286,7 +250,14 @@
         </div>
     </section>
 
-    <!-- xem nhanh modal -->
-    <%@ include file="/common/web/quick-view.jsp" %>
+    <%-- script --%>
+    <script type="text/javascript">
+        window.onload = function () {
+            $('ul.main-menu li').each((_, element) => {
+                $(element).removeClass('active-menu')
+            })
+            $('li#store').addClass('active-menu');
+        }
+    </script>
 </body>
 </html>

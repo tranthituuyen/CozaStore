@@ -107,6 +107,13 @@
                                    class="form-control flex-grow-1"/>
                         </div>
 
+                        <%-- soluong --%>
+                        <div class="form-inline mb-2">
+                            <label for="soluong" class="d-block edit-product-label">Số lượng:</label>
+                            <input type="text" id="soluong" name="soluong" value="${detail.soluong}"
+                                   class="form-control flex-grow-1"/>
+                        </div>
+
                         <%-- trang thai (chua sua) --%>
                         <div class="form-inline mb-2">
                             <label for="trangthai" class="d-block edit-product-label">Trạng thái:</label>
@@ -218,7 +225,7 @@
                 dataType: 'json',
                 success: function (result) {
                     console.log(JSON.stringify(data))
-                    window.location.href = '${ProductURL}?type=edit&id=' + ${model.id} + '&message=update_success';
+                    window.location.href = '${ProductURL}?type=edit&id=' + ${model.id} +'&message=update_success';
                 },
                 error: function (error) {
                     window.location.href = '${ProductURL}?type=edit&${model.id}=10&message=error_system';

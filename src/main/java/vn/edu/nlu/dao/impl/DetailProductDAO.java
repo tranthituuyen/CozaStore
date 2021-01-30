@@ -10,21 +10,21 @@ public class DetailProductDAO extends AbstractDAO<DetailProduct> implements IDet
 
     @Override
     public Integer save(DetailProduct product) {
-        StringBuilder sql = new StringBuilder("INSERT INTO chitietsanpham (masanpham, size, mau, trangthai, thongtinchitiet, ");
+        StringBuilder sql = new StringBuilder("INSERT INTO chitietsanpham (masanpham, size, mau, soluong, trangthai, thongtinchitiet, ");
         sql.append("createddate, createdby) ");
-        sql.append("VALUES (?, ?, ?, ?, ?, ?, ?)");
+        sql.append("VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
 
-        return insert(sql.toString(), product.getCode(), product.getSize(), product.getMau(), product.isTrangthai(),
+        return insert(sql.toString(), product.getCode(), product.getSize(), product.getMau(), product.getSoluong(), product.isTrangthai(),
                 product.getThongtinchitiet(), product.getCreatedDate(), product.getCreatedBy());
     }
 
     @Override
     public void update(DetailProduct updateProduct) {
-        StringBuilder sql = new StringBuilder("UPDATE chitietsanpham SET masanpham = ?, size = ?, mau = ?, thongtinchitiet = ?, ");
+        StringBuilder sql = new StringBuilder("UPDATE chitietsanpham SET masanpham = ?, size = ?, mau = ?, soluong = ?, thongtinchitiet = ?, ");
         sql.append("trangthai = ?, createddate = ?, createdby = ?, modifieddate = ?, modifiedby = ? ");
         sql.append("WHERE id  = ?");
 
-        update(sql.toString(), updateProduct.getCode(), updateProduct.getSize(), updateProduct.getMau(), updateProduct.getThongtinchitiet(),
+        update(sql.toString(), updateProduct.getCode(), updateProduct.getSize(), updateProduct.getMau(), updateProduct.getSoluong(), updateProduct.getThongtinchitiet(),
                 updateProduct.isTrangthai(), updateProduct.getCreatedDate(), updateProduct.getCreatedBy(), updateProduct.getModifiedDate(),
                 updateProduct.getModifiedBy(), updateProduct.getId());
     }
@@ -54,5 +54,23 @@ public class DetailProductDAO extends AbstractDAO<DetailProduct> implements IDet
         String sql = "SELECT * FROM chitietsanpham WHERE masanpham = ? AND id = ?";
         List<DetailProduct> details = query(sql, new DetailProductMapper(), masanpham, id);
         return details.isEmpty() ? null : details.get(0);
+    }
+
+    @Override
+    public List<String> findAllColor(String code) {
+        String sql = "SELECT DISTINCT mau FROM chitietsanpham WHERE masanpham = ?";
+        return getListString(sql, code);
+    }
+
+    @Override
+    public List<String> findAllSize(String code) {
+        String sql = "SELECT DISTINCT size FROM chitietsanpham WHERE masanpham = ?";
+        return getListString(sql, code);
+    }
+
+    @Override
+    public List<String> getInfo(String code) {
+        String sql = "SELECT DISTINCT thongtinchitiet FROM chitietsanpham WHERE masanpham = ?";
+        return getListString(sql, code);
     }
 }

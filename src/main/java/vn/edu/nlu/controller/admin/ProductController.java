@@ -61,6 +61,7 @@ public class ProductController extends HttpServlet {
                 if (product.getId() != null) {
                     product = productService.findOne(product.getId());
                     product.setDetails(productService.findAllDetailOfProduct(product.getCode()));
+                    product.setNumberOfProduct(productService.countProduct(product.getCode()));
                     request.setAttribute("listDetailSize", product.getDetails().size());
                     request.setAttribute(SystemConstant.MODEL, product);
                 }

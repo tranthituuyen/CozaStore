@@ -26,12 +26,35 @@ public class UserDAO extends AbstractDAO<User> implements IUserDAO {
 
     @Override
     public Integer save(User user) {
-        return null;
+        StringBuilder sql = new StringBuilder("INSERT INTO user (username, email, password, fullname, status, roleid, createddate, createdby) ");
+        sql.append("VALUES (?,?,?,?,?,?,?,?)");
+
+        return insert(sql.toString(), user.getUsername(), user.getEmail(), user.getPassword(), user.getFullname(), user.getStatus(), user.getRoleId(),
+                user.getCreatedDate(), user.getCreatedBy());
     }
 
     @Override
     public void update(User updateUser) {
+        StringBuilder sql = new StringBuilder("UPDATE `user` SET username = ?, email = ?, `password` = ?, fullname = ?, `status` = ?, roleid = ?, ");
+        sql.append("createddate = ?, createdby = ?, modifieddate = ?, modifiedby = ? ");
+        sql.append("WHERE id  = ?");
 
+        update(sql.toString(), updateUser.getUsername(), updateUser.getEmail(), updateUser.getPassword(), updateUser.getFullname(), updateUser.getStatus(),
+                updateUser.getRoleId(), updateUser.getCreatedDate(), updateUser.getCreatedBy(), updateUser.getModifiedDate(),
+                updateUser.getModifiedBy(), updateUser.getId());
+    }
+
+    @Override
+    public User findOne(Integer id) {
+        String sql = "SELECT * FROM user WHERE id = ?";
+        List<User> user = query(sql, new UserMapper(), id);
+        return user.isEmpty() ? null : user.get(0);
+    }
+
+    @Override
+    public void delete(int id) {
+        String sql = "DELETE FROM user WHERE id = ?";
+        update(sql, id);
     }
 
 }

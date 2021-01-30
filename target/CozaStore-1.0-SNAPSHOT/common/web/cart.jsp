@@ -13,57 +13,31 @@
 
         <div class="header-cart-content flex-w js-pscroll">
             <ul class="header-cart-wrapitem w-full">
-                <li class="header-cart-item flex-w flex-t m-b-12">
-                    <div class="header-cart-item-img">
-                        <img src="<c:url value='/images/products/cart-item-1.jpg' />" alt="IMG">
-                    </div>
-                    <div class="header-cart-item-txt p-t-8">
-                        <a href="<c:url value='/views/web/product-detail.jsp' />" class="header-cart-item-name m-b-18 hov-cl1 trans-04">Sheer shirt</a>
-                        <span class="header-cart-item-info">1 x 400.000đ</span>
-                    </div>
-                </li>
-
-                <li class="header-cart-item flex-w flex-t m-b-12">
-                    <div class="header-cart-item-img">
-                        <img src="<c:url value='/images/products/cart-item-2.jpg' />" alt="IMG">
-                    </div>
-                    <div class="header-cart-item-txt p-t-8">
-                        <a href="<c:url value='/chi-tiet-san-pham' />" class="header-cart-item-name m-b-18 hov-cl1 trans-04">SSS. Icon Pants</a>
-                        <span class="header-cart-item-info">1 x 494.000đ</span>
-                    </div>
-                </li>
-
-                <li class="header-cart-item flex-w flex-t m-b-12">
-                    <div class="header-cart-item-img">
-                        <img src="<c:url value='/images/products/cart-item-3.jpg' />" alt="IMG">
-                    </div>
-                    <div class="header-cart-item-txt p-t-8">
-                        <a href="<c:url value='/chi-tiet-san-pham' />" class="header-cart-item-name m-b-18 hov-cl1 trans-04">SSS. Thomas Jacket</a>
-                        <span class="header-cart-item-info">1 x 719.000đ</span>
-                    </div>
-                </li>
-
-                <li class="header-cart-item flex-w flex-t m-b-12">
-                    <div class="header-cart-item-img">
-                        <img src="<c:url value='/images/products/cart-item-1.jpg' />" alt="IMG">
-                    </div>
-
-                    <div class="header-cart-item-txt p-t-8">
-                        <a href="<c:url value='/chi-tiet-san-pham' />" class="header-cart-item-name m-b-18 hov-cl1 trans-04">Sheer shirt</a>
-                        <span class="header-cart-item-info">1 x 400.000đ</span>
-                    </div>
-                </li>
+                <c:forEach var="item" items="${sessionScope.cart}">
+                    <c:set var="total" value="${total+item.product.price*item.quantity}"></c:set>
+                    <li class="header-cart-item flex-w flex-t m-b-12">
+                        <div class="header-cart-item-img">
+                            <img src="<c:url value="/images/products/${item.product.categoryCode}/${item.product.cover}" />"
+                                 alt="">
+                        </div>
+                        <div class="header-cart-item-txt p-t-8">
+                            <a href="<c:url value='/san-pham?type=detail&productcode=${item.product.code}' />"
+                               class="header-cart-item-name m-b-18 hov-cl1 trans-04">${item.product.name}</a>
+                            <span class="header-cart-item-info">${item.product.price}</span>
+                        </div>
+                    </li>
+                </c:forEach>
             </ul>
 
             <div class="w-full">
-                <div class="header-cart-total w-full p-tb-40">Tổng cộng: 1.613.000đ</div>
+                <div class="header-cart-total w-full p-tb-40">Tổng cộng: ${total}</div>
                 <div class="header-cart-buttons flex-w w-full">
-                    <a href="<c:url value="/gio-hang" />"
+                    <a href="<c:url value="/views/web/shopping-cart.jsp" />"
                        class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
                         Xem giỏ hàng
                     </a>
 
-                    <a href="<c:url value="/gio-hang" />"
+                    <a href="<c:url value="/views/web/shopping-cart.jsp" />"
                        class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
                         Thanh toán
                     </a>

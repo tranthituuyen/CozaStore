@@ -74,7 +74,7 @@
                                     <a class="small" href="forgot-password.jsp">Quên mật khẩu?</a>
                                 </div>
                                 <div class="text-center">
-                                    <a class="small" href="register.jsp">Tạo tài khoản!</a>
+                                    <a class="small" href="<c:url value="/dang-ky?action=register" />">Tạo tài khoản!</a>
                                 </div>
                             </div>
                         </div>

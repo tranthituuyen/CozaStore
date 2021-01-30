@@ -17,4 +17,10 @@ public interface IDetailProductDAO extends GenericDAO<DetailProduct> {
     DetailProduct findOne(String productcode);
 
     DetailProduct findOne(String masanpham, Integer id);
+
+    List<String> findAllColor(String code);
+
+    List<String> findAllSize(String code);
+
+    List<String> getInfo(String code);
 }

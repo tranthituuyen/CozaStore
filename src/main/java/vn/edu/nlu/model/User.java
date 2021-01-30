@@ -1,10 +1,13 @@
 package vn.edu.nlu.model;
 
-public class User extends AbstractModel<User> {
+import java.io.Serializable;
+
+public class User extends AbstractModel<User> implements Serializable {
 
     private String username;
-    private String fullname;
+    private String email;
     private String password;
+    private String fullname;
     private int status;
     private Integer roleId;
     private Role role = new Role();
@@ -16,6 +19,14 @@ public class User extends AbstractModel<User> {
         super();
         this.username = username;
         this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getUsername() {

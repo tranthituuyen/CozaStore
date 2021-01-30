@@ -36,4 +36,10 @@ public interface IProductService {
     List<ImagesOfProduct> findAllImgOfProduct(String code);
 
     List<DetailProduct> findAllDetailOfProduct(String masanpham);
+
+    List<Size> finfAllSize(String code);
+
+    int countProduct(String code);
+
+    List<Product> findByKeyword(String keyword);
 }
